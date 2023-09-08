@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\erikm\\ucl\\SlopeApplication\\SlopeApp\\SlopeApp.csproj": {}
+    "c:\\Users\\erikm\\ucl\\SemesterOne\\SlopeApplication\\SlopeApp\\SlopeApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\erikm\\ucl\\SlopeApplication\\SlopeApp\\SlopeApp.csproj": {
+    "c:\\Users\\erikm\\ucl\\SemesterOne\\SlopeApplication\\SlopeApp\\SlopeApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\erikm\\ucl\\SlopeApplication\\SlopeApp\\SlopeApp.csproj",
+        "projectUniqueName": "c:\\Users\\erikm\\ucl\\SemesterOne\\SlopeApplication\\SlopeApp\\SlopeApp.csproj",
         "projectName": "SlopeApp",
-        "projectPath": "C:\\Users\\erikm\\ucl\\SlopeApplication\\SlopeApp\\SlopeApp.csproj",
+        "projectPath": "c:\\Users\\erikm\\ucl\\SemesterOne\\SlopeApplication\\SlopeApp\\SlopeApp.csproj",
         "packagesPath": "C:\\Users\\erikm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\erikm\\ucl\\SlopeApplication\\SlopeApp\\obj\\",
+        "outputPath": "c:\\Users\\erikm\\ucl\\SemesterOne\\SlopeApplication\\SlopeApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\erikm\\AppData\\Roaming\\NuGet\\NuGet.Config",

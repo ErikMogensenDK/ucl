@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SlopeApp.Tests
-build_property.ProjectDir = C:\Users\erikm\ucl\SlopeApplication\SlopeApp.Tests\
+build_property.ProjectDir = c:\Users\erikm\ucl\SemesterOne\SlopeApplication\SlopeApp.Tests\

@@ -62,5 +62,15 @@ namespace SlopeApp.Tests
             // Then
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void TestName()
+        {
+            // Given
+        
+            // When
+        
+            // Then
+        }
     }
 }

@@ -5539,11 +5539,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\erikm\\ucl\\SlopeApplication\\SlopeApp.Tests\\SlopeApp.Tests.csproj",
+      "projectUniqueName": "c:\\Users\\erikm\\ucl\\SemesterOne\\SlopeApplication\\SlopeApp.Tests\\SlopeApp.Tests.csproj",
       "projectName": "SlopeApp.Tests",
-      "projectPath": "C:\\Users\\erikm\\ucl\\SlopeApplication\\SlopeApp.Tests\\SlopeApp.Tests.csproj",
+      "projectPath": "c:\\Users\\erikm\\ucl\\SemesterOne\\SlopeApplication\\SlopeApp.Tests\\SlopeApp.Tests.csproj",
       "packagesPath": "C:\\Users\\erikm\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\erikm\\ucl\\SlopeApplication\\SlopeApp.Tests\\obj\\",
+      "outputPath": "c:\\Users\\erikm\\ucl\\SemesterOne\\SlopeApplication\\SlopeApp.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\erikm\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5560,8 +5560,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\erikm\\ucl\\SlopeApplication\\SlopeApp\\SlopeApp.csproj": {
-              "projectPath": "C:\\Users\\erikm\\ucl\\SlopeApplication\\SlopeApp\\SlopeApp.csproj"
+            "c:\\Users\\erikm\\ucl\\SemesterOne\\SlopeApplication\\SlopeApp\\SlopeApp.csproj": {
+              "projectPath": "c:\\Users\\erikm\\ucl\\SemesterOne\\SlopeApplication\\SlopeApp\\SlopeApp.csproj"
             }
           }
         }

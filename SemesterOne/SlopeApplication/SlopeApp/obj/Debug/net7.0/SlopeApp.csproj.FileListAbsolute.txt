@@ -26,3 +26,17 @@ C:\Users\erikm\ucl\SlopeApplication\SlopeApp\bin\Debug\net7.0\SlopeApp.dll
 C:\Users\erikm\ucl\SlopeApplication\SlopeApp\bin\Debug\net7.0\SlopeApp.pdb
 C:\Users\erikm\ucl\SlopeApplication\SlopeApp\obj\Debug\net7.0\SlopeApp.genruntimeconfig.cache
 C:\Users\erikm\ucl\SlopeApplication\SlopeApp\obj\Debug\net7.0\ref\SlopeApp.dll
+c:\Users\erikm\ucl\SemesterOne\SlopeApplication\SlopeApp\bin\Debug\net7.0\SlopeApp.exe
+c:\Users\erikm\ucl\SemesterOne\SlopeApplication\SlopeApp\bin\Debug\net7.0\SlopeApp.deps.json
+c:\Users\erikm\ucl\SemesterOne\SlopeApplication\SlopeApp\bin\Debug\net7.0\SlopeApp.runtimeconfig.json
+c:\Users\erikm\ucl\SemesterOne\SlopeApplication\SlopeApp\bin\Debug\net7.0\SlopeApp.dll
+c:\Users\erikm\ucl\SemesterOne\SlopeApplication\SlopeApp\bin\Debug\net7.0\SlopeApp.pdb
+c:\Users\erikm\ucl\SemesterOne\SlopeApplication\SlopeApp\obj\Debug\net7.0\SlopeApp.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\erikm\ucl\SemesterOne\SlopeApplication\SlopeApp\obj\Debug\net7.0\SlopeApp.AssemblyInfoInputs.cache
+c:\Users\erikm\ucl\SemesterOne\SlopeApplication\SlopeApp\obj\Debug\net7.0\SlopeApp.AssemblyInfo.cs
+c:\Users\erikm\ucl\SemesterOne\SlopeApplication\SlopeApp\obj\Debug\net7.0\SlopeApp.csproj.CoreCompileInputs.cache
+c:\Users\erikm\ucl\SemesterOne\SlopeApplication\SlopeApp\obj\Debug\net7.0\SlopeApp.dll
+c:\Users\erikm\ucl\SemesterOne\SlopeApplication\SlopeApp\obj\Debug\net7.0\refint\SlopeApp.dll
+c:\Users\erikm\ucl\SemesterOne\SlopeApplication\SlopeApp\obj\Debug\net7.0\SlopeApp.pdb
+c:\Users\erikm\ucl\SemesterOne\SlopeApplication\SlopeApp\obj\Debug\net7.0\SlopeApp.genruntimeconfig.cache
+c:\Users\erikm\ucl\SemesterOne\SlopeApplication\SlopeApp\obj\Debug\net7.0\ref\SlopeApp.dll

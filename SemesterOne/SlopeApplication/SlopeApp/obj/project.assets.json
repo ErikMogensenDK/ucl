@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\erikm\\ucl\\SlopeApplication\\SlopeApp\\SlopeApp.csproj",
+      "projectUniqueName": "c:\\Users\\erikm\\ucl\\SemesterOne\\SlopeApplication\\SlopeApp\\SlopeApp.csproj",
       "projectName": "SlopeApp",
-      "projectPath": "c:\\Users\\erikm\\ucl\\SlopeApplication\\SlopeApp\\SlopeApp.csproj",
+      "projectPath": "c:\\Users\\erikm\\ucl\\SemesterOne\\SlopeApplication\\SlopeApp\\SlopeApp.csproj",
       "packagesPath": "C:\\Users\\erikm\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\erikm\\ucl\\SlopeApplication\\SlopeApp\\obj\\",
+      "outputPath": "c:\\Users\\erikm\\ucl\\SemesterOne\\SlopeApplication\\SlopeApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\erikm\\AppData\\Roaming\\NuGet\\NuGet.Config",
