@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\erikm\\ucl\\TestApp.Tests\\TestApp.Tests.csproj": {}
+    "c:\\Users\\erikm\\ucl\\TestApp.Tests\\TestApp.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\erikm\\ucl\\TestApp.Tests\\TestApp.Tests.csproj": {
+    "c:\\Users\\erikm\\ucl\\TestApp.Tests\\TestApp.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\erikm\\ucl\\TestApp.Tests\\TestApp.Tests.csproj",
+        "projectUniqueName": "c:\\Users\\erikm\\ucl\\TestApp.Tests\\TestApp.Tests.csproj",
         "projectName": "TestApp.Tests",
-        "projectPath": "C:\\Users\\erikm\\ucl\\TestApp.Tests\\TestApp.Tests.csproj",
+        "projectPath": "c:\\Users\\erikm\\ucl\\TestApp.Tests\\TestApp.Tests.csproj",
         "packagesPath": "C:\\Users\\erikm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\erikm\\ucl\\TestApp.Tests\\obj\\",
+        "outputPath": "c:\\Users\\erikm\\ucl\\TestApp.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\erikm\\AppData\\Roaming\\NuGet\\NuGet.Config",
