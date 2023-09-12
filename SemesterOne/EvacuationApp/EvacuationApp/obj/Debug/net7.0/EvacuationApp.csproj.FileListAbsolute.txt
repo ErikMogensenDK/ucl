@@ -1,0 +1,14 @@
+C:\Users\erikm\ucl\SemesterOne\EvacuationApp\evacuationApp\bin\Debug\net7.0\EvacuationApp.exe
+C:\Users\erikm\ucl\SemesterOne\EvacuationApp\evacuationApp\bin\Debug\net7.0\EvacuationApp.deps.json
+C:\Users\erikm\ucl\SemesterOne\EvacuationApp\evacuationApp\bin\Debug\net7.0\EvacuationApp.runtimeconfig.json
+C:\Users\erikm\ucl\SemesterOne\EvacuationApp\evacuationApp\bin\Debug\net7.0\EvacuationApp.dll
+C:\Users\erikm\ucl\SemesterOne\EvacuationApp\evacuationApp\bin\Debug\net7.0\EvacuationApp.pdb
+C:\Users\erikm\ucl\SemesterOne\EvacuationApp\evacuationApp\obj\Debug\net7.0\EvacuationApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erikm\ucl\SemesterOne\EvacuationApp\evacuationApp\obj\Debug\net7.0\EvacuationApp.AssemblyInfoInputs.cache
+C:\Users\erikm\ucl\SemesterOne\EvacuationApp\evacuationApp\obj\Debug\net7.0\EvacuationApp.AssemblyInfo.cs
+C:\Users\erikm\ucl\SemesterOne\EvacuationApp\evacuationApp\obj\Debug\net7.0\EvacuationApp.csproj.CoreCompileInputs.cache
+C:\Users\erikm\ucl\SemesterOne\EvacuationApp\evacuationApp\obj\Debug\net7.0\EvacuationApp.dll
+C:\Users\erikm\ucl\SemesterOne\EvacuationApp\evacuationApp\obj\Debug\net7.0\refint\EvacuationApp.dll
+C:\Users\erikm\ucl\SemesterOne\EvacuationApp\evacuationApp\obj\Debug\net7.0\EvacuationApp.pdb
+C:\Users\erikm\ucl\SemesterOne\EvacuationApp\evacuationApp\obj\Debug\net7.0\EvacuationApp.genruntimeconfig.cache
+C:\Users\erikm\ucl\SemesterOne\EvacuationApp\evacuationApp\obj\Debug\net7.0\ref\EvacuationApp.dll
