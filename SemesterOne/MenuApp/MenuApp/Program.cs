@@ -1,30 +1,36 @@
-﻿namespace MenuApp;
+﻿using System.Collections;
+
+namespace MenuApp;
 
 class Program
 {
     static void Main(string[] args)
     {
-        var optionOne = "Option 1 of my fantastic menu";
-        var optionTwo = "Option 2 of my fantastic menu";
-        var optionThree = "Option 3 of my fantastic menu";
-        var menuItems = new List<string> { optionOne, optionTwo, optionThree };
-        string selectedOption = SelectOptionFromMenu(menuItems);
+        while (true)
+        {
+            var optionOne = "Option 1 of my fantastic menu";
+            var optionTwo = "Option 2 of my fantastic menu";
+            var optionThree = "Option 3 of my fantastic menu";
+            var menuItems = new List<string> { optionOne, optionTwo, optionThree };
+            int selectedOption = SelectOptionFromMenu(menuItems);
 
-        if (selectedOption == optionOne)
-        {
-            Console.WriteLine("You chose option number 1");
-        }
-        else if (selectedOption == optionTwo)
-        {
-            Console.WriteLine("You chose option number 2");
-        }
-        else if (selectedOption == optionThree)
-        {
-            Console.WriteLine("You chose option number 3");
+            switch (selectedOption)
+            {
+                case 1:
+                    Console.WriteLine("You chose option number 1");
+                    break;
+                case 2:
+                    Console.WriteLine("You chose option number 2");
+                    break;
+                case 3:
+                    Console.WriteLine("You chose option number 3");
+                    break;
+            }
+            Console.ReadLine();
         }
     }
 
-    private static string SelectOptionFromMenu(List<string> menuItems)
+    static int SelectOptionFromMenu(List<string> menuItems)
     {
         Console.Clear();
         var menu = "";
@@ -46,7 +52,7 @@ class Program
             userInput = Console.ReadLine();
             v = Int32.TryParse(userInput, null, out intUserInput);
         }
-        return validIndexes[intUserInput];
+        return intUserInput;
     }
 
 }

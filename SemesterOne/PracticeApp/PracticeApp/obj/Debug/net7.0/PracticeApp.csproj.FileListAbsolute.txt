@@ -1,0 +1,14 @@
+c:\Users\erikm\ucl\SemesterOne\PracticeApp\PracticeApp\bin\Debug\net7.0\PracticeApp.exe
+c:\Users\erikm\ucl\SemesterOne\PracticeApp\PracticeApp\bin\Debug\net7.0\PracticeApp.deps.json
+c:\Users\erikm\ucl\SemesterOne\PracticeApp\PracticeApp\bin\Debug\net7.0\PracticeApp.runtimeconfig.json
+c:\Users\erikm\ucl\SemesterOne\PracticeApp\PracticeApp\bin\Debug\net7.0\PracticeApp.dll
+c:\Users\erikm\ucl\SemesterOne\PracticeApp\PracticeApp\bin\Debug\net7.0\PracticeApp.pdb
+c:\Users\erikm\ucl\SemesterOne\PracticeApp\PracticeApp\obj\Debug\net7.0\PracticeApp.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\erikm\ucl\SemesterOne\PracticeApp\PracticeApp\obj\Debug\net7.0\PracticeApp.AssemblyInfoInputs.cache
+c:\Users\erikm\ucl\SemesterOne\PracticeApp\PracticeApp\obj\Debug\net7.0\PracticeApp.AssemblyInfo.cs
+c:\Users\erikm\ucl\SemesterOne\PracticeApp\PracticeApp\obj\Debug\net7.0\PracticeApp.csproj.CoreCompileInputs.cache
+c:\Users\erikm\ucl\SemesterOne\PracticeApp\PracticeApp\obj\Debug\net7.0\PracticeApp.dll
+c:\Users\erikm\ucl\SemesterOne\PracticeApp\PracticeApp\obj\Debug\net7.0\refint\PracticeApp.dll
+c:\Users\erikm\ucl\SemesterOne\PracticeApp\PracticeApp\obj\Debug\net7.0\PracticeApp.pdb
+c:\Users\erikm\ucl\SemesterOne\PracticeApp\PracticeApp\obj\Debug\net7.0\PracticeApp.genruntimeconfig.cache
+c:\Users\erikm\ucl\SemesterOne\PracticeApp\PracticeApp\obj\Debug\net7.0\ref\PracticeApp.dll
