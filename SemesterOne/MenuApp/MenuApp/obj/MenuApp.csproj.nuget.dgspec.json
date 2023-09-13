@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\erikm\\ucl\\semesterone\\draft\\draftapp\\DraftApp.csproj": {}
+    "C:\\Users\\erikm\\ucl\\semesterone\\menuapp\\menuapp\\MenuApp.csproj": {}
   },
   "projects": {
-    "c:\\Users\\erikm\\ucl\\semesterone\\draft\\draftapp\\DraftApp.csproj": {
+    "C:\\Users\\erikm\\ucl\\semesterone\\menuapp\\menuapp\\MenuApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\erikm\\ucl\\semesterone\\draft\\draftapp\\DraftApp.csproj",
-        "projectName": "DraftApp",
-        "projectPath": "c:\\Users\\erikm\\ucl\\semesterone\\draft\\draftapp\\DraftApp.csproj",
+        "projectUniqueName": "C:\\Users\\erikm\\ucl\\semesterone\\menuapp\\menuapp\\MenuApp.csproj",
+        "projectName": "MenuApp",
+        "projectPath": "C:\\Users\\erikm\\ucl\\semesterone\\menuapp\\menuapp\\MenuApp.csproj",
         "packagesPath": "C:\\Users\\erikm\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\erikm\\ucl\\semesterone\\draft\\draftapp\\obj\\",
+        "outputPath": "C:\\Users\\erikm\\ucl\\semesterone\\menuapp\\menuapp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\erikm\\AppData\\Roaming\\NuGet\\NuGet.Config",

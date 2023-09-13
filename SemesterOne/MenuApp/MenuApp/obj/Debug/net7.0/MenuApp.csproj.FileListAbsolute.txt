@@ -1,0 +1,14 @@
+C:\Users\erikm\ucl\semesterone\menuapp\menuapp\bin\Debug\net7.0\MenuApp.exe
+C:\Users\erikm\ucl\semesterone\menuapp\menuapp\bin\Debug\net7.0\MenuApp.deps.json
+C:\Users\erikm\ucl\semesterone\menuapp\menuapp\bin\Debug\net7.0\MenuApp.runtimeconfig.json
+C:\Users\erikm\ucl\semesterone\menuapp\menuapp\bin\Debug\net7.0\MenuApp.dll
+C:\Users\erikm\ucl\semesterone\menuapp\menuapp\bin\Debug\net7.0\MenuApp.pdb
+C:\Users\erikm\ucl\semesterone\menuapp\menuapp\obj\Debug\net7.0\MenuApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erikm\ucl\semesterone\menuapp\menuapp\obj\Debug\net7.0\MenuApp.AssemblyInfoInputs.cache
+C:\Users\erikm\ucl\semesterone\menuapp\menuapp\obj\Debug\net7.0\MenuApp.AssemblyInfo.cs
+C:\Users\erikm\ucl\semesterone\menuapp\menuapp\obj\Debug\net7.0\MenuApp.csproj.CoreCompileInputs.cache
+C:\Users\erikm\ucl\semesterone\menuapp\menuapp\obj\Debug\net7.0\MenuApp.dll
+C:\Users\erikm\ucl\semesterone\menuapp\menuapp\obj\Debug\net7.0\refint\MenuApp.dll
+C:\Users\erikm\ucl\semesterone\menuapp\menuapp\obj\Debug\net7.0\MenuApp.pdb
+C:\Users\erikm\ucl\semesterone\menuapp\menuapp\obj\Debug\net7.0\MenuApp.genruntimeconfig.cache
+C:\Users\erikm\ucl\semesterone\menuapp\menuapp\obj\Debug\net7.0\ref\MenuApp.dll
