@@ -9,11 +9,12 @@ class Program
         var optionTwo = "Option 2 of my fantastic menu";
         var optionThree = "Option 3 of my fantastic menu";
         var menuItems = new List<string>{optionOne, optionTwo, optionThree};
-        SelectOptionFromMenu(menuItems);
-        Console.WriteLine("Hello, World!");
+        int menuInt = SelectOptionFromMenu(menuItems);
+        
+
     }
 
-    private static void SelectOptionFromMenu(List<string> menuItems)
+    private static int SelectOptionFromMenu(List<string> menuItems)
     {
         Console.Clear();
         var menu = "";
@@ -24,14 +25,18 @@ class Program
             menu += i+1 + ". " + menuItems[i] + "\n";
             validIndexes[i + 1] = menuItems[i];
         }
-        Console.Write("Enter the number of the option you would like to choose");
+        Console.Write(menu);
+        Console.Write("Enter the number of the option you would like to choose: ");
         string userInput = Console.ReadLine();
-        bool v = Int32.TryParse(userInput, null, out(userInput));
-        while (!validIndexes.ContainsKey(userInput))
+        bool v = Int32.TryParse(userInput, null, out int intUserInput);
+        while (!validIndexes.ContainsKey(intUserInput))
         {
             Console.WriteLine("Invalid input, try again!");
-            Console.Write("Enter the number of the option you would like to choose");
+            Console.Write("Enter the number of the option you would like to choose: ");
+            userInput = Console.ReadLine();
+            v = Int32.TryParse(userInput, null, out intUserInput);
         }
+        return intUserInput;
     }
 
 }
