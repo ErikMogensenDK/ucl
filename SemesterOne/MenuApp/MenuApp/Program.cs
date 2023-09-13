@@ -8,13 +8,24 @@ class Program
         var optionOne = "Option 1 of my fantastic menu";
         var optionTwo = "Option 2 of my fantastic menu";
         var optionThree = "Option 3 of my fantastic menu";
-        var menuItems = new List<string>{optionOne, optionTwo, optionThree};
-        int menuInt = SelectOptionFromMenu(menuItems);
-        
+        var menuItems = new List<string> { optionOne, optionTwo, optionThree };
+        string selectedOption = SelectOptionFromMenu(menuItems);
 
+        if (selectedOption == optionOne)
+        {
+            Console.WriteLine("You chose option number 1");
+        }
+        else if (selectedOption == optionTwo)
+        {
+            Console.WriteLine("You chose option number 2");
+        }
+        else if (selectedOption == optionThree)
+        {
+            Console.WriteLine("You chose option number 3");
+        }
     }
 
-    private static int SelectOptionFromMenu(List<string> menuItems)
+    private static string SelectOptionFromMenu(List<string> menuItems)
     {
         Console.Clear();
         var menu = "";
@@ -22,7 +33,7 @@ class Program
         var validIndexes = new Dictionary<int, string>();
         for (int i = 0; i < menuItems.Count(); i++)
         {
-            menu += i+1 + ". " + menuItems[i] + "\n";
+            menu += i + 1 + ". " + menuItems[i] + "\n";
             validIndexes[i + 1] = menuItems[i];
         }
         Console.Write(menu);
@@ -36,7 +47,7 @@ class Program
             userInput = Console.ReadLine();
             v = Int32.TryParse(userInput, null, out intUserInput);
         }
-        return intUserInput;
+        return validIndexes[intUserInput];
     }
 
 }
