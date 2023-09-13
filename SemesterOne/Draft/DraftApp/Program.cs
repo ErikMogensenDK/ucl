@@ -12,6 +12,7 @@ class Program
     {
         var databaseService = new DatabaseService();
         var employeeService = new EmployeeService(databaseService);
+        var adminService = new AdminService(databaseService);
 
         // int numberOfTestusers = 10;
         //populateDatabaseWithTestData(databaseService, numberOfTestUsers);
@@ -19,16 +20,37 @@ class Program
         // Sets up variables needed for initial start-menu
         var employeeItemId = "employee";
         var adminItemId = "admin";
-        var exitId = "exit";
-        var menuItems = new List<string> { employeeItemId, adminItemId, exitId };
+        // Currenly exitid does not do anything, because this is the "outer-most" menu
+        //var exitId = "exit";
+        var menuItems = new List<string> { employeeItemId, adminItemId};
+        var menuDescription = "Welcome to the amazing Evacuation App!";
 
         while (true)
         {
-            string option = SelectOptionFromMenu(menuItems);
+            string option = SelectOptionFromMenu(menuDescription, menuItems);
             if (option == employeeItemId)
             {
                 ExecuteEmployeeFlow(employeeService);
             }
+            if (option == adminItemId)
+            {
+                ExecuteAdminFlow(adminService);
+            }
+        }
+    }
+
+    private static void ExecuteAdminFlow(AdminService adminService)
+    {
+        // Print new menu to console
+        var createUserMenuId = "Create user";
+        var createWorkstationMenuId = "Create workstation";
+        var exitId = "Exit";
+        var menuItems = new List<string> { createUserMenuId, createWorkstationMenuId, exitId };
+        var menuDescription = "Welcome to the menu for registration of workstation for employees";
+        var option = SelectOptionFromMenu(menuDescription, menuItems);
+        if (option == registerWorkstationMenuId)
+        {
+            ExecuteRegisterWorksStationFlow(employeeService);
         }
     }
 
@@ -38,7 +60,8 @@ class Program
         var registerWorkstationMenuId = "Register workstation";
         var exitId = "Exit";
         var menuItems = new List<string> { registerWorkstationMenuId, exitId };
-        var option = SelectOptionFromMenu(menuItems);
+        var menuDescription = "Welcome to the menu for registration of workstation for employees";
+        var option = SelectOptionFromMenu(menuDescription, menuItems);
         if (option == registerWorkstationMenuId)
         {
             ExecuteRegisterWorksStationFlow(employeeService);
@@ -112,9 +135,12 @@ class Program
     }
 
 
-    static string SelectOptionFromMenu(List<string> menuItems)
+    static string SelectOptionFromMenu(string menuDescription, List<string> menuItems)
     {
+        Console.Clear();
         var menu = "";
+        menu += menuDescription;
+        menu += "\n\n";
         var validIndexes = new Dictionary<int, string>();
         for (var i = 0; i < menuItems.Count; i++)
         {
@@ -124,14 +150,16 @@ class Program
 
         Console.WriteLine(menu);
         Console.Write("Choose option: ");
-        var input = int.Parse(Console.ReadLine());
-        while (!validIndexes.ContainsKey(input))
+        var userInput = (Console.ReadLine());
+        Int32.TryParse(userInput, null, out int validInput);
+        while (!validIndexes.ContainsKey(validInput))
         {
             Console.WriteLine("Invalid index - pick available index");
-            input = int.Parse(Console.ReadLine());
+            userInput = (Console.ReadLine());
+            Int32.TryParse(userInput, null, out validInput);
         }
 
-        return validIndexes[input];
+        return validIndexes[validInput];
     }
 
     public class DatabaseService
@@ -182,5 +210,15 @@ class Program
     class WorkstationDto
     {
         public string WorkStationId { get; set; }
+    }
+}
+
+class AdminService
+{
+    private Program.DatabaseService databaseService;
+
+    public AdminService(Program.DatabaseService databaseService)
+    {
+        this.databaseService = databaseService;
     }
 }
