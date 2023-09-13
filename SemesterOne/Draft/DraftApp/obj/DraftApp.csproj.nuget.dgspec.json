@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "c:\\Users\\erikm\\ucl\\SemesterOne\\Draft\\DraftApp\\DraftApp.csproj": {}
   },
   "projects": {
@@ -13,19 +12,6 @@
         "projectPath": "c:\\Users\\erikm\\ucl\\SemesterOne\\Draft\\DraftApp\\DraftApp.csproj",
         "packagesPath": "C:\\Users\\erikm\\.nuget\\packages\\",
         "outputPath": "c:\\Users\\erikm\\ucl\\SemesterOne\\Draft\\DraftApp\\obj\\",
-=======
-    "c:\\Users\\erikm\\ucl\\semesterone\\draft\\draftapp\\DraftApp.csproj": {}
-  },
-  "projects": {
-    "c:\\Users\\erikm\\ucl\\semesterone\\draft\\draftapp\\DraftApp.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "c:\\Users\\erikm\\ucl\\semesterone\\draft\\draftapp\\DraftApp.csproj",
-        "projectName": "DraftApp",
-        "projectPath": "c:\\Users\\erikm\\ucl\\semesterone\\draft\\draftapp\\DraftApp.csproj",
-        "packagesPath": "C:\\Users\\erikm\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\erikm\\ucl\\semesterone\\draft\\draftapp\\obj\\",
->>>>>>> e64fd0458e4f91413abe27974560f0a3504c4101
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\erikm\\AppData\\Roaming\\NuGet\\NuGet.Config",

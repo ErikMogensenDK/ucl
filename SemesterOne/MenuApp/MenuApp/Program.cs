@@ -1,5 +1,4 @@
-﻿
-namespace MenuApp;
+﻿namespace MenuApp;
 
 class Program
 {

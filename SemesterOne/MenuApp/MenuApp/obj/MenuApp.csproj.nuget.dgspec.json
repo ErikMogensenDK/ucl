@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\erikm\\ucl\\semesterone\\menuapp\\menuapp\\MenuApp.csproj": {}
+    "c:\\Users\\erikm\\ucl\\SemesterOne\\MenuApp\\MenuApp\\MenuApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\erikm\\ucl\\semesterone\\menuapp\\menuapp\\MenuApp.csproj": {
+    "c:\\Users\\erikm\\ucl\\SemesterOne\\MenuApp\\MenuApp\\MenuApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\erikm\\ucl\\semesterone\\menuapp\\menuapp\\MenuApp.csproj",
+        "projectUniqueName": "c:\\Users\\erikm\\ucl\\SemesterOne\\MenuApp\\MenuApp\\MenuApp.csproj",
         "projectName": "MenuApp",
-        "projectPath": "C:\\Users\\erikm\\ucl\\semesterone\\menuapp\\menuapp\\MenuApp.csproj",
+        "projectPath": "c:\\Users\\erikm\\ucl\\SemesterOne\\MenuApp\\MenuApp\\MenuApp.csproj",
         "packagesPath": "C:\\Users\\erikm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\erikm\\ucl\\semesterone\\menuapp\\menuapp\\obj\\",
+        "outputPath": "c:\\Users\\erikm\\ucl\\SemesterOne\\MenuApp\\MenuApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\erikm\\AppData\\Roaming\\NuGet\\NuGet.Config",
