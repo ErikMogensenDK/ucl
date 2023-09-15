@@ -1,0 +1,14 @@
+C:\Users\erikm\ucl\semesterone\misc\SokkerOgLysProjekt\LysApp\bin\Debug\net7.0\LysApp.exe
+C:\Users\erikm\ucl\semesterone\misc\SokkerOgLysProjekt\LysApp\bin\Debug\net7.0\LysApp.deps.json
+C:\Users\erikm\ucl\semesterone\misc\SokkerOgLysProjekt\LysApp\bin\Debug\net7.0\LysApp.runtimeconfig.json
+C:\Users\erikm\ucl\semesterone\misc\SokkerOgLysProjekt\LysApp\bin\Debug\net7.0\LysApp.dll
+C:\Users\erikm\ucl\semesterone\misc\SokkerOgLysProjekt\LysApp\bin\Debug\net7.0\LysApp.pdb
+C:\Users\erikm\ucl\semesterone\misc\SokkerOgLysProjekt\LysApp\obj\Debug\net7.0\LysApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erikm\ucl\semesterone\misc\SokkerOgLysProjekt\LysApp\obj\Debug\net7.0\LysApp.AssemblyInfoInputs.cache
+C:\Users\erikm\ucl\semesterone\misc\SokkerOgLysProjekt\LysApp\obj\Debug\net7.0\LysApp.AssemblyInfo.cs
+C:\Users\erikm\ucl\semesterone\misc\SokkerOgLysProjekt\LysApp\obj\Debug\net7.0\LysApp.csproj.CoreCompileInputs.cache
+C:\Users\erikm\ucl\semesterone\misc\SokkerOgLysProjekt\LysApp\obj\Debug\net7.0\LysApp.dll
+C:\Users\erikm\ucl\semesterone\misc\SokkerOgLysProjekt\LysApp\obj\Debug\net7.0\refint\LysApp.dll
+C:\Users\erikm\ucl\semesterone\misc\SokkerOgLysProjekt\LysApp\obj\Debug\net7.0\LysApp.pdb
+C:\Users\erikm\ucl\semesterone\misc\SokkerOgLysProjekt\LysApp\obj\Debug\net7.0\LysApp.genruntimeconfig.cache
+C:\Users\erikm\ucl\semesterone\misc\SokkerOgLysProjekt\LysApp\obj\Debug\net7.0\ref\LysApp.dll

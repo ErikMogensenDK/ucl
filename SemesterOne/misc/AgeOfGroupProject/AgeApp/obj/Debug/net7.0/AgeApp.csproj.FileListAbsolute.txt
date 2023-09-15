@@ -1,0 +1,14 @@
+C:\Users\erikm\ucl\semesterone\misc\ageofgroupproject\ageapp\bin\Debug\net7.0\AgeApp.exe
+C:\Users\erikm\ucl\semesterone\misc\ageofgroupproject\ageapp\bin\Debug\net7.0\AgeApp.deps.json
+C:\Users\erikm\ucl\semesterone\misc\ageofgroupproject\ageapp\bin\Debug\net7.0\AgeApp.runtimeconfig.json
+C:\Users\erikm\ucl\semesterone\misc\ageofgroupproject\ageapp\bin\Debug\net7.0\AgeApp.dll
+C:\Users\erikm\ucl\semesterone\misc\ageofgroupproject\ageapp\bin\Debug\net7.0\AgeApp.pdb
+C:\Users\erikm\ucl\semesterone\misc\ageofgroupproject\ageapp\obj\Debug\net7.0\AgeApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erikm\ucl\semesterone\misc\ageofgroupproject\ageapp\obj\Debug\net7.0\AgeApp.AssemblyInfoInputs.cache
+C:\Users\erikm\ucl\semesterone\misc\ageofgroupproject\ageapp\obj\Debug\net7.0\AgeApp.AssemblyInfo.cs
+C:\Users\erikm\ucl\semesterone\misc\ageofgroupproject\ageapp\obj\Debug\net7.0\AgeApp.csproj.CoreCompileInputs.cache
+C:\Users\erikm\ucl\semesterone\misc\ageofgroupproject\ageapp\obj\Debug\net7.0\AgeApp.dll
+C:\Users\erikm\ucl\semesterone\misc\ageofgroupproject\ageapp\obj\Debug\net7.0\refint\AgeApp.dll
+C:\Users\erikm\ucl\semesterone\misc\ageofgroupproject\ageapp\obj\Debug\net7.0\AgeApp.pdb
+C:\Users\erikm\ucl\semesterone\misc\ageofgroupproject\ageapp\obj\Debug\net7.0\AgeApp.genruntimeconfig.cache
+C:\Users\erikm\ucl\semesterone\misc\ageofgroupproject\ageapp\obj\Debug\net7.0\ref\AgeApp.dll
