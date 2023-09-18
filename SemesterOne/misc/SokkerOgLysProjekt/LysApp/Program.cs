@@ -9,9 +9,29 @@ public class Program
     {
         Console.WriteLine("Hello, World!");
     }
+
     public static int SockMerchant(int [] sockArray)
     {
-        int pairCounter= 0;
+        // 1, 2, 2, 2
+        var uniqueSockMap = new Dictionary<int, int>();
+        for(var i = 0; i < sockArray.Length;i++)
+        {
+            var sock = sockArray[i];
+            if(!uniqueSockMap.ContainsKey(sock)){
+                uniqueSockMap.Add(sock, 0);
+            }
+
+            uniqueSockMap[sock] += 1;
+        }
+
+        //key: 1, val: 1 
+        //key: 2, val: 3
+
+        var pairs = 0; 
+        foreach(var value in uniqueSockMap.Values)
+            pairs += value / 2;
+
+
         int [] uniqueSocks = GetDistinctNumbers(sockArray);
         int [] pairs = new int[uniqueSocks.Count()];
         for (int i = 0; i< uniqueSocks.Count(); i++)

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "de7sigSGFoeWRpTgl5Noyj5WHp60G+MX5F8ImErggrEqc4g2R7BiEa0IbVupuFhXQ4zytEX2DhelTFnRA0pSCw==",
+  "dgSpecHash": "4AN1KroLWK6xaCzrw4NbvwA2wzb4lzi5HFeJ5ajX91cO4Nh96DaV8GN4BinY/viQhbqBTgxzGc8ZjDEqrp8VoA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\SokkerOgLysProjekt\\LysAppTests\\LysAppTests.csproj",
+  "projectFilePath": "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\SokkerOgLysProjekt\\LysAppTests\\LysAppTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\erikm\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
     "C:\\Users\\erikm\\.nuget\\packages\\microsoft.codecoverage\\17.6.0\\microsoft.codecoverage.17.6.0.nupkg.sha512",

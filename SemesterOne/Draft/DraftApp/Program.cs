@@ -10,12 +10,12 @@ class Program
 {
     static void Main(string[] args)
     {
-        var databaseService = new DatabaseService();
-        var employeeService = new EmployeeService(databaseService);
-        var adminService = new AdminService(databaseService);
+        DatabaseService databaseService = new();
+        EmployeeService employeeService = new (databaseService);
+        AdminService adminService = new (databaseService);
 
         // int numberOfTestusers = 10;
-        //populateDatabaseWithTestData(databaseService, numberOfTestUsers);
+        // populateDatabaseWithTestData(databaseService, numberOfTestUsers);
 
         // Sets up variables needed for initial start-menu
         var employeeItemId = "employee";

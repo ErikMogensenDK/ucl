@@ -1,0 +1,14 @@
+C:\Users\erikm\ucl\SemesterOne\AMC\AMC\bin\Release\net7.0\AMC.exe
+C:\Users\erikm\ucl\SemesterOne\AMC\AMC\bin\Release\net7.0\AMC.deps.json
+C:\Users\erikm\ucl\SemesterOne\AMC\AMC\bin\Release\net7.0\AMC.runtimeconfig.json
+C:\Users\erikm\ucl\SemesterOne\AMC\AMC\bin\Release\net7.0\AMC.dll
+C:\Users\erikm\ucl\SemesterOne\AMC\AMC\bin\Release\net7.0\AMC.pdb
+C:\Users\erikm\ucl\SemesterOne\AMC\AMC\obj\Release\net7.0\AMC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erikm\ucl\SemesterOne\AMC\AMC\obj\Release\net7.0\AMC.AssemblyInfoInputs.cache
+C:\Users\erikm\ucl\SemesterOne\AMC\AMC\obj\Release\net7.0\AMC.AssemblyInfo.cs
+C:\Users\erikm\ucl\SemesterOne\AMC\AMC\obj\Release\net7.0\AMC.csproj.CoreCompileInputs.cache
+C:\Users\erikm\ucl\SemesterOne\AMC\AMC\obj\Release\net7.0\AMC.dll
+C:\Users\erikm\ucl\SemesterOne\AMC\AMC\obj\Release\net7.0\refint\AMC.dll
+C:\Users\erikm\ucl\SemesterOne\AMC\AMC\obj\Release\net7.0\AMC.pdb
+C:\Users\erikm\ucl\SemesterOne\AMC\AMC\obj\Release\net7.0\AMC.genruntimeconfig.cache
+C:\Users\erikm\ucl\SemesterOne\AMC\AMC\obj\Release\net7.0\ref\AMC.dll

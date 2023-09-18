@@ -1,0 +1,14 @@
+C:\Users\erikm\ucl\semesterone\misc\NotesOnLambda\lambdaproject\bin\Debug\net7.0\LambdaProject.exe
+C:\Users\erikm\ucl\semesterone\misc\NotesOnLambda\lambdaproject\bin\Debug\net7.0\LambdaProject.deps.json
+C:\Users\erikm\ucl\semesterone\misc\NotesOnLambda\lambdaproject\bin\Debug\net7.0\LambdaProject.runtimeconfig.json
+C:\Users\erikm\ucl\semesterone\misc\NotesOnLambda\lambdaproject\bin\Debug\net7.0\LambdaProject.dll
+C:\Users\erikm\ucl\semesterone\misc\NotesOnLambda\lambdaproject\bin\Debug\net7.0\LambdaProject.pdb
+C:\Users\erikm\ucl\semesterone\misc\NotesOnLambda\lambdaproject\obj\Debug\net7.0\LambdaProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erikm\ucl\semesterone\misc\NotesOnLambda\lambdaproject\obj\Debug\net7.0\LambdaProject.AssemblyInfoInputs.cache
+C:\Users\erikm\ucl\semesterone\misc\NotesOnLambda\lambdaproject\obj\Debug\net7.0\LambdaProject.AssemblyInfo.cs
+C:\Users\erikm\ucl\semesterone\misc\NotesOnLambda\lambdaproject\obj\Debug\net7.0\LambdaProject.csproj.CoreCompileInputs.cache
+C:\Users\erikm\ucl\semesterone\misc\NotesOnLambda\lambdaproject\obj\Debug\net7.0\LambdaProject.dll
+C:\Users\erikm\ucl\semesterone\misc\NotesOnLambda\lambdaproject\obj\Debug\net7.0\refint\LambdaProject.dll
+C:\Users\erikm\ucl\semesterone\misc\NotesOnLambda\lambdaproject\obj\Debug\net7.0\LambdaProject.pdb
+C:\Users\erikm\ucl\semesterone\misc\NotesOnLambda\lambdaproject\obj\Debug\net7.0\LambdaProject.genruntimeconfig.cache
+C:\Users\erikm\ucl\semesterone\misc\NotesOnLambda\lambdaproject\obj\Debug\net7.0\ref\LambdaProject.dll

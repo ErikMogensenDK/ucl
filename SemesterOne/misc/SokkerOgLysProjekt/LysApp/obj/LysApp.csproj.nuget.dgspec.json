@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\SokkerOgLysProjekt\\LysApp\\LysApp.csproj": {}
+    "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\SokkerOgLysProjekt\\LysApp\\LysApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\SokkerOgLysProjekt\\LysApp\\LysApp.csproj": {
+    "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\SokkerOgLysProjekt\\LysApp\\LysApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\SokkerOgLysProjekt\\LysApp\\LysApp.csproj",
+        "projectUniqueName": "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\SokkerOgLysProjekt\\LysApp\\LysApp.csproj",
         "projectName": "LysApp",
-        "projectPath": "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\SokkerOgLysProjekt\\LysApp\\LysApp.csproj",
+        "projectPath": "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\SokkerOgLysProjekt\\LysApp\\LysApp.csproj",
         "packagesPath": "C:\\Users\\erikm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\SokkerOgLysProjekt\\LysApp\\obj\\",
+        "outputPath": "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\SokkerOgLysProjekt\\LysApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\erikm\\AppData\\Roaming\\NuGet\\NuGet.Config",
