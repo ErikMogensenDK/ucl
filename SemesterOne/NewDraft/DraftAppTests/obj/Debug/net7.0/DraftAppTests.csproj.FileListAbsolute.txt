@@ -103,3 +103,4 @@ C:\Users\erikm\ucl\semesterone\newdraft\DraftAppTests\obj\Debug\net7.0\refint\Dr
 C:\Users\erikm\ucl\semesterone\newdraft\DraftAppTests\obj\Debug\net7.0\DraftAppTests.pdb
 C:\Users\erikm\ucl\semesterone\newdraft\DraftAppTests\obj\Debug\net7.0\DraftAppTests.genruntimeconfig.cache
 C:\Users\erikm\ucl\semesterone\newdraft\DraftAppTests\obj\Debug\net7.0\ref\DraftAppTests.dll
+C:\Users\erikm\ucl\semesterone\newdraft\DraftAppTests\bin\Debug\net7.0\Autofac.dll

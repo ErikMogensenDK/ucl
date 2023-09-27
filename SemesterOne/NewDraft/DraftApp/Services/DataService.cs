@@ -4,10 +4,11 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using DraftApp.Models;
+using DraftApp.Services;
 
 namespace DraftApp
 {
-    public class DataService
+    public class DataService : IDataService
     {
         private List<Employee> _employees;
         private List<Workstation> _workstations;
@@ -42,7 +43,13 @@ namespace DraftApp
             return currentEmployeeCheckins;
         }
 
-        internal bool EmployeeExists(string employeeId)
+        public void SaveCheckIn(string employeeId, string workstationId, DateTime startTime)
+        {
+            var newCheckin = new Checkin(employeeId, workstationId, startTime);
+            _checkins.Add(newCheckin);
+        }
+
+        public bool EmployeeExists(string employeeId)
         {
             foreach (Employee employee in _employees)
             {
@@ -52,13 +59,8 @@ namespace DraftApp
             return false;
         }
 
-        internal void SaveCheckIn(string employeeId, string workstationId, DateTime startTime)
-        {
-            var newCheckin = new Checkin(employeeId, workstationId, startTime);
-            _checkins.Add(newCheckin);
-        }
 
-        internal bool WorkstationExists(string workstationId)
+        public bool WorkstationExists(string workstationId)
         {
             foreach (Workstation workstation in _workstations)
             {
@@ -67,7 +69,6 @@ namespace DraftApp
             }
             return false;
         }
-
         
     }
 }

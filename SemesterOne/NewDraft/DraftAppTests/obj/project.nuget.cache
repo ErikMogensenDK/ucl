@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "5Dr2j2E3q9TTqnwMZ5l9UeSQyLD90CCBBUrtKw/iP4VlmMsenKk/r9qLJ5lRlpjJzGupSZYCPpgHDmMlgZHWLQ==",
+  "dgSpecHash": "SRQu3xn3kdjTBWkRy8Tj3Jt4tDHKuJZIFj61R4mns/xYPifZLW2cEwuBrZUX6e6wsseVKgg9LG0Yc41hXkrJvA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\erikm\\ucl\\semesterone\\newdraft\\DraftAppTests\\DraftAppTests.csproj",
+  "projectFilePath": "c:\\Users\\erikm\\ucl\\SemesterOne\\NewDraft\\DraftAppTests\\DraftAppTests.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\erikm\\.nuget\\packages\\autofac\\7.1.0\\autofac.7.1.0.nupkg.sha512",
     "C:\\Users\\erikm\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
     "C:\\Users\\erikm\\.nuget\\packages\\microsoft.codecoverage\\17.6.0\\microsoft.codecoverage.17.6.0.nupkg.sha512",
     "C:\\Users\\erikm\\.nuget\\packages\\microsoft.net.test.sdk\\17.6.0\\microsoft.net.test.sdk.17.6.0.nupkg.sha512",
@@ -18,6 +19,7 @@
     "C:\\Users\\erikm\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\erikm\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\erikm\\.nuget\\packages\\system.diagnostics.debug\\4.3.0\\system.diagnostics.debug.4.3.0.nupkg.sha512",
+    "C:\\Users\\erikm\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
     "C:\\Users\\erikm\\.nuget\\packages\\system.diagnostics.textwritertracelistener\\4.3.0\\system.diagnostics.textwritertracelistener.4.3.0.nupkg.sha512",
     "C:\\Users\\erikm\\.nuget\\packages\\system.diagnostics.tracesource\\4.3.0\\system.diagnostics.tracesource.4.3.0.nupkg.sha512",
     "C:\\Users\\erikm\\.nuget\\packages\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",

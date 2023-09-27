@@ -4,25 +4,29 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using DraftApp.Models;
+using DraftApp.Services;
 
 namespace DraftApp
 {
-    public class EmployeeService
+    public class EmployeeService : IEmployeeService
     {
-        private readonly DataService _dataService;
+        private readonly IDataService _dataService;
 
-        public EmployeeService(DataService dataService)
+        public EmployeeService(IDataService dataService)
         {
             _dataService = dataService;
         }
 
         public void CheckinAtWorkstation(string employeeId, string workstationId, DateTime startTime)
         {
-            Checkout(employeeId);
             if (!_dataService.EmployeeExists(employeeId))
                 throw new Exception("Employee does not exist");
             if (!_dataService.WorkstationExists(workstationId))
                 throw new Exception("Workstation does not exist");
+
+            // checks employee out, in case they're checked in somewhere else
+            Checkout(employeeId);
+
             _dataService.SaveCheckIn(employeeId, workstationId, startTime);
         }
         public void Checkout(string employeeid)

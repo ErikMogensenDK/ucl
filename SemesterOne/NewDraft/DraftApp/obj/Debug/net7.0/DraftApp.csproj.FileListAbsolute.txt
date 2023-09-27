@@ -12,3 +12,6 @@ C:\Users\erikm\ucl\semesterone\newdraft\draftApp\obj\Debug\net7.0\refint\DraftAp
 C:\Users\erikm\ucl\semesterone\newdraft\draftApp\obj\Debug\net7.0\DraftApp.pdb
 C:\Users\erikm\ucl\semesterone\newdraft\draftApp\obj\Debug\net7.0\DraftApp.genruntimeconfig.cache
 C:\Users\erikm\ucl\semesterone\newdraft\draftApp\obj\Debug\net7.0\ref\DraftApp.dll
+C:\Users\erikm\ucl\semesterone\newdraft\DraftApp\bin\Debug\net7.0\Autofac.dll
+C:\Users\erikm\ucl\semesterone\newdraft\DraftApp\obj\Debug\net7.0\DraftApp.csproj.AssemblyReference.cache
+C:\Users\erikm\ucl\semesterone\newdraft\DraftApp\obj\Debug\net7.0\DraftApp.csproj.CopyComplete

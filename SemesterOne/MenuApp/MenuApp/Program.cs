@@ -8,16 +8,28 @@ class Program
     {
         while (true)
         {
-            var optionOne = "Option 1 of my fantastic menu";
+            displayMainMenu
+            var optionOne = "Option 1 of my fantastic menu (shows sub-menu)";
             var optionTwo = "Option 2 of my fantastic menu";
             var optionThree = "Option 3 of my fantastic menu";
             var menuItems = new List<string> { optionOne, optionTwo, optionThree };
-            int selectedOption = SelectOptionFromMenu(menuItems);
+            var menuTitle = "Welcome to my fantastic menu!";
+            int selectedOption = SelectOptionFromMenu(menuTitle, menuItems);
+            optionOne = "You choose option number 1";
+            listOfOptions = 
+            ExecuteOptionFromOptions(selectedOption, listOfOptions);
+
+            var subOptionOne = "Option 1 of my fantastic sub-menu";
+            var subOptionTwo = "Option 2 of my fantastic sub-menu";
+            var subOptionThree = "Option 3 of my fantastic sub-menu";
+            var subMenuTitle = "Welcome to my fantastic sub-menu!";
+            var subMenuItems = new List<string> {subOptionOne, subOptionTwo, subOptionThree};
 
             switch (selectedOption)
             {
                 case 1:
-                    Console.WriteLine("You chose option number 1");
+                    Console.WriteLine("You chose option number 1 - sub-menu incoming");
+                    int selectedSubOption = SelectOptionFromMenu(subMenuTitle, subMenuItems);
                     break;
                 case 2:
                     Console.WriteLine("You chose option number 2");
@@ -30,11 +42,11 @@ class Program
         }
     }
 
-    static int SelectOptionFromMenu(List<string> menuItems)
+    static int SelectOptionFromMenu(string menuTitle, List<string> menuItems, string menuDescription = "")
     {
         Console.Clear();
         var menu = "";
-        menu += "Welcome to My fantastic menu! \n\n";
+        menu += menuTitle + "\n\n";
         var validIndexes = new Dictionary<int, string>();
         for (int i = 0; i < menuItems.Count(); i++)
         {
@@ -56,66 +68,3 @@ class Program
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
-//        static string SelectOptionFromMenu(List<string> menuItems)
-//    {
-//        var menu = "";
-//        var validIndexes = new Dictionary<int, string>();
-//        for (var i = 0; i < menuItems.Count; i++)
-//        {
-//            validIndexes[i + 1] = menuItems[i];
-//            menu += (i + 1) + ". " + menuItems[i] + "\n";
-//        }
-//
-//        Console.WriteLine(menu);
-//        Console.Write("Choose option: ");
-//        var input = int.Parse(Console.ReadLine());
-//        while (!validIndexes.ContainsKey(input))
-//        {
-//            Console.WriteLine("Invalid index - pick available index");
-//            input = int.Parse(Console.ReadLine());
-//        }
-//
-//        return validIndexes[input];
-//    }

@@ -9,7 +9,7 @@ class Program
         var employeeItemId = "employee";
         var adminItemId = "admin";
         var printEvaucationItemId = "exit";
-        //var exitId = "exit";
+        var exitId = "exit";
         var menuItems = new List<string> {employeeItemId, adminItemId, printEvaucationItemId};
         var menuDescription = "Welcome to the amazing Evacuation App!";
 
@@ -32,6 +32,11 @@ class Program
             {
                 //ExecuteAdminFlow(adminService);
                 Console.WriteLine("This should print the evacuation menu!')");
+                Console.ReadLine();
+            }
+            if (option == exitId)
+            {
+                Console.WriteLine("This should exit the program");
                 Console.ReadLine();
             }
         }

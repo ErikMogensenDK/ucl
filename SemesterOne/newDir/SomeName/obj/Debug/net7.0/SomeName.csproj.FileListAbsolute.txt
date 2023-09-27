@@ -1,0 +1,14 @@
+C:\Users\erikm\ucl\semesterone\newdir\SomeName\bin\Debug\net7.0\SomeName.exe
+C:\Users\erikm\ucl\semesterone\newdir\SomeName\bin\Debug\net7.0\SomeName.deps.json
+C:\Users\erikm\ucl\semesterone\newdir\SomeName\bin\Debug\net7.0\SomeName.runtimeconfig.json
+C:\Users\erikm\ucl\semesterone\newdir\SomeName\bin\Debug\net7.0\SomeName.dll
+C:\Users\erikm\ucl\semesterone\newdir\SomeName\bin\Debug\net7.0\SomeName.pdb
+C:\Users\erikm\ucl\semesterone\newdir\SomeName\obj\Debug\net7.0\SomeName.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erikm\ucl\semesterone\newdir\SomeName\obj\Debug\net7.0\SomeName.AssemblyInfoInputs.cache
+C:\Users\erikm\ucl\semesterone\newdir\SomeName\obj\Debug\net7.0\SomeName.AssemblyInfo.cs
+C:\Users\erikm\ucl\semesterone\newdir\SomeName\obj\Debug\net7.0\SomeName.csproj.CoreCompileInputs.cache
+C:\Users\erikm\ucl\semesterone\newdir\SomeName\obj\Debug\net7.0\SomeName.dll
+C:\Users\erikm\ucl\semesterone\newdir\SomeName\obj\Debug\net7.0\refint\SomeName.dll
+C:\Users\erikm\ucl\semesterone\newdir\SomeName\obj\Debug\net7.0\SomeName.pdb
+C:\Users\erikm\ucl\semesterone\newdir\SomeName\obj\Debug\net7.0\SomeName.genruntimeconfig.cache
+C:\Users\erikm\ucl\semesterone\newdir\SomeName\obj\Debug\net7.0\ref\SomeName.dll

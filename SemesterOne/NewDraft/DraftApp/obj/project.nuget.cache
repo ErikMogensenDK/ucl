@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "isurNiu0zW/6tE3VNPsdZMJ/cBy2SiWpnnTar6okWNUh/AYAN/fZmKt7WWPF8dVQtqJ3DOTv/leGc9DUO5/0sw==",
+  "dgSpecHash": "zCFZMkEgQ2ysHfeMBU8d9c6dDcC20MQdHd076c83DKzB2vSVLTPEGzDcVE7rXRs7Lchv1Q4J3uHyFTgpfoJQEg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\erikm\\ucl\\semesterone\\newdraft\\DraftApp\\DraftApp.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "c:\\Users\\erikm\\ucl\\SemesterOne\\NewDraft\\DraftApp\\DraftApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\erikm\\.nuget\\packages\\autofac\\7.1.0\\autofac.7.1.0.nupkg.sha512",
+    "C:\\Users\\erikm\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\erikm\\ucl\\semesterone\\newdraft\\DraftApp\\DraftApp.csproj": {}
+    "c:\\Users\\erikm\\ucl\\SemesterOne\\NewDraft\\DraftApp\\DraftApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\erikm\\ucl\\semesterone\\newdraft\\DraftApp\\DraftApp.csproj": {
+    "c:\\Users\\erikm\\ucl\\SemesterOne\\NewDraft\\DraftApp\\DraftApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\erikm\\ucl\\semesterone\\newdraft\\DraftApp\\DraftApp.csproj",
+        "projectUniqueName": "c:\\Users\\erikm\\ucl\\SemesterOne\\NewDraft\\DraftApp\\DraftApp.csproj",
         "projectName": "DraftApp",
-        "projectPath": "C:\\Users\\erikm\\ucl\\semesterone\\newdraft\\DraftApp\\DraftApp.csproj",
+        "projectPath": "c:\\Users\\erikm\\ucl\\SemesterOne\\NewDraft\\DraftApp\\DraftApp.csproj",
         "packagesPath": "C:\\Users\\erikm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\erikm\\ucl\\semesterone\\newdraft\\DraftApp\\obj\\",
+        "outputPath": "c:\\Users\\erikm\\ucl\\SemesterOne\\NewDraft\\DraftApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\erikm\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Autofac": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
