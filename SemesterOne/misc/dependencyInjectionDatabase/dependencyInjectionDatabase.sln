@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIDatabase", "DIDatabase\DIDatabase.csproj", "{2082A3A8-E08B-4DC0-B58B-28D805AAB0DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIDatabaseTests", "DIDatabaseTests\DIDatabaseTests.csproj", "{7055754A-7D09-4C15-AA9B-F45131350FDD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2082A3A8-E08B-4DC0-B58B-28D805AAB0DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2082A3A8-E08B-4DC0-B58B-28D805AAB0DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2082A3A8-E08B-4DC0-B58B-28D805AAB0DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2082A3A8-E08B-4DC0-B58B-28D805AAB0DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7055754A-7D09-4C15-AA9B-F45131350FDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7055754A-7D09-4C15-AA9B-F45131350FDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7055754A-7D09-4C15-AA9B-F45131350FDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7055754A-7D09-4C15-AA9B-F45131350FDD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

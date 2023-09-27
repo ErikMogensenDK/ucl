@@ -1,0 +1,14 @@
+C:\Users\erikm\ucl\semesterone\misc\TestProjekt\testprojekt\bin\Debug\net7.0\Testprojekt.exe
+C:\Users\erikm\ucl\semesterone\misc\TestProjekt\testprojekt\bin\Debug\net7.0\Testprojekt.deps.json
+C:\Users\erikm\ucl\semesterone\misc\TestProjekt\testprojekt\bin\Debug\net7.0\Testprojekt.runtimeconfig.json
+C:\Users\erikm\ucl\semesterone\misc\TestProjekt\testprojekt\bin\Debug\net7.0\Testprojekt.dll
+C:\Users\erikm\ucl\semesterone\misc\TestProjekt\testprojekt\bin\Debug\net7.0\Testprojekt.pdb
+C:\Users\erikm\ucl\semesterone\misc\TestProjekt\testprojekt\obj\Debug\net7.0\Testprojekt.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erikm\ucl\semesterone\misc\TestProjekt\testprojekt\obj\Debug\net7.0\Testprojekt.AssemblyInfoInputs.cache
+C:\Users\erikm\ucl\semesterone\misc\TestProjekt\testprojekt\obj\Debug\net7.0\Testprojekt.AssemblyInfo.cs
+C:\Users\erikm\ucl\semesterone\misc\TestProjekt\testprojekt\obj\Debug\net7.0\Testprojekt.csproj.CoreCompileInputs.cache
+C:\Users\erikm\ucl\semesterone\misc\TestProjekt\testprojekt\obj\Debug\net7.0\Testprojekt.dll
+C:\Users\erikm\ucl\semesterone\misc\TestProjekt\testprojekt\obj\Debug\net7.0\refint\Testprojekt.dll
+C:\Users\erikm\ucl\semesterone\misc\TestProjekt\testprojekt\obj\Debug\net7.0\Testprojekt.pdb
+C:\Users\erikm\ucl\semesterone\misc\TestProjekt\testprojekt\obj\Debug\net7.0\Testprojekt.genruntimeconfig.cache
+C:\Users\erikm\ucl\semesterone\misc\TestProjekt\testprojekt\obj\Debug\net7.0\ref\Testprojekt.dll

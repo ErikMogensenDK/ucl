@@ -1,0 +1,14 @@
+C:\Users\erikm\ucl\semesterone\misc\dependencyInjectionDatabase\DIDatabase\bin\Debug\net7.0\DIDatabase.exe
+C:\Users\erikm\ucl\semesterone\misc\dependencyInjectionDatabase\DIDatabase\bin\Debug\net7.0\DIDatabase.deps.json
+C:\Users\erikm\ucl\semesterone\misc\dependencyInjectionDatabase\DIDatabase\bin\Debug\net7.0\DIDatabase.runtimeconfig.json
+C:\Users\erikm\ucl\semesterone\misc\dependencyInjectionDatabase\DIDatabase\bin\Debug\net7.0\DIDatabase.dll
+C:\Users\erikm\ucl\semesterone\misc\dependencyInjectionDatabase\DIDatabase\bin\Debug\net7.0\DIDatabase.pdb
+C:\Users\erikm\ucl\semesterone\misc\dependencyInjectionDatabase\DIDatabase\obj\Debug\net7.0\DIDatabase.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erikm\ucl\semesterone\misc\dependencyInjectionDatabase\DIDatabase\obj\Debug\net7.0\DIDatabase.AssemblyInfoInputs.cache
+C:\Users\erikm\ucl\semesterone\misc\dependencyInjectionDatabase\DIDatabase\obj\Debug\net7.0\DIDatabase.AssemblyInfo.cs
+C:\Users\erikm\ucl\semesterone\misc\dependencyInjectionDatabase\DIDatabase\obj\Debug\net7.0\DIDatabase.csproj.CoreCompileInputs.cache
+C:\Users\erikm\ucl\semesterone\misc\dependencyInjectionDatabase\DIDatabase\obj\Debug\net7.0\DIDatabase.dll
+C:\Users\erikm\ucl\semesterone\misc\dependencyInjectionDatabase\DIDatabase\obj\Debug\net7.0\refint\DIDatabase.dll
+C:\Users\erikm\ucl\semesterone\misc\dependencyInjectionDatabase\DIDatabase\obj\Debug\net7.0\DIDatabase.pdb
+C:\Users\erikm\ucl\semesterone\misc\dependencyInjectionDatabase\DIDatabase\obj\Debug\net7.0\DIDatabase.genruntimeconfig.cache
+C:\Users\erikm\ucl\semesterone\misc\dependencyInjectionDatabase\DIDatabase\obj\Debug\net7.0\ref\DIDatabase.dll

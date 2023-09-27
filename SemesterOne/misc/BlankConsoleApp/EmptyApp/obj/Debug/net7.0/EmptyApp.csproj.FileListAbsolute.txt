@@ -1,0 +1,14 @@
+C:\Users\erikm\ucl\semesterone\misc\BlankConsoleApp\emptyapp\bin\Debug\net7.0\EmptyApp.exe
+C:\Users\erikm\ucl\semesterone\misc\BlankConsoleApp\emptyapp\bin\Debug\net7.0\EmptyApp.deps.json
+C:\Users\erikm\ucl\semesterone\misc\BlankConsoleApp\emptyapp\bin\Debug\net7.0\EmptyApp.runtimeconfig.json
+C:\Users\erikm\ucl\semesterone\misc\BlankConsoleApp\emptyapp\bin\Debug\net7.0\EmptyApp.dll
+C:\Users\erikm\ucl\semesterone\misc\BlankConsoleApp\emptyapp\bin\Debug\net7.0\EmptyApp.pdb
+C:\Users\erikm\ucl\semesterone\misc\BlankConsoleApp\emptyapp\obj\Debug\net7.0\EmptyApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erikm\ucl\semesterone\misc\BlankConsoleApp\emptyapp\obj\Debug\net7.0\EmptyApp.AssemblyInfoInputs.cache
+C:\Users\erikm\ucl\semesterone\misc\BlankConsoleApp\emptyapp\obj\Debug\net7.0\EmptyApp.AssemblyInfo.cs
+C:\Users\erikm\ucl\semesterone\misc\BlankConsoleApp\emptyapp\obj\Debug\net7.0\EmptyApp.csproj.CoreCompileInputs.cache
+C:\Users\erikm\ucl\semesterone\misc\BlankConsoleApp\emptyapp\obj\Debug\net7.0\EmptyApp.dll
+C:\Users\erikm\ucl\semesterone\misc\BlankConsoleApp\emptyapp\obj\Debug\net7.0\refint\EmptyApp.dll
+C:\Users\erikm\ucl\semesterone\misc\BlankConsoleApp\emptyapp\obj\Debug\net7.0\EmptyApp.pdb
+C:\Users\erikm\ucl\semesterone\misc\BlankConsoleApp\emptyapp\obj\Debug\net7.0\EmptyApp.genruntimeconfig.cache
+C:\Users\erikm\ucl\semesterone\misc\BlankConsoleApp\emptyapp\obj\Debug\net7.0\ref\EmptyApp.dll
