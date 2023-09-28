@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\PerfectHelloWorld\\HelloWorld\\HelloWorld.csproj": {}
+    "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\PerfectHelloWorld\\HelloWorld\\HelloWorld.csproj": {}
   },
   "projects": {
-    "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\PerfectHelloWorld\\HelloWorld\\HelloWorld.csproj": {
+    "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\PerfectHelloWorld\\HelloWorldLibrary\\HelloWorldLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\PerfectHelloWorld\\HelloWorld\\HelloWorld.csproj",
-        "projectName": "HelloWorld",
-        "projectPath": "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\PerfectHelloWorld\\HelloWorld\\HelloWorld.csproj",
+        "projectUniqueName": "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\PerfectHelloWorld\\HelloWorldLibrary\\HelloWorldLibrary.csproj",
+        "projectName": "HelloWorldLibrary",
+        "projectPath": "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\PerfectHelloWorld\\HelloWorldLibrary\\HelloWorldLibrary.csproj",
         "packagesPath": "C:\\Users\\erikm\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\PerfectHelloWorld\\HelloWorld\\obj\\",
+        "outputPath": "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\PerfectHelloWorld\\HelloWorldLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\erikm\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,75 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\PerfectHelloWorld\\HelloWorld\\HelloWorld.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\PerfectHelloWorld\\HelloWorld\\HelloWorld.csproj",
+        "projectName": "HelloWorld",
+        "projectPath": "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\PerfectHelloWorld\\HelloWorld\\HelloWorld.csproj",
+        "packagesPath": "C:\\Users\\erikm\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\PerfectHelloWorld\\HelloWorld\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\erikm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\PerfectHelloWorld\\HelloWorldLibrary\\HelloWorldLibrary.csproj": {
+                "projectPath": "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\PerfectHelloWorld\\HelloWorldLibrary\\HelloWorldLibrary.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[7.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -1,0 +1,11 @@
+C:\Users\erikm\ucl\semesterone\misc\PerfectHelloWorld\HelloWorldLibrary\bin\Debug\net7.0\HelloWorldLibrary.deps.json
+C:\Users\erikm\ucl\semesterone\misc\PerfectHelloWorld\HelloWorldLibrary\bin\Debug\net7.0\HelloWorldLibrary.dll
+C:\Users\erikm\ucl\semesterone\misc\PerfectHelloWorld\HelloWorldLibrary\bin\Debug\net7.0\HelloWorldLibrary.pdb
+C:\Users\erikm\ucl\semesterone\misc\PerfectHelloWorld\HelloWorldLibrary\obj\Debug\net7.0\HelloWorldLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erikm\ucl\semesterone\misc\PerfectHelloWorld\HelloWorldLibrary\obj\Debug\net7.0\HelloWorldLibrary.AssemblyInfoInputs.cache
+C:\Users\erikm\ucl\semesterone\misc\PerfectHelloWorld\HelloWorldLibrary\obj\Debug\net7.0\HelloWorldLibrary.AssemblyInfo.cs
+C:\Users\erikm\ucl\semesterone\misc\PerfectHelloWorld\HelloWorldLibrary\obj\Debug\net7.0\HelloWorldLibrary.csproj.CoreCompileInputs.cache
+C:\Users\erikm\ucl\semesterone\misc\PerfectHelloWorld\HelloWorldLibrary\obj\Debug\net7.0\HelloWorldLibrary.dll
+C:\Users\erikm\ucl\semesterone\misc\PerfectHelloWorld\HelloWorldLibrary\obj\Debug\net7.0\refint\HelloWorldLibrary.dll
+C:\Users\erikm\ucl\semesterone\misc\PerfectHelloWorld\HelloWorldLibrary\obj\Debug\net7.0\HelloWorldLibrary.pdb
+C:\Users\erikm\ucl\semesterone\misc\PerfectHelloWorld\HelloWorldLibrary\obj\Debug\net7.0\ref\HelloWorldLibrary.dll

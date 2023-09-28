@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersistenceTests", "PersistenceTests\PersistenceTests.csproj", "{D696FDEB-2C9A-4EE4-B510-5D76D1F37498}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\Persistence.csproj", "{D2F45B50-F159-4ACF-9F1A-FA889F50A3AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D696FDEB-2C9A-4EE4-B510-5D76D1F37498}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D696FDEB-2C9A-4EE4-B510-5D76D1F37498}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D696FDEB-2C9A-4EE4-B510-5D76D1F37498}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D696FDEB-2C9A-4EE4-B510-5D76D1F37498}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2F45B50-F159-4ACF-9F1A-FA889F50A3AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2F45B50-F159-4ACF-9F1A-FA889F50A3AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2F45B50-F159-4ACF-9F1A-FA889F50A3AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2F45B50-F159-4ACF-9F1A-FA889F50A3AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
