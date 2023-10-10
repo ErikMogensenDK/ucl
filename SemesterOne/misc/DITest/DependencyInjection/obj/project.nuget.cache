@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "x/tCIG0TWq7ZedXv+NqUMfcgzQ36u+vRYDiQLM0K9H/1nBI74/NPfGpIbBHIyIk0Dk9O+Xi1XB/IQgYNvWBEww==",
+  "dgSpecHash": "CaOXAs/OIM56GKFyMtszY5UvDM7EzCTRqiPXh8Z8sdFIp0NTrDlJhkZg9TZrRTKTMKp1pL6XZcNLJAg67DPuAw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\erikm\\ucl\\semesterone\\misc\\ditest\\DependencyInjection\\DependencyInjection.csproj",
+  "projectFilePath": "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\DITest\\DependencyInjection\\DependencyInjection.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\erikm\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\erikm\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",

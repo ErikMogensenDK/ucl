@@ -7,6 +7,6 @@ namespace DITest
 {
     public interface IWriter
     {
-        public void Write(char myChar);
+        public void Write();
     }
 }

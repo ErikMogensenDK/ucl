@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pengeskab", "Pengeskab\Pengeskab.csproj", "{41C5A71E-6307-439B-9191-860327B4F2EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PengeskabTests", "PengeskabTests\PengeskabTests.csproj", "{3777CB02-DE34-456D-B3C8-A9EC48C3C75C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{41C5A71E-6307-439B-9191-860327B4F2EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41C5A71E-6307-439B-9191-860327B4F2EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41C5A71E-6307-439B-9191-860327B4F2EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41C5A71E-6307-439B-9191-860327B4F2EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3777CB02-DE34-456D-B3C8-A9EC48C3C75C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3777CB02-DE34-456D-B3C8-A9EC48C3C75C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3777CB02-DE34-456D-B3C8-A9EC48C3C75C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3777CB02-DE34-456D-B3C8-A9EC48C3C75C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

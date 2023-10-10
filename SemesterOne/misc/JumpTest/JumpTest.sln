@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JumpTest", "JumpTest\JumpTest.csproj", "{3F96F30A-A494-45C5-9039-03BAC6C78699}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JumpTestTests", "JumpTestTests\JumpTestTests.csproj", "{2DF03C7B-35CE-42AA-BC25-20FF4357E231}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F96F30A-A494-45C5-9039-03BAC6C78699}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F96F30A-A494-45C5-9039-03BAC6C78699}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F96F30A-A494-45C5-9039-03BAC6C78699}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F96F30A-A494-45C5-9039-03BAC6C78699}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DF03C7B-35CE-42AA-BC25-20FF4357E231}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DF03C7B-35CE-42AA-BC25-20FF4357E231}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DF03C7B-35CE-42AA-BC25-20FF4357E231}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DF03C7B-35CE-42AA-BC25-20FF4357E231}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

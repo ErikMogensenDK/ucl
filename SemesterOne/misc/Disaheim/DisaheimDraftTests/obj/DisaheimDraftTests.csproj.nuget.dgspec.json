@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\Disaheim\\DisaheimDraftTests\\DisaheimDraftTests.csproj": {}
+    "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\Disaheim\\DisaheimDraftTests\\DisaheimDraftTests.csproj": {}
   },
   "projects": {
-    "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\Disaheim\\DisaheimDraftTests\\DisaheimDraftTests.csproj": {
+    "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\Disaheim\\DisaheimDraftTests\\DisaheimDraftTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\Disaheim\\DisaheimDraftTests\\DisaheimDraftTests.csproj",
+        "projectUniqueName": "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\Disaheim\\DisaheimDraftTests\\DisaheimDraftTests.csproj",
         "projectName": "DisaheimDraftTests",
-        "projectPath": "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\Disaheim\\DisaheimDraftTests\\DisaheimDraftTests.csproj",
+        "projectPath": "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\Disaheim\\DisaheimDraftTests\\DisaheimDraftTests.csproj",
         "packagesPath": "C:\\Users\\erikm\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\Disaheim\\DisaheimDraftTests\\obj\\",
+        "outputPath": "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\Disaheim\\DisaheimDraftTests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\erikm\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\Disaheim\\DisaheimDraft\\DisaheimDraft.csproj": {
-                "projectPath": "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\Disaheim\\DisaheimDraft\\DisaheimDraft.csproj"
+              "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\Disaheim\\DisaheimDraft\\DisaheimDraft.csproj": {
+                "projectPath": "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\Disaheim\\DisaheimDraft\\DisaheimDraft.csproj"
               }
             }
           }
@@ -81,14 +81,14 @@
         }
       }
     },
-    "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\Disaheim\\DisaheimDraft\\DisaheimDraft.csproj": {
+    "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\Disaheim\\DisaheimDraft\\DisaheimDraft.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\Disaheim\\DisaheimDraft\\DisaheimDraft.csproj",
+        "projectUniqueName": "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\Disaheim\\DisaheimDraft\\DisaheimDraft.csproj",
         "projectName": "DisaheimDraft",
-        "projectPath": "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\Disaheim\\DisaheimDraft\\DisaheimDraft.csproj",
+        "projectPath": "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\Disaheim\\DisaheimDraft\\DisaheimDraft.csproj",
         "packagesPath": "C:\\Users\\erikm\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\Disaheim\\DisaheimDraft\\obj\\",
+        "outputPath": "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\Disaheim\\DisaheimDraft\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\erikm\\AppData\\Roaming\\NuGet\\NuGet.Config",

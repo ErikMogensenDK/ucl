@@ -1,0 +1,14 @@
+C:\Users\erikm\ucl\semesterone\misc\Pengeskab\Pengeskab\bin\Debug\net7.0\Pengeskab.exe
+C:\Users\erikm\ucl\semesterone\misc\Pengeskab\Pengeskab\bin\Debug\net7.0\Pengeskab.deps.json
+C:\Users\erikm\ucl\semesterone\misc\Pengeskab\Pengeskab\bin\Debug\net7.0\Pengeskab.runtimeconfig.json
+C:\Users\erikm\ucl\semesterone\misc\Pengeskab\Pengeskab\bin\Debug\net7.0\Pengeskab.dll
+C:\Users\erikm\ucl\semesterone\misc\Pengeskab\Pengeskab\bin\Debug\net7.0\Pengeskab.pdb
+C:\Users\erikm\ucl\semesterone\misc\Pengeskab\Pengeskab\obj\Debug\net7.0\Pengeskab.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erikm\ucl\semesterone\misc\Pengeskab\Pengeskab\obj\Debug\net7.0\Pengeskab.AssemblyInfoInputs.cache
+C:\Users\erikm\ucl\semesterone\misc\Pengeskab\Pengeskab\obj\Debug\net7.0\Pengeskab.AssemblyInfo.cs
+C:\Users\erikm\ucl\semesterone\misc\Pengeskab\Pengeskab\obj\Debug\net7.0\Pengeskab.csproj.CoreCompileInputs.cache
+C:\Users\erikm\ucl\semesterone\misc\Pengeskab\Pengeskab\obj\Debug\net7.0\Pengeskab.dll
+C:\Users\erikm\ucl\semesterone\misc\Pengeskab\Pengeskab\obj\Debug\net7.0\refint\Pengeskab.dll
+C:\Users\erikm\ucl\semesterone\misc\Pengeskab\Pengeskab\obj\Debug\net7.0\Pengeskab.pdb
+C:\Users\erikm\ucl\semesterone\misc\Pengeskab\Pengeskab\obj\Debug\net7.0\Pengeskab.genruntimeconfig.cache
+C:\Users\erikm\ucl\semesterone\misc\Pengeskab\Pengeskab\obj\Debug\net7.0\ref\Pengeskab.dll

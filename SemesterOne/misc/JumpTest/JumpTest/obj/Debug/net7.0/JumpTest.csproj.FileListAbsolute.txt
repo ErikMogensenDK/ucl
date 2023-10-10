@@ -1,0 +1,14 @@
+C:\Users\erikm\ucl\semesterone\misc\JumpTest\JumpTest\bin\Debug\net7.0\JumpTest.exe
+C:\Users\erikm\ucl\semesterone\misc\JumpTest\JumpTest\bin\Debug\net7.0\JumpTest.deps.json
+C:\Users\erikm\ucl\semesterone\misc\JumpTest\JumpTest\bin\Debug\net7.0\JumpTest.runtimeconfig.json
+C:\Users\erikm\ucl\semesterone\misc\JumpTest\JumpTest\bin\Debug\net7.0\JumpTest.dll
+C:\Users\erikm\ucl\semesterone\misc\JumpTest\JumpTest\bin\Debug\net7.0\JumpTest.pdb
+C:\Users\erikm\ucl\semesterone\misc\JumpTest\JumpTest\obj\Debug\net7.0\JumpTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erikm\ucl\semesterone\misc\JumpTest\JumpTest\obj\Debug\net7.0\JumpTest.AssemblyInfoInputs.cache
+C:\Users\erikm\ucl\semesterone\misc\JumpTest\JumpTest\obj\Debug\net7.0\JumpTest.AssemblyInfo.cs
+C:\Users\erikm\ucl\semesterone\misc\JumpTest\JumpTest\obj\Debug\net7.0\JumpTest.csproj.CoreCompileInputs.cache
+C:\Users\erikm\ucl\semesterone\misc\JumpTest\JumpTest\obj\Debug\net7.0\JumpTest.dll
+C:\Users\erikm\ucl\semesterone\misc\JumpTest\JumpTest\obj\Debug\net7.0\refint\JumpTest.dll
+C:\Users\erikm\ucl\semesterone\misc\JumpTest\JumpTest\obj\Debug\net7.0\JumpTest.pdb
+C:\Users\erikm\ucl\semesterone\misc\JumpTest\JumpTest\obj\Debug\net7.0\JumpTest.genruntimeconfig.cache
+C:\Users\erikm\ucl\semesterone\misc\JumpTest\JumpTest\obj\Debug\net7.0\ref\JumpTest.dll

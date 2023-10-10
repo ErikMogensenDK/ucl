@@ -1,0 +1,14 @@
+C:\Users\erikm\ucl\SemesterOne\misc\HyggeMadProjekt\HyggeMadProjekt\bin\Debug\net7.0\HyggeMadProjekt.exe
+C:\Users\erikm\ucl\SemesterOne\misc\HyggeMadProjekt\HyggeMadProjekt\bin\Debug\net7.0\HyggeMadProjekt.deps.json
+C:\Users\erikm\ucl\SemesterOne\misc\HyggeMadProjekt\HyggeMadProjekt\bin\Debug\net7.0\HyggeMadProjekt.runtimeconfig.json
+C:\Users\erikm\ucl\SemesterOne\misc\HyggeMadProjekt\HyggeMadProjekt\bin\Debug\net7.0\HyggeMadProjekt.dll
+C:\Users\erikm\ucl\SemesterOne\misc\HyggeMadProjekt\HyggeMadProjekt\bin\Debug\net7.0\HyggeMadProjekt.pdb
+C:\Users\erikm\ucl\SemesterOne\misc\HyggeMadProjekt\HyggeMadProjekt\obj\Debug\net7.0\HyggeMadProjekt.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erikm\ucl\SemesterOne\misc\HyggeMadProjekt\HyggeMadProjekt\obj\Debug\net7.0\HyggeMadProjekt.AssemblyInfoInputs.cache
+C:\Users\erikm\ucl\SemesterOne\misc\HyggeMadProjekt\HyggeMadProjekt\obj\Debug\net7.0\HyggeMadProjekt.AssemblyInfo.cs
+C:\Users\erikm\ucl\SemesterOne\misc\HyggeMadProjekt\HyggeMadProjekt\obj\Debug\net7.0\HyggeMadProjekt.csproj.CoreCompileInputs.cache
+C:\Users\erikm\ucl\SemesterOne\misc\HyggeMadProjekt\HyggeMadProjekt\obj\Debug\net7.0\HyggeMadProjekt.dll
+C:\Users\erikm\ucl\SemesterOne\misc\HyggeMadProjekt\HyggeMadProjekt\obj\Debug\net7.0\refint\HyggeMadProjekt.dll
+C:\Users\erikm\ucl\SemesterOne\misc\HyggeMadProjekt\HyggeMadProjekt\obj\Debug\net7.0\HyggeMadProjekt.pdb
+C:\Users\erikm\ucl\SemesterOne\misc\HyggeMadProjekt\HyggeMadProjekt\obj\Debug\net7.0\HyggeMadProjekt.genruntimeconfig.cache
+C:\Users\erikm\ucl\SemesterOne\misc\HyggeMadProjekt\HyggeMadProjekt\obj\Debug\net7.0\ref\HyggeMadProjekt.dll

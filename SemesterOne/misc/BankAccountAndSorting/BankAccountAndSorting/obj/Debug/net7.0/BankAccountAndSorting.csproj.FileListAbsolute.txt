@@ -1,0 +1,14 @@
+C:\Users\erikm\ucl\semesterone\misc\BankAccountAndSorting\BankAccountAndSorting\bin\Debug\net7.0\BankAccountAndSorting.exe
+C:\Users\erikm\ucl\semesterone\misc\BankAccountAndSorting\BankAccountAndSorting\bin\Debug\net7.0\BankAccountAndSorting.deps.json
+C:\Users\erikm\ucl\semesterone\misc\BankAccountAndSorting\BankAccountAndSorting\bin\Debug\net7.0\BankAccountAndSorting.runtimeconfig.json
+C:\Users\erikm\ucl\semesterone\misc\BankAccountAndSorting\BankAccountAndSorting\bin\Debug\net7.0\BankAccountAndSorting.dll
+C:\Users\erikm\ucl\semesterone\misc\BankAccountAndSorting\BankAccountAndSorting\bin\Debug\net7.0\BankAccountAndSorting.pdb
+C:\Users\erikm\ucl\semesterone\misc\BankAccountAndSorting\BankAccountAndSorting\obj\Debug\net7.0\BankAccountAndSorting.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erikm\ucl\semesterone\misc\BankAccountAndSorting\BankAccountAndSorting\obj\Debug\net7.0\BankAccountAndSorting.AssemblyInfoInputs.cache
+C:\Users\erikm\ucl\semesterone\misc\BankAccountAndSorting\BankAccountAndSorting\obj\Debug\net7.0\BankAccountAndSorting.AssemblyInfo.cs
+C:\Users\erikm\ucl\semesterone\misc\BankAccountAndSorting\BankAccountAndSorting\obj\Debug\net7.0\BankAccountAndSorting.csproj.CoreCompileInputs.cache
+C:\Users\erikm\ucl\semesterone\misc\BankAccountAndSorting\BankAccountAndSorting\obj\Debug\net7.0\BankAccountAndSorting.dll
+C:\Users\erikm\ucl\semesterone\misc\BankAccountAndSorting\BankAccountAndSorting\obj\Debug\net7.0\refint\BankAccountAndSorting.dll
+C:\Users\erikm\ucl\semesterone\misc\BankAccountAndSorting\BankAccountAndSorting\obj\Debug\net7.0\BankAccountAndSorting.pdb
+C:\Users\erikm\ucl\semesterone\misc\BankAccountAndSorting\BankAccountAndSorting\obj\Debug\net7.0\BankAccountAndSorting.genruntimeconfig.cache
+C:\Users\erikm\ucl\semesterone\misc\BankAccountAndSorting\BankAccountAndSorting\obj\Debug\net7.0\ref\BankAccountAndSorting.dll

@@ -7,9 +7,9 @@ namespace DITest
 {
     public class Writer : IWriter
     {
-        public void Write(char myChar)
+        public void Write()
         {
-            Console.WriteLine(myChar);
+            Console.WriteLine("Something was written");
         }
     }
 }

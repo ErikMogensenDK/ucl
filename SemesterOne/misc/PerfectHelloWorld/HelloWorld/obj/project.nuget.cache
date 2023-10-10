@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RjKa1BJu7pT7UtSanbCK6GUszAA6PyMt+aaJSn2kyneEnijsn1wIkv+nnD+hHkHu0rbfsRGNZfD/ZMmxhyNVSQ==",
+  "dgSpecHash": "ztdojvtOiOeW9/gLDw1TfTmUsd35tuEj/nmza9jXJWsP9TmiLi2gCaS4bTBA89OedwdW2h9aeT9m7oJ0YQ9UBw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\PerfectHelloWorld\\HelloWorld\\HelloWorld.csproj",
+  "projectFilePath": "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\PerfectHelloWorld\\HelloWorld\\HelloWorld.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\erikm\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\erikm\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",

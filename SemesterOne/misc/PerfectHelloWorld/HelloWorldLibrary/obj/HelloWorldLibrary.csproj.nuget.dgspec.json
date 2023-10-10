@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\PerfectHelloWorld\\HelloWorldLibrary\\HelloWorldLibrary.csproj": {}
+    "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\PerfectHelloWorld\\HelloWorldLibrary\\HelloWorldLibrary.csproj": {}
   },
   "projects": {
-    "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\PerfectHelloWorld\\HelloWorldLibrary\\HelloWorldLibrary.csproj": {
+    "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\PerfectHelloWorld\\HelloWorldLibrary\\HelloWorldLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\PerfectHelloWorld\\HelloWorldLibrary\\HelloWorldLibrary.csproj",
+        "projectUniqueName": "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\PerfectHelloWorld\\HelloWorldLibrary\\HelloWorldLibrary.csproj",
         "projectName": "HelloWorldLibrary",
-        "projectPath": "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\PerfectHelloWorld\\HelloWorldLibrary\\HelloWorldLibrary.csproj",
+        "projectPath": "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\PerfectHelloWorld\\HelloWorldLibrary\\HelloWorldLibrary.csproj",
         "packagesPath": "C:\\Users\\erikm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\PerfectHelloWorld\\HelloWorldLibrary\\obj\\",
+        "outputPath": "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\PerfectHelloWorld\\HelloWorldLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\erikm\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5I4pq61DdJuYyPNylSRdcONTIniDFOsknIVMCz9OrV7Pa+iwCoxSAiVizYp7oIX5pcSjtPQECo5vKBPMSeKMgw==",
+  "dgSpecHash": "jBszzFqmZP5gT4xSveTggrH5tosoohjUg0CTlJTvylHVMwQ0g3Oau4kEpM6vIY2HhgdEc0gPZ1fZj4db1R98qA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\erikm\\ucl\\semesterone\\misc\\DIPractice\\DITest\\DITest.csproj",
+  "projectFilePath": "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\DIPractice\\DITest\\DITest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\erikm\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\erikm\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",

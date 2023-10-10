@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\erikm\\ucl\\semesterone\\misc\\DIPractice\\DITest\\DITest.csproj": {}
+    "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\DIPractice\\DITest\\DITest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\erikm\\ucl\\semesterone\\misc\\DIPractice\\DITest\\DITest.csproj": {
+    "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\DIPractice\\DITest\\DITest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\erikm\\ucl\\semesterone\\misc\\DIPractice\\DITest\\DITest.csproj",
+        "projectUniqueName": "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\DIPractice\\DITest\\DITest.csproj",
         "projectName": "DITest",
-        "projectPath": "C:\\Users\\erikm\\ucl\\semesterone\\misc\\DIPractice\\DITest\\DITest.csproj",
+        "projectPath": "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\DIPractice\\DITest\\DITest.csproj",
         "packagesPath": "C:\\Users\\erikm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\erikm\\ucl\\semesterone\\misc\\DIPractice\\DITest\\obj\\",
+        "outputPath": "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\DIPractice\\DITest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\erikm\\AppData\\Roaming\\NuGet\\NuGet.Config",
