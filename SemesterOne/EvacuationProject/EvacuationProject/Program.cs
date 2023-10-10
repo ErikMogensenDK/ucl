@@ -21,6 +21,7 @@ class Program
         var handler = service.GetRequiredService<IDataHandler>();
         var loginService = service.GetRequiredService<ILoginService>();
         var userService = service.GetRequiredService<IUserService>();
+        // FillDataBaseWithExamples is only for testing purposes!!
         FillDataBaseWithExamples(dataService, handler);
         handler.ReadDatabase();
 
@@ -29,31 +30,53 @@ class Program
         views.Greeting.Run();
         while (true)
         {
-            string userOption = views.MainMenuView.Run().Value.ToString();;
+            handler.ReadDatabase();
+            string userOption = views.MainMenuView.Run();
+            if (userOption == "Afslut")
+            {
+                break;
+            }
             if (userOption == "Log ind")
             {
                 int.TryParse(views.LoginView.Run(), out int userId);
                 if (loginService.IsValidUserId(userId))
                 {
-                    string option = views.EmployeeView.Run().Value.ToString();
+                    User myUser = dataService.FindObject(userId, dataService.Users);
+                    views.CreateEmployeeMainView(myUser);
+                    string option = views.EmployeeMainView.Run();
                     if (option == "Check ind")
                     {
-                        int.TryParse(views.EmployeeCheckinView.Run().Value.ToString(), out int workstationId);
-                        userService.CheckIn(dataService.FindObject(userId, dataService.Users), dataService.FindObject(workstationId, dataService.Workstations));
+                        int.TryParse(views.EmployeeCheckinView.Run(), out int workstationIndex);
+                        if (workstationIndex > dataService.Workstations.Count)
+                            break;
+                        Workstation myWorkstation = dataService.Workstations[workstationIndex];
+                        userService.CheckIn(myUser, myWorkstation);
+                        views.CreateSuccessfullCheckinView(myUser, myWorkstation);
+                        views.SuccessfulCheckin.Run();
                     }
                     else if (option == "Check ud")
-                    { }
+                    { 
+                        views.CreateCheckoutView(myUser);
+                        views.CheckoutView.Run();
+                    }
                 }
-                else if (loginService.IsValidAdministrator(userId))
+                else if (loginService.IsValidAdministrator(userId) && loginService.IsValidAdminPassword(userId, views.AdminLoginView.Run()))
                 {
-                    if (loginService.IsValidAdminPassword(userId, views.AdminLoginView.Run().Value.ToString()))
+                    Administrator myAdmin = dataService.FindObject(userId, dataService.Administrators);
+                    views.CreateAdminMainView(myAdmin);
+                    string adminOption = views.AdminMainView.Run();
+                    switch(adminOption)
                     {
-                        ExecuteAdminFlow();
+                        case "Opret bruger":
+                        {
+                            views.AdminCreateUser.Run();
+                            break;
+                        }
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Ukendt brugerId, tast enter for at prøve igen!");
+                    Console.WriteLine("Login-information var ikke gyldig, tast enter for at forsøge igen!");
                     Console.ReadLine();
                 }
 
@@ -66,6 +89,8 @@ class Program
             //if (optionChosen == 'Manager')
             //    ExecuteManagerFlow()
             handler.WriteDatabase();
+            Console.WriteLine("Reached end of loop");
+            Console.ReadLine();
         }
 
         IHostBuilder CreateDefaultBuilder(string[] args)
@@ -102,7 +127,7 @@ class Program
             Workstation myWorkstation = new(workstationName, roomNumber, myRoom);
             myDataService.Save(myWorkstation, myDataService.Workstations);
 
-            Administrator myAdmin = new(123, "Test Person", "LongPassword");
+            Administrator myAdmin = new(99999, "Test Person", "LongPassword");
             myDataService.Save(myAdmin, myDataService.Administrators);
             myHandler.WriteDatabase();
             Console.WriteLine("Database successfully written!");

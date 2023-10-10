@@ -18,7 +18,6 @@ namespace EvacuationProject.BusinessLogic
             Presence presence = new(workstation, startTime);
             user.Presence = presence;
             _dataService.Save(user, _dataService.Users);
-            Console.WriteLine("Did this");
         }
 
         public void CheckOut(User user)
