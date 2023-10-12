@@ -4,8 +4,6 @@ using EvacuationProject.BusinessLogic;
 using EvacuationProject.Models;
 using EvacuationProject.DataHandling;
 using EvacuationProject.UI;
-using System.Data;
-using Microsoft.Extensions.Configuration.UserSecrets;
 
 namespace EvacuationProject;
 
@@ -22,8 +20,7 @@ class Program
         var loginService = service.GetRequiredService<ILoginService>();
         var userService = service.GetRequiredService<IUserService>();
         // FillDataBaseWithExamples is only for testing purposes!!
-        FillDataBaseWithExamples(dataService, handler);
-        handler.ReadDatabase();
+        FillDataBaseWithExamples(dataService, handler, userService);
 
 	    // Could inject instead?
         ViewHelper views = new(dataService);
@@ -31,10 +28,24 @@ class Program
         while (true)
         {
             handler.ReadDatabase();
+            Console.WriteLine(dataService.Buildings.Count);
+            Console.WriteLine(dataService.Users.Count);
+            foreach (User myUser in dataService.Users)
+            {
+                Console.WriteLine(myUser);
+            }
+            Console.WriteLine(dataService.Workstations.Count);
+            Console.WriteLine(dataService.Administrators.Count);
+            Console.ReadLine();
             string userOption = views.MainMenuView.Run();
             if (userOption == "Afslut")
             {
                 break;
+            }
+            if (userOption == "Print evakueringsliste")
+            {
+                views.EvacuationView.Run();
+                // Log printout of evacuation.
             }
             if (userOption == "Log ind")
             {
@@ -54,23 +65,130 @@ class Program
                         views.CreateSuccessfullCheckinView(myUser, myWorkstation);
                         views.SuccessfulCheckin.Run();
                     }
-                    else if (option == "Check ud")
+                    if (option == "Check ud")
                     { 
                         views.CreateCheckoutView(myUser);
                         views.CheckoutView.Run();
+                        userService.CheckOut(myUser);
                     }
                 }
                 else if (loginService.IsValidAdministrator(userId) && loginService.IsValidAdminPassword(userId, views.AdminLoginView.Run()))
                 {
-                    Administrator myAdmin = dataService.FindObject(userId, dataService.Administrators);
-                    views.CreateAdminMainView(myAdmin);
-                    string adminOption = views.AdminMainView.Run();
-                    switch(adminOption)
+                    string adminOption = "";
+                    while (adminOption != "Afslut")
                     {
-                        case "Opret bruger":
+                        Administrator myAdmin = new();
+                        try
                         {
-                            views.AdminCreateUser.Run();
+                            myAdmin = dataService.FindObject(userId, dataService.Administrators);
+                        }
+                        catch
+                        {
+                            views.InvalidInput.Run();
                             break;
+                        }
+                        views.CreateAdminMainView(myAdmin);
+                        adminOption = views.AdminMainView.Run();
+                        string internalAdminOption = "";
+                        switch (adminOption)
+                        {
+                            case "Bruger":
+                                {
+                                    string crudOption = views.ChooseCrudOperation.Run();
+
+                                    //Dictionary<int, string> myOptions = new(){{1, "Vis elementer i databasen"},{2, "Opret ny element"}, {3, "Rediger element"}, {4, "Slet element"}};
+                                    switch (crudOption)
+                                    {
+                                        case "Vis elementer i databasen":
+                                        {
+                                            views.CreateDisplayListView()
+                                            break;
+                                        }
+                                        case "Opret nyt element":
+                                        {
+                                            break;
+                                        }
+                                        case "Rediger element":
+                                        {
+                                            break;
+                                        }
+                                        case "Slet element":
+                                        {
+                                            break;
+                                        }
+                                        default:
+                                        {
+                                            views.InvalidInput.Run();
+                                            break;
+                                        }
+                                    }
+                                    // UserCrudFlow
+                                    // vælg type element (bruger, workstation osv)
+                                    // vælg opret eller rediger?
+                                        // opret: opretskærm
+                                        // rediger: vis elementer, vælge elment
+                                            // vis rediger-skærm
+                                    views.CreateDisplayListView(dataService.Users);
+                                    int myUserIndex;
+                                    while(int.TryParse(views.DisplayList.Run(), out myUserIndex) && myUserIndex > dataService.Users.Count);
+                                    User myUser = dataService.Users[myUserIndex];
+                                    string selectedUserOption = views.SelectOptionView.Run();
+                                    if (selectedUserOption == "Slet")
+                                    {
+                                        dataService.Delete(myUser, dataService.Users);
+                                        views.DeleteSuccessfull.Run();
+                                        break;
+                                    }
+                                    if (selectedUserOption == "Opdater")
+                                    {
+                                        views.CreateUpdateUserIdView(myUser.Id);
+                                        int newUserId;
+                                        do
+                                        {
+                                            int.TryParse(views.UpdateView.Run(), out newUserId);
+                                        } while (newUserId < 0 || newUserId > 10000);
+                                        views.CreateUpdateUserNameView(myUser.Id);
+                                        string newName = views.UpdateView.Run();
+                                        User newUser = new(newUserId, newName);
+                                        dataService.Delete(myUser, dataService.Users);
+                                        dataService.Save(newUser, dataService.Users);
+                                        break;
+                                    }
+                                    break;
+                                }
+                            case "Administrator":
+                                {
+                                    views.CreateDisplayListView(dataService.Administrators);
+                                    internalAdminOption = views.DisplayList.Run();
+                                    break;
+                                }
+                            case "Bygning":
+                                {
+                                    views.CreateDisplayListView(dataService.Buildings);
+                                    internalAdminOption = views.DisplayList.Run();
+                                    break;
+                                }
+                            case "Lokale":
+                                {
+                                    views.CreateDisplayListView(dataService.Rooms);
+                                    internalAdminOption = views.DisplayList.Run();
+                                    break;
+                                }
+                            case "Arbejdsstation":
+                                {
+                                    views.CreateDisplayListView(dataService.Workstations);
+                                    internalAdminOption = views.DisplayList.Run();
+                                    break;
+                                }
+                            case "Afslut":
+                                {
+                                    break;
+                                }
+                            default:
+                                {
+                                    views.InvalidInput.Run();
+                                    break;
+                                }
                         }
                     }
                 }
@@ -81,13 +199,6 @@ class Program
                 }
 
             }
-            //ExecuteLoginFlow();
-            //if (optionChosen == 'Employee')
-            //    ExecuteEmployeeFlow();
-            //if (optionChosen == 'Administrator')
-            //    ExecuteAdministratorFlow();
-            //if (optionChosen == 'Manager')
-            //    ExecuteManagerFlow()
             handler.WriteDatabase();
             Console.WriteLine("Reached end of loop");
             Console.ReadLine();
@@ -106,16 +217,8 @@ class Program
                 //services.AddSingleton<ILogger, Logger>();
             });
         }
-        static void FillDataBaseWithExamples(IDataService myDataService, IDataHandler myHandler)
+        static void FillDataBaseWithExamples(IDataService myDataService, IDataHandler myHandler, IUserService myUserService)
         {
-            int userId = 123;
-            string userName = "Test Name";
-            AccessLevel level = AccessLevel.Employee;
-            var myUser = new User(userId, userName, level);
-            List<User> myUserList = new() { myUser };
-            myDataService.Save(myUser, myDataService.Users);
-            myDataService.Save(myUser, myDataService.Users);
-
             string workstationName = "Test Workstation Name";
             string roomName = "TestRum 1";
             int roomNumber = 1;
@@ -126,23 +229,56 @@ class Program
             myDataService.Save(myRoom, myDataService.Rooms);
             Workstation myWorkstation = new(workstationName, roomNumber, myRoom);
             myDataService.Save(myWorkstation, myDataService.Workstations);
+            myWorkstation = new("NewWorkstationName", 2, myRoom);
+            myDataService.Save(myWorkstation, myDataService.Workstations);
 
             Administrator myAdmin = new(99999, "Test Person", "LongPassword");
             myDataService.Save(myAdmin, myDataService.Administrators);
+
+            int userId = 1234;
+            string userName = "Test Thomas";
+            var myUser = new User(userId, userName);
+            myDataService.Save(myUser, myDataService.Users);
+            myUser = new User(4321, "Tove Test");
+            myDataService.Save(myUser, myDataService.Users);
+            myUserService.CheckIn(myUser, myWorkstation);
+            myUser = new User(4839, "Tobias Test");
+            myDataService.Save(myUser, myDataService.Users);
+            myUserService.CheckIn(myUser, myWorkstation);
             myHandler.WriteDatabase();
             Console.WriteLine("Database successfully written!");
         }
     }
-
-
-
-    //private static void ExecuteLoginFlow()
-    //{
-    //    views.Greeting.Show();
-    //    optionChosen = inputHelper.ChooseOption(Views.Greeting);
-    //}
-    static void ExecuteAdminFlow()
-    {
-        throw new NotImplementedException();
-    }
+//    public void CrudFlow<T>(List<T> data, IDataService dataService) 
+//    {
+//        views.CreateDisplayListView(data);
+//        int myIndex;
+//        while (int.TryParse(views.DisplayList.Run(), out myIndex) && myIndex > data.Count) ;
+//        T myObj = data[myIndex];
+//        string selectedUserOption = views.SelectOptionView.Run();
+//        if (selectedUserOption == "Slet")
+//        {
+//            dataService.Delete(myObj, data);
+//            break;
+//        }
+//        if (selectedUserOption == "Opdater")
+//        {
+//            // Create update view needs to know which type of object it is, since most objects have different info 
+//            // For instance a room needs to be associated to a building and a workstation to a oom
+//            // Can a view take prompts in succession??
+//            views.CreateUpdateView(myUser.Id);
+//            int newUserId;
+//            do
+//            {
+//                int.TryParse(views.UpdateView.Run(), out newUserId);
+//            } while (newUserId < 0 || newUserId > 10000);
+//            views.CreateUpdateUserNameView(myUser.Id);
+//            string newName = views.UpdateView.Run();
+//            User newUser = new(newUserId, newName);
+//            dataService.Delete(myUser, data);
+//            dataService.Save(newUser, data);
+//            break;
+//        }
+//        break;
+//    }
 }

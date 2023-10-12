@@ -21,7 +21,7 @@ namespace EvacuationProject.Models
         }
         public override string ToString()
         {
-            return $"{_name},{_id},{_floor},{_building.Id}";
+            return $"Name:{_name},Id:{_id},Floor:{_floor},Building id:{_building.Id}";
         }
     }
 }

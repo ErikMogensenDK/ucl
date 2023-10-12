@@ -40,21 +40,23 @@ namespace EvacuationProjectTests
             // Act
             dataService.Save(myUser, dataService.Users);
             // Assert
-            Assert.AreEqual(myUser, dataService.Users.Last());
+            Assert.AreEqual(myUser.Name, dataService.Users.Last().Name);
+            Assert.AreEqual(myUser.Id, dataService.Users.Last().Id);
+            Assert.AreEqual(myUser.ToString(), dataService.Users.Last().ToString());
         }
         [TestMethod]
         public void DataService_SeveralSavesShouldSaveSeveralEmployees()
         {
             //Arrange
-            int userId = 123;
+            int userId = 1234;
             string userName = "Test Name";
             AccessLevel level = AccessLevel.Employee;
             var myUser = new User(userId, userName, level);
-            int expectedCount = 4;
+            int expectedCount = 3;
+            var mySecondUser = new User(4321, userName, level);
             // Act
             dataService.Save(myUser, dataService.Users);
-            dataService.Save(myUser, dataService.Users);
-            dataService.Save(myUser, dataService.Users);
+            dataService.Save(mySecondUser, dataService.Users);
             // Assert
             Assert.AreEqual(expectedCount, dataService.Users.Count());
         }
@@ -90,14 +92,17 @@ namespace EvacuationProjectTests
 
             // Act
             var myUser = new User(userId, userName, level);
+            dataService.Save(myUser, dataService.Users);
             userService.CheckIn(myUser, dataService.Workstations[0]);
 
             userId = 2;
             myUser = new User(userId, userName, level);
+            dataService.Save(myUser, dataService.Users);
             userService.CheckIn(myUser, dataService.Workstations[0]);
 
             userId = 3;
             myUser = new User(userId, userName, level);
+            dataService.Save(myUser, dataService.Users);
             userService.CheckIn(myUser, dataService.Workstations[0]);
 
             List<User> myUsers = dataService.GetUsersCurrentlyCheckedIn();
@@ -123,6 +128,7 @@ namespace EvacuationProjectTests
             string userName = "Test Name";
             AccessLevel level = AccessLevel.Employee;
             var myUser = new User(userId, userName, level);
+            dataService.Save(myUser, dataService.Users);
             UserService userService = new(dataService);
 
             // Act
@@ -130,10 +136,12 @@ namespace EvacuationProjectTests
 
             userId = 2;
             var myUserTwo = new User(userId, userName, level);
+            dataService.Save(myUserTwo, dataService.Users);
             userService.CheckIn(myUserTwo, dataService.Workstations[0]);
 
             userId = 3;
             var myUserThree = new User(userId, userName, level);
+            dataService.Save(myUserThree, dataService.Users);
             userService.CheckIn(myUserThree, dataService.Workstations[0]);
 
 

@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace EvacuationProject.UI
 {
     public class View
@@ -14,16 +9,29 @@ namespace EvacuationProject.UI
         public Dictionary<int, string> Options { get; private set; }
         public string? Prompt { get; private set; }
         private bool validInput = false;
+        public List<string>? Prompts {get; private set;}
 
-        public View(string? title = null, string? body = null, string? prompt = null, Dictionary<int, string> validInputOptions = null)
+        public View(
+            string? title = null, 
+            string? body = null, 
+            string? prompt = null, 
+            Dictionary<int, string> validInputOptions = null,
+            List<string> prompts = null)
         {
             Title = title;
             Body = body;
             Options = validInputOptions;
+            if (prompt == null)
+                prompt = "";
             Prompt = prompt;
             Options = validInputOptions;
             if (Options != null)
                 Options.Add(Options.Count +1, "Afslut");
+            if (prompts == null)
+                Prompts = new() {Prompt};
+            else 
+                Prompts = prompts;
+
         }
 
         public string? GetInput()
@@ -56,7 +64,7 @@ namespace EvacuationProject.UI
                     Console.ReadLine();
             return null;
         }
-        public void Display()
+        public void Display(string prompt)
         {
             Console.Clear();
             if (Title != null)
@@ -73,19 +81,25 @@ namespace EvacuationProject.UI
                         Console.WriteLine($"{i}. {Options[i]}");
                 }
             }
-            if (Prompt != null)
-                Console.WriteLine(Prompt);
+            if (prompt != null)
+                Console.WriteLine(prompt);
             Console.Write("Dit input: ");
         }
 
         public string Run()
         {
-            validInput = false;
             string myInput = "";
-            while (!validInput)
+
+            for (int i = 0; i < Prompts.Count; i++)
             {
-                Display();
-                myInput = GetInput();
+                validInput = false;
+                while (!validInput)
+                {
+                    Display(Prompts[i]);
+                    myInput += GetInput();
+                    if (i > 0)
+                        myInput += ",";
+                }
             }
             return myInput;
         }

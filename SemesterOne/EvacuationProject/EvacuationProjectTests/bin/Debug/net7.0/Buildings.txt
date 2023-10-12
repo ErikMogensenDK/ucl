@@ -1,1 +1,1 @@
-TestBuildingName,1
+Name:TestBuildingName,Id:1

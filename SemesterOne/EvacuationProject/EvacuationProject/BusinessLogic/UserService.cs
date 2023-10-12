@@ -17,6 +17,7 @@ namespace EvacuationProject.BusinessLogic
             DateTime startTime = DateTime.Now;
             Presence presence = new(workstation, startTime);
             user.Presence = presence;
+            _dataService.Delete(user, _dataService.Users);
             _dataService.Save(user, _dataService.Users);
         }
 

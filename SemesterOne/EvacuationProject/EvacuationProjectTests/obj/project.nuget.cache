@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "NLukj4+zWhs1fvxNB5SORYoaFxqtC4O6TIB9eAr+WuqK15Dx45wr+79W69UnP9Hrpkf9brn9NlVjzmoBoXRlGg==",
+  "dgSpecHash": "mTlKn1CljSCBkBiVhHOQep9KmdvCqzPU1x+eJUPBHrpvfWapX44KIUkRBy4axu+xnNS8mHkxGnVqk+OliV8INA==",
   "success": true,
   "projectFilePath": "C:\\Users\\erikm\\ucl\\semesterone\\evacuationproject\\EvacuationProjectTests\\EvacuationProjectTests.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\erikm\\.nuget\\packages\\consoletables\\2.5.0\\consoletables.2.5.0.nupkg.sha512",
     "C:\\Users\\erikm\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
     "C:\\Users\\erikm\\.nuget\\packages\\microsoft.codecoverage\\17.6.0\\microsoft.codecoverage.17.6.0.nupkg.sha512",
     "C:\\Users\\erikm\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",

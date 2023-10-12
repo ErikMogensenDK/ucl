@@ -47,7 +47,8 @@ namespace EvacuationProject.BusinessLogic
 
         public void Save<T>(T obj, List<T> data) where T : class
         {
-            data.Add(obj);
+            if (!AlreadyExists(obj, data))
+                data.Add(obj);
         }
         public void Save<T>(T obj, List<T> data, string pathToWriteTo) where T : class
         {

@@ -19,6 +19,14 @@
           "EvacuationProjectTests.dll": {}
         }
       },
+      "ConsoleTables/2.5.0": {
+        "runtime": {
+          "lib/netstandard2.1/ConsoleTables.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.5.0.0"
+          }
+        }
+      },
       "coverlet.collector/3.2.0": {},
       "Microsoft.CodeCoverage/17.6.0": {
         "runtime": {
@@ -795,6 +803,7 @@
       },
       "EvacuationProject/1.0.0": {
         "dependencies": {
+          "ConsoleTables": "2.5.0",
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
           "Microsoft.Extensions.Hosting": "7.0.1"
         },
@@ -817,6 +826,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "ConsoleTables/2.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lfXLGH1coDInONveyIW5ufJWT/P5KbMRRV0cbR7CBnoZLNLZeTY51QUrAmtsX+gIWj7xlY9FSmg1sBYhXMmuuw==",
+      "path": "consoletables/2.5.0",
+      "hashPath": "consoletables.2.5.0.nupkg.sha512"
     },
     "coverlet.collector/3.2.0": {
       "type": "package",

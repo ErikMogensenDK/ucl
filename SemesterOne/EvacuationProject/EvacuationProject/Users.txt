@@ -1,6 +1,3 @@
-Test Name,123,Employee,null
-Test Name,123,Employee,null
-Test Name,123,Employee,null
-Test Name,123,Employee,null
-Test Name,123,Employee,null
-Test Name,123,Employee,null
+Name:Test Thomas,Id:1234,Access level:Employee,null
+Name:Tove Test,Id:4321,Access level:Employee,Checkin workstation id:2,Start time:12-10-2023 09:40:33
+Name:Tobias Test,Id:4839,Access level:Employee,Checkin workstation id:2,Start time:12-10-2023 09:40:33

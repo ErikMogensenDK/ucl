@@ -25,18 +25,12 @@ namespace EvacuationProject.Models
 
         public override string ToString()
         {
-            string myString = "";
-            myString +=_name + ",";
-            myString +=_id+ ",";
-            myString +=_accessLevel + ",";
+            string stringPresence;
             if (_presence == null)
-                myString += "null";
-            else 
-            {
-                myString += _presence.Workstation.Id + ",";
-                myString += _presence.StartTime;
-            }
-            return myString;
+                stringPresence = "null";
+            else
+                stringPresence = $"{_presence.ToString()}";
+            return $"Name:{_name},Id:{_id},Access level:{_accessLevel},{stringPresence}";
         }
     }
 }

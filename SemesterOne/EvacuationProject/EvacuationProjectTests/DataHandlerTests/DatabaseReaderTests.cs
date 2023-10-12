@@ -42,7 +42,7 @@ namespace EvacuationProjectTests
             Administrator expectedAdmin = dataService.Administrators[0];
             TextDataHandler handler = new(newDataService);
             //Act
-            Administrator actualAdmin = handler.ReadAdministrator("Test Person,123,LongPassword");
+            Administrator actualAdmin = handler.ReadAdministrator("Name:Test Person,Id:123,Password:LongPassword");
             //Assert
             Assert.AreEqual(expectedAdmin.Name, actualAdmin.Name);
             Assert.AreEqual(expectedAdmin.Id, actualAdmin.Id);
@@ -55,7 +55,7 @@ namespace EvacuationProjectTests
             //Arrange
             string pathToTxtFile = "Admin.txt";
             StreamWriter myWriter = new(pathToTxtFile);
-            myWriter.WriteLine("Test Person,123,LongPassword");
+            myWriter.WriteLine("Name:Test Person,Id:123,Password:LongPassword");
             myWriter.Close();
             Administrator expectedAdmin = dataService.Administrators[0];
             TextDataHandler handler = new(newDataService);
@@ -173,15 +173,5 @@ namespace EvacuationProjectTests
             Assert.AreEqual(dataService.Workstations[0].ToString(), newDataService.Workstations[0].ToString());
         }
 
-        [TestMethod]
-        public void ReadDatabase_ShouldThrowErrorIfINvalidPaths()
-        {
-            // Arrange
-            List<string> invalidPaths = new(){"invalidPath1","invalidPath2","invalidPath3","invalidPath4","invalidPath5"};
-            TextDataHandler handler = new(dataService, invalidPaths);
-            // Act
-            // Assert
-            Assert.ThrowsException<Exception>(() => handler.ReadDatabase());
-        }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\erikm\\ucl\\semesterone\\EvacuationProject\\EvacuationProject\\EvacuationProject.csproj": {}
+    "C:\\Users\\erikm\\ucl\\semesterone\\evacuationproject\\EvacuationProject\\EvacuationProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\erikm\\ucl\\semesterone\\EvacuationProject\\EvacuationProject\\EvacuationProject.csproj": {
+    "C:\\Users\\erikm\\ucl\\semesterone\\evacuationproject\\EvacuationProject\\EvacuationProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\erikm\\ucl\\semesterone\\EvacuationProject\\EvacuationProject\\EvacuationProject.csproj",
+        "projectUniqueName": "C:\\Users\\erikm\\ucl\\semesterone\\evacuationproject\\EvacuationProject\\EvacuationProject.csproj",
         "projectName": "EvacuationProject",
-        "projectPath": "C:\\Users\\erikm\\ucl\\semesterone\\EvacuationProject\\EvacuationProject\\EvacuationProject.csproj",
+        "projectPath": "C:\\Users\\erikm\\ucl\\semesterone\\evacuationproject\\EvacuationProject\\EvacuationProject.csproj",
         "packagesPath": "C:\\Users\\erikm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\erikm\\ucl\\semesterone\\EvacuationProject\\EvacuationProject\\obj\\",
+        "outputPath": "C:\\Users\\erikm\\ucl\\semesterone\\evacuationproject\\EvacuationProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\erikm\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "ConsoleTables": {
+              "target": "Package",
+              "version": "[2.5.0, )"
+            },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
               "version": "[7.0.0, )"

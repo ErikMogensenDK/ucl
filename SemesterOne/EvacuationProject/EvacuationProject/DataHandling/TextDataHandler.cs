@@ -45,8 +45,6 @@ namespace EvacuationProject.DataHandling
 
         public void ReadDatabase()
         {
-            try
-            {
                 //Building
                 ReadItemsIntoList(_paths[0], _dataService.Buildings, ReadBuilding);
                 //Room
@@ -57,19 +55,17 @@ namespace EvacuationProject.DataHandling
                 ReadItemsIntoList(_paths[3], _dataService.Users, ReadUser);
                 //Administrator
                 ReadItemsIntoList(_paths[4], _dataService.Administrators, ReadAdministrator);
-            }
-            catch (Exception e) 
-            {
-                Console.WriteLine(e.Message);
-                throw new Exception("Manually thrown error: Error - data was not read into database, since input path could not be found");
-            }
         }
 
         public void ReadItemsIntoList<T>(string PathToTextFile, List<T> listToReadTo, Func<string, T> myReadFunction) where T : class
         {
+            for (int i = 0; i < listToReadTo.Count; i++)
+            { 
+                _dataService.Delete(listToReadTo[i], listToReadTo);
+            }
             StreamReader myReader = new(PathToTextFile);
-            string? input = myReader.ReadLine();
-            while(input != null)
+            string? input; 
+            while((input = myReader.ReadLine()) != null)
             {
                 listToReadTo.Add(myReadFunction(input));
                 input = myReader.ReadLine();
@@ -80,9 +76,9 @@ namespace EvacuationProject.DataHandling
         public Administrator ReadAdministrator(string inputString)
         {
             string[] inputArray = inputString.Split(",");
-            string name = inputArray[0];
-            int id = Convert.ToInt32(inputArray[1]);
-            string password = inputArray[2];
+            string name = inputArray[0].Split(":")[1];
+            int id = Convert.ToInt32(inputArray[1].Split(":")[1]);
+            string password = inputArray[2].Split(":")[1];
             Administrator myAdmin = new(id, name, password);
             return myAdmin;
         }
@@ -90,9 +86,9 @@ namespace EvacuationProject.DataHandling
         public Workstation ReadWorkstation(string arg)
         {
             string[] inputArray = arg.Split(",");
-            string name = inputArray[0];
-            int id = Convert.ToInt32(inputArray[1]);
-            int roomId = Convert.ToInt32(inputArray[2]);
+            string name = inputArray[0].Split(":")[1];
+            int id = Convert.ToInt32(inputArray[1].Split(":")[1]);
+            int roomId = Convert.ToInt32(inputArray[2].Split(":")[1]);
             Room myRoom = _dataService.FindObject(roomId, _dataService.Rooms);
             Workstation myWorkstation = new(name, id, myRoom);
             return myWorkstation;
@@ -101,18 +97,18 @@ namespace EvacuationProject.DataHandling
         public Building ReadBuilding(string input)
         {
             string[] inputArray = input.Split(",");
-            string name = inputArray[0];
-            int id = Convert.ToInt32(inputArray[1]);
+            string name = inputArray[0].Split(":")[1];
+            int id = Convert.ToInt32(inputArray[1].Split(":")[1]);
             Building myBuilding = new(name, id);
             return myBuilding;
         }
         public Room ReadRoom(string input)
         {
             string[] inputArray = input.Split(",");
-            string name = inputArray[0];
-            int id = Convert.ToInt32(inputArray[1]);
-            int floor = Convert.ToInt32(inputArray[2]);
-            int buildingId = Convert.ToInt32(inputArray[3]);
+            string name = inputArray[0].Split(":")[1];
+            int id = Convert.ToInt32(inputArray[1].Split(":")[1]);
+            int floor = Convert.ToInt32(inputArray[2].Split(":")[1]);
+            int buildingId = Convert.ToInt32(inputArray[3].Split(":")[1]);
             Building building = _dataService.FindObject(buildingId, _dataService.Buildings);
             Room myRoom = new(name, id, floor, building);
             return myRoom;
@@ -121,17 +117,18 @@ namespace EvacuationProject.DataHandling
         public User ReadUser(string pathToTextFile)
         {
             string[] inputArray = pathToTextFile.Split(",");
-            string name = inputArray[0];
-            int id = Convert.ToInt32(inputArray[1]);
-            AccessLevel accessLevel = DetermineAccessLevel(inputArray[2]);
+            string name = inputArray[0].Split(":")[1];
+            int id = Convert.ToInt32(inputArray[1].Split(":")[1]);
+            AccessLevel accessLevel = DetermineAccessLevel(inputArray[2].Split(":")[1]);
             Presence presence;
             if (inputArray[3] == "null")
                 presence = null;
             else
             {
-                int workstationId = Convert.ToInt32(inputArray[3]);
+                Console.WriteLine(inputArray[3]);
+                int workstationId = Convert.ToInt32(inputArray[3].Split(":")[1]);
                 Workstation myWorkstation = _dataService.FindObject(workstationId, _dataService.Workstations);
-                DateTime startTime = DateTime.Parse(inputArray[4]);
+                DateTime startTime = DateTime.Parse(inputArray[4].Split(":")[1] + ":" + inputArray[4].Split(":")[2]);
                 presence = new(myWorkstation, startTime);
             }
             User myUser = new(id, name, accessLevel, presence);
