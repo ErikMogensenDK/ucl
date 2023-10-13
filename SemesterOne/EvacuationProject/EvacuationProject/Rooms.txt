@@ -1,1 +1,2 @@
-Name:TestRum 1,Id:1,Floor:0,Building id:1
+Room id:1,Name:TestRum 1,Floor:0,Building id:1
+Room id:2,Name:Erik,Floor:1,Building id:1

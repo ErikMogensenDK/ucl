@@ -42,7 +42,7 @@ namespace EvacuationProjectTests
             Administrator expectedAdmin = dataService.Administrators[0];
             TextDataHandler handler = new(newDataService);
             //Act
-            Administrator actualAdmin = handler.ReadAdministrator("Name:Test Person,Id:123,Password:LongPassword");
+            Administrator actualAdmin = handler.ReadAdministrator("Administrator Id:123,Name:Test Person,Password:LongPassword");
             //Assert
             Assert.AreEqual(expectedAdmin.Name, actualAdmin.Name);
             Assert.AreEqual(expectedAdmin.Id, actualAdmin.Id);
@@ -55,7 +55,7 @@ namespace EvacuationProjectTests
             //Arrange
             string pathToTxtFile = "Admin.txt";
             StreamWriter myWriter = new(pathToTxtFile);
-            myWriter.WriteLine("Name:Test Person,Id:123,Password:LongPassword");
+            myWriter.WriteLine("Administrator Id:123,Name:Test Person,Password:LongPassword");
             myWriter.Close();
             Administrator expectedAdmin = dataService.Administrators[0];
             TextDataHandler handler = new(newDataService);

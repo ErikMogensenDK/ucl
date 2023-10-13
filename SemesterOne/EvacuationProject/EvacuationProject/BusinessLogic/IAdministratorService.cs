@@ -1,15 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using EvacuationProject.Models;
 
 namespace EvacuationProject.BusinessLogic
 {
     public interface IAdministratorService
     {
-        public void Create<T>(T obj, List<T> data) where T : class;
-        public void Delete<T>(T obj, List<T> data) where T : class;
-        public void Update<T>(T obj, List<T> data) where T : class;
-        public T GetItemFromDatabase<T>(int id, List<T> data) where T : class;
+        public void Create<T>(T obj, List<T> data) where T : IModel;
+        public void Delete<T>(T obj, List<T> data) where T : IModel;
+        public void Update<T>(T obj, List<T> data) where T : IModel;
+        public T GetItemFromDatabase<T>(int id, List<T> data) where T : IModel;
+        public void CreateObject<T>(string objectString, T myObj, List<T> myList, bool overwriteExistingObject = false) where T : IModel;
+
     }
 }

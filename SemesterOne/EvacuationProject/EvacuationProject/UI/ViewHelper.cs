@@ -1,11 +1,6 @@
-using System.ComponentModel.DataAnnotations;
-using System.Linq.Expressions;
-using System.Reflection.Metadata.Ecma335;
-using System.Runtime.InteropServices;
 using ConsoleTables;
 using EvacuationProject.BusinessLogic;
 using EvacuationProject.Models;
-using Microsoft.Extensions.Options;
 
 namespace EvacuationProject.UI
 {
@@ -133,6 +128,26 @@ namespace EvacuationProject.UI
             }
         }
 
+        public View CreateView { get; private set; }
+        public View SelectFromList { get; private set; }
+        public View CreateWasASuccess
+        {
+            get
+            {
+                View myView = new(title: "Objekt blev oprettet!", prompt: "Tast enter for at vende tilbage");
+                return myView;
+            }
+        }
+
+        public View UpdateWasASuccess
+        {
+            get
+            {
+                View myView = new(title: "Objekt blev oprettet!", prompt: "Tast enter for at vende tilbage");
+                return myView;
+            }
+        }
+
         private IDataService dataService;
         public ViewHelper(IDataService someDataService)
         {
@@ -208,7 +223,7 @@ namespace EvacuationProject.UI
 
         public void CreateAdminMainView(Administrator admin)
         {
-            string myTitle = $"Velkommen {admin.Name}\nVælg hvilken type objekt du vil tilføje/redigere:";
+            string myTitle = $"Velkommen {admin.Name}\nVælg hvilken type objekt du vil tilgå:";
             Dictionary<int, string> myOptions = new(){
                 {1, "Bruger"},
                 {2, "Administrator"},
@@ -258,8 +273,7 @@ namespace EvacuationProject.UI
         public void CreateDisplayListView<T>(List<T> data) where T : IModel
         {
             string myTitle = $"Eksisterende elementer i databasen: ";
-            string myPrompt = "Vælg et element ved at indtaste dens indeks og trykke på \"enter\" tasten";
-            //Dictionary<int, string> myOptions = new() { { 1, "Opret nyt element" }, { 2, "Opdater eksisterende element" } };
+            string myPrompt = "Tryk på \"enter\" tasten for at afslutte";
             string myBody = CreateDisplayOfList(data);
             var myView = new View(title: myTitle, prompt: myPrompt, body: myBody);
             DisplayList = myView;
@@ -267,15 +281,31 @@ namespace EvacuationProject.UI
         private string CreateDisplayOfList<T>(List<T> data) where T : IModel
         {
             string myString;
-            var table = new ConsoleTable("Indeks","Navn", "ID");
+            var table = new ConsoleTable();
+            if (typeof(T) == typeof(User) || typeof(T) == typeof(Building) || typeof(T) == typeof(Room))
+                table = new ConsoleTable("Indeks", "Navn", "Id");
+            else
+                table = new ConsoleTable("Indeks", "Navn");
+
             int i = 1;
             foreach (var element in data)
             {
-                table.AddRow(i, element.Name, element.Id);
+                if (typeof(T) == typeof(User) || typeof(T) == typeof(Building) || typeof(T) == typeof(Room))
+                    table.AddRow(i, element.Name, element.Id);
+                else
+                    table.AddRow(i, element.Name);
                 i++;
             }
             myString = table.ToMinimalString();
             return myString;
+        }
+        public void CreateSelectFromListView<T>(List<T> data) where T : IModel
+        {
+            string myTitle = $"Eksisterende elementer i databasen: ";
+            string myPrompt = "Indtast indeks på elementet du vil ændre og tryk på \"enter\" tasten";
+            string myBody = CreateDisplayOfList(data);
+            var myView = new View(title: myTitle, prompt: myPrompt, body: myBody);
+            SelectFromList = myView;
         }
         public void CreateUpdateUserIdView(int userId)
         {
@@ -299,6 +329,29 @@ namespace EvacuationProject.UI
             var myView = new View(title: myTitle, body: myBody, prompt: myPrompt);
             UpdateView = myView;
         }
+        public void CreateUpdateView<T>(List<T> myList, T myObj) where T: IModel
+        {
+            string myTitle = $"Opdater {myObj.GetType().ToString().Split(".").Last()}";
+            string myString = myObj.ToString();
+            List<string> prompts = myString.Split(",").ToList();
+
+            // Only Users and administrators need to display ID-number, since it was requested that the ID of these elements should not be updated automatically
+            if (myObj.GetType() != typeof(User) && myObj.GetType() != typeof(Administrator))
+                prompts.RemoveAt(0);
+            // User has a "Presence" field, which cannot be set manually
+            if (myObj.GetType() == typeof(User)) 
+                prompts.RemoveAt(prompts.Count-1);
+
+            // Iterate through fields which need input in order to create an object of this particular type
+            for (int i = 0; i < prompts.Count; i++)
+            {
+                string someString = "";
+                someString = AddListIfNescessary(prompts[i].Split(":")[0]);
+                prompts[i] = $"\n{someString}\nIndtast en værdi for feltet {prompts[i].Split(":")[0]}";
+            }
+            var myView = new View(title: myTitle, prompts: prompts);
+            UpdateView = myView;
+        }
         public string DisplayEvacuationList()
         {
             List<User> myList = dataService.GetUsersCurrentlyCheckedIn();
@@ -317,39 +370,60 @@ namespace EvacuationProject.UI
             }
             return myTable.ToMinimalString();
         }
-        public void CreateUpdateView<T>(IDataService dataservice, T myObj) where T: class
+        public void CreateCreateView<T>(T myObj) where T: IModel 
         {
-            string myTitle = "Opdater information";
-            string mystring = myObj.ToString();
-            string [] myStringArray = mystring.ToString().Split(",");
-            List<string> prompts = new();
-            foreach (string element in myStringArray)
+            string myTitle = $"Opret {myObj.GetType().ToString().Split(".").Last()}";
+            string myString = myObj.ToString();
+            List<string> prompts = myString.Split(",").ToList();
+
+            // Only Users and administrators need to display ID-number, since it was requested that the ID of these elements should not be updated automatically
+            if (myObj.GetType() != typeof(User) && myObj.GetType() != typeof(Administrator))
+                prompts.RemoveAt(0);
+
+            // User has a "Presence" field, which cannot be set manually
+            if (myObj.GetType() == typeof(User)) 
+                prompts.RemoveAt(prompts.Count-1);
+            
+            // Iterate through fields requiring input to create object of this particular type
+            for (int i = 0; i < prompts.Count; i++)
             {
-                prompts.Add($"Indtast ny værdi for {element.Split(":")[0]}, den eksisterende værdi er {element.Split(":")[1]}");
+                string someString = "";
+                someString = AddListIfNescessary(prompts[i].Split(":")[0]);
+                prompts[i] = $"\n{someString}\nIndtast en værdi for feltet {prompts[i].Split(":")[0]}";
             }
-            //var table = new ConsoleTable("Navn", "Id");
-            //table.AddRow(myUser.Name, myUser.Id);
-            //string myBody = table.ToMinimalString();
-            //List<string> myPrompt = new(){"Indtast navn: ", "Indtast Id: "};
             var myView = new View(title: myTitle, prompts: prompts);
-            UpdateView = myView;
+            CreateView = myView;
         }
-        public void CreateCreateView<T>(IDataService dataservice, T myObj) where T: class
+
+        private string AddListIfNescessary(string myString)
         {
-            string myTitle = "Opret nyt element";
-            string mystring = myObj.ToString();
-            string [] myStringArray = mystring.ToString().Split(",");
-            List<string> prompts = new();
-            foreach (string element in myStringArray)
+            string newString = "";
+            if (myString == "Workstation id")
             {
-                prompts.Add($"Indtast ny værdi for {element.Split(":")[0]}, den eksisterende værdi er {element.Split(":")[1]}");
+                newString = "Eksisterende arbejdsstationer\n";
+                newString += CreateDisplayOfList(dataService.Workstations);
             }
-            //var table = new ConsoleTable("Navn", "Id");
-            //table.AddRow(myUser.Name, myUser.Id);
-            //string myBody = table.ToMinimalString();
-            //List<string> myPrompt = new(){"Indtast navn: ", "Indtast Id: "};
-            var myView = new View(title: myTitle, prompts: prompts);
-            UpdateView = myView;
+            if (myString == "Room id")
+            {
+                newString = "Eksisterende Rum\n";
+                newString += CreateDisplayOfList(dataService.Rooms);
+            }
+            if (myString == "Building id")
+            {
+                newString = "Eksisterende bygninger\n";
+                newString += CreateDisplayOfList(dataService.Buildings);
+            }
+            if (myString == "Employee id")
+            {
+                newString = "Eksisterende brugere\n";
+                newString += CreateDisplayOfList(dataService.Users);
+            }
+            if (myString == "Administrator id")
+            {
+                newString = "Eksisterende brugere\n";
+                newString += CreateDisplayOfList(dataService.Users);
+            }
+            return newString;
         }
     }
 }

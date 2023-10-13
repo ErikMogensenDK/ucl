@@ -1,1 +1,1 @@
-Test Person,99999,LongPassword
+Administrator id:0,Name:Test Person,Password:

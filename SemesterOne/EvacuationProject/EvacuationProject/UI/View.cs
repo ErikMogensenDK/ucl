@@ -86,10 +86,11 @@ namespace EvacuationProject.UI
             Console.Write("Dit input: ");
         }
 
-        public string Run()
+        public string Run(string extraMessage = null)
         {
+            if (extraMessage != null)
+                Prompts[0] = (extraMessage);
             string myInput = "";
-
             for (int i = 0; i < Prompts.Count; i++)
             {
                 validInput = false;
@@ -97,7 +98,7 @@ namespace EvacuationProject.UI
                 {
                     Display(Prompts[i]);
                     myInput += GetInput();
-                    if (i > 0)
+                    if (Prompts.Count > 1)
                         myInput += ",";
                 }
             }

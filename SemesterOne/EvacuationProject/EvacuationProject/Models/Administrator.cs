@@ -6,13 +6,13 @@ namespace EvacuationProject.BusinessLogic
     {
         private string _name;
         private string _password;
-        private int _id;
+        private int? _id;
 
         public string Name { get => _name; set => _name = value; }
         public string Password { get => _password; set => _password = value; }
-        public int Id { get => _id; set => _id = value; }
+        public int? Id { get => _id; set => _id = value; }
 
-        public Administrator(int id = 99999, string userName = "Not registered", string password = "Default")
+        public Administrator(int? id = null, string userName = "Not registered", string password = "Default")
         {
             Id = id;
             Name = userName;            
@@ -21,7 +21,7 @@ namespace EvacuationProject.BusinessLogic
 
         public override string ToString()
         {
-            return $"Name:{_name},Id:{_id},Password:{_password}";
+            return $"Administrator id:{_id},Name:{_name},Password:{_password}";
         }
     }
 }

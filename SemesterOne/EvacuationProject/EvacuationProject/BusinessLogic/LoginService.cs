@@ -44,7 +44,7 @@ namespace EvacuationProject.BusinessLogic
             if (!(admin.Password == password))
             {
                 // log admin login attempt
-                throw new Exception("Error - invalid password for Administrator");
+                //throw new Exception("Error - invalid password for Administrator");
                 return false;
             }
             return true;

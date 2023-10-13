@@ -1,2 +1,2 @@
-Name:Test Workstation Name,Id:1,Room id:1
-Name:NewWorkstationName,Id:2,Room id:1
+Workstation id:1,Name:Test Workstation Name,Room id:1
+Workstation id:2,Name:NewWorkstationName,Room id:1

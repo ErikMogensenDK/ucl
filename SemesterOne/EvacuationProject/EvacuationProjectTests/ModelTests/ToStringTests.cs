@@ -38,7 +38,7 @@ namespace EvacuationProjectTests.ModelTests
         {
             //Arrange
             Administrator myAdmin = new(123, "someName", "somePassword");
-            string expectedText = "Name:someName,Id:123,Password:somePassword";
+            string expectedText = "Administrator id:123,Name:someName,Password:somePassword";
             //Act
             string actualText = myAdmin.ToString();
             //Assert
@@ -49,7 +49,7 @@ namespace EvacuationProjectTests.ModelTests
         {
             //Arrange
             Building myBuilding = new("SomeName", 123);
-            string expectedText = "Name:SomeName,Id:123";
+            string expectedText = "Building id:123,Name:SomeName";
             //Act
             string actualText = myBuilding.ToString();
             //Assert
@@ -61,7 +61,7 @@ namespace EvacuationProjectTests.ModelTests
             //Arrange
             DateTime myDateTime = DateTime.Now;
             Presence presence = new(dataService.Workstations[0], myDateTime);
-            string expectedText = $"Checkin workstation id:1,Start time:{myDateTime}";
+            string expectedText = $"Workstation id:1,Start time:{myDateTime}";
             //Act
             string actualText = presence.ToString();
             //Assert
@@ -73,7 +73,7 @@ namespace EvacuationProjectTests.ModelTests
             //Arrange
             DateTime myDateTime = DateTime.Now;
             Room room = new("RoomName", 123, 3, dataService.Buildings[0]);
-            string expectedText = "Name:RoomName,Id:123,Floor:3,Building id:1";
+            string expectedText = "Room id:123,Name:RoomName,Floor:3,Building id:1";
             //Act
             string actualText = room.ToString();
             //Assert
@@ -85,7 +85,7 @@ namespace EvacuationProjectTests.ModelTests
         {
             //Arrange
             Workstation myWorkstation = new("workstationName 2", 5, dataService.Rooms[0]);
-            string expectedText = "Name:workstationName 2,Id:5,Room id:1";
+            string expectedText = "Workstation id:5,Name:workstationName 2,Room id:1";
             //Act
             string actualText = myWorkstation.ToString();
             //Assert
@@ -97,7 +97,7 @@ namespace EvacuationProjectTests.ModelTests
         {
             //Arrange
             User myUser = new(123, "SomeUser Name", AccessLevel.Employee);
-            string expectedText = "Name:SomeUser Name,Id:123,Access level:Employee,null";
+            string expectedText = "Employee id:123,Name:SomeUser Name,Access level:Employee,Presence:null";
             //Act
             string actualText = myUser.ToString();
             //Assert
@@ -110,7 +110,7 @@ namespace EvacuationProjectTests.ModelTests
             DateTime myDateTime = DateTime.Now;
             Presence presence = new(dataService.Workstations[0], myDateTime);
             User myUser = new(123, "SomeUser Name", AccessLevel.Employee, presence);
-            string expectedText = $"Name:SomeUser Name,Id:123,Access level:Employee,Checkin workstation id:1,Start time:{myDateTime}";
+            string expectedText = $"Employee id:123,Name:SomeUser Name,Access level:Employee,Presence:Workstation id:1,Start time:{myDateTime}";
             //Act
             string actualText = myUser.ToString();
             //Assert

@@ -11,9 +11,10 @@ namespace EvacuationProject.BusinessLogic
         public List<Building> Buildings { get; }
 
         public List<User> GetUsersCurrentlyCheckedIn();
-        public bool AlreadyExists<T>(T obj, List<T> data) where T : class;
-        public void Save<T>(T obj, List<T> data) where T : class;
-        public void Delete<T>(T obj, List<T> data) where T : class;
-        public T FindObject<T>(int Id, List<T> data) where T : class;
+        public bool AlreadyExists<T>(T obj, List<T> data) where T : IModel;
+        public void Save<T>(T obj, List<T> data) where T : IModel;
+        public void Delete<T>(T obj, List<T> data) where T : IModel;
+        public T FindObject<T>(int Id, List<T> data) where T : IModel;
+        public bool OtherObjectsDependOnThisObject<T>(T obj) where T: IModel;
     }
 }

@@ -17,7 +17,7 @@ namespace EvacuationProject.Models
 
         public override string ToString()
         {
-            return $"Checkin workstation id:{_workstation.Id},Start time:{_startTime}";
+            return $"Workstation id:{_workstation.Id},Start time:{_startTime}";
         }
     }
 }

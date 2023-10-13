@@ -153,7 +153,7 @@ namespace EvacuationProjectTests.ModelsTests
             int adminId = 666;
             Administrator myAdmin = new(adminId, "AdministratorName", "AdministratorPassword");
             administratorService.Create(myUser, dataService.Users);
-            int actualUserId = dataService.Users[1].Id;
+            int? actualUserId = dataService.Users[1].Id;
             string actualUsername = dataService.Users[1].Name;
             AccessLevel actualAccessLevel = dataService.Users[1].AccessLevel;
 
@@ -240,10 +240,10 @@ namespace EvacuationProjectTests.ModelsTests
             administratorService.Create(myRoom, dataService.Rooms);
 
             string actualRoomName = dataService.Rooms[1].Name;
-            int actualRoomNumber = dataService.Rooms[1].Id;
+            int? actualRoomNumber = dataService.Rooms[1].Id;
             int actualFloor = dataService.Rooms[1].Floor;
             string actualBuildingName = dataService.Rooms[1].Building.Name;
-            int actualBuildingId = dataService.Rooms[1].Building.Id;
+            int? actualBuildingId = dataService.Rooms[1].Building.Id;
 
             //Assert
             Assert.AreEqual(expectedRoomName, actualRoomName);
@@ -353,7 +353,7 @@ namespace EvacuationProjectTests.ModelsTests
         }
 
         [TestMethod]
-        public void Administrator_UpdateShouldUpdateShouldThrowExceptionIfNoRoomExists()
+        public void Administrator_DeleteShouldThrowExceptionIfNoRoomExists()
         {
             //Arrange
             string roomName = "Test Room Name";
@@ -369,7 +369,7 @@ namespace EvacuationProjectTests.ModelsTests
             Administrator myAdmin = new(adminId, "AdministratorName", "AdministratorPassword");
 
             //Assert
-            Assert.ThrowsException<Exception>(() => administratorService.Update(myRoom, dataService.Rooms));
+            Assert.ThrowsException<Exception>(() => administratorService.Delete(myRoom, dataService.Rooms));
         }
 
         [TestMethod]

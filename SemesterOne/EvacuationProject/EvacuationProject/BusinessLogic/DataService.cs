@@ -4,6 +4,9 @@ using EvacuationProject.BusinessLogic;
 using System.ComponentModel.Design;
 using System.Runtime.InteropServices;
 using System.Reflection.Metadata.Ecma335;
+using System.Data;
+using System.Data.Common;
+using System.Linq.Expressions;
 
 namespace EvacuationProject.BusinessLogic
 {
@@ -38,37 +41,72 @@ namespace EvacuationProject.BusinessLogic
             return _users.Where(u => u.Presence != null).ToList();
         }
 
-        public bool AlreadyExists<T>(T obj, List<T> data) where T : class
+        public bool AlreadyExists<T>(T obj, List<T> data) where T : IModel
         {
             var idProperty = typeof(T).GetProperty("Id");
             var idValue = idProperty.GetValue(obj);
             return data.Any(e => idProperty.GetValue(e).Equals(idValue));
         }
 
-        public void Save<T>(T obj, List<T> data) where T : class
+        public void Save<T>(T obj, List<T> data) where T : IModel
         {
             if (!AlreadyExists(obj, data))
                 data.Add(obj);
+            else
+            {
+                Delete(obj, data);
+                data.Add(obj);
+            }
         }
-        public void Save<T>(T obj, List<T> data, string pathToWriteTo) where T : class
-        {
-            data.Add(obj);
-            _dataHandler.WriteListToTextFile(pathToWriteTo, data);
-        }
-
-        public void Delete<T>(T obj, List<T> data) where T : class
+        public void Delete<T>(T obj, List<T> data) where T : IModel
         {
             var idProperty = typeof(T).GetProperty("Id");
             var idValue = idProperty.GetValue(obj);
             var myEnumerable = data.Where(e => idProperty.GetValue(e).Equals(idValue));
-            obj = myEnumerable.First();
-            data.Remove(obj);
+            data.Remove(myEnumerable.First());
         }
-        public T FindObject<T>(int id, List<T> data) where T : class
+        public bool OtherObjectsDependOnThisObject<T>(T myObj) where T: IModel
         {
+            if (myObj.GetType() == typeof(Room))
+            {
+                for (int i = 0; i < _workstations.Count; i++)
+                {
+                    if (_workstations[i].Room.Id == myObj.Id)
+                    {
+                        return true;
+                    }
+                }
+            }
+            if (myObj.GetType() == typeof(Building))
+            {
+                for (int i = 0; i < _rooms.Count; i++)
+                {
+                    if (_rooms[i].Building.Id == myObj.Id)
+                        return true;
+                }
+            }
+            return false;
+        }
+        public T FindObject<T>(int id, List<T> data) where T : IModel 
+        {
+            //try
+            //{
             var idProperty = typeof(T).GetProperty("Id");
             var myEnumerable = data.Where(e => idProperty.GetValue(e).Equals(id));
             return myEnumerable.First();
+            //}
+            //catch
+            //{
+                //throw new Exception("Error - object_id not found in database");
+            //}
         }
+        public void DeleteObject<T>(T obj, List<T> data) where T: IModel
+        {
+            if (!OtherObjectsDependOnThisObject(obj))
+                Delete(obj, data);
+            else
+                throw new Exception("Error - could not delete, since other objects depend on this object");
+        }
+
     }
 }

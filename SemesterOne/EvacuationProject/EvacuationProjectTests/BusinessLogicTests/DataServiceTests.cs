@@ -33,7 +33,7 @@ namespace EvacuationProjectTests
         public void DataService_SaveShouldSaveEmployee()
         {
             //Arrange
-            int userId = 123;
+            int userId = 1234;
             string userName = "Test Name";
             AccessLevel level = AccessLevel.Employee;
             var myUser = new User(userId, userName, level);
@@ -92,17 +92,14 @@ namespace EvacuationProjectTests
 
             // Act
             var myUser = new User(userId, userName, level);
-            dataService.Save(myUser, dataService.Users);
             userService.CheckIn(myUser, dataService.Workstations[0]);
 
             userId = 2;
             myUser = new User(userId, userName, level);
-            dataService.Save(myUser, dataService.Users);
             userService.CheckIn(myUser, dataService.Workstations[0]);
 
             userId = 3;
             myUser = new User(userId, userName, level);
-            dataService.Save(myUser, dataService.Users);
             userService.CheckIn(myUser, dataService.Workstations[0]);
 
             List<User> myUsers = dataService.GetUsersCurrentlyCheckedIn();
@@ -117,6 +114,29 @@ namespace EvacuationProjectTests
                 Assert.AreEqual(user.Presence.Workstation, dataService.Workstations[0]);
                 idCounter ++;
             }
+        }
+        [TestMethod]
+        public void Dataservice_DeleteShouldDeleteUser()
+        {
+            // Arrange
+            dataService.Delete(dataService.Users[0], dataService.Users);
+            int expectedNumOfUsers = 0;
+            int userId = 1;
+            string userName = "Test Name";
+            var myUser = new User(userId, userName);
+            // Act
+            dataService.Save(myUser, dataService.Users);
+            dataService.Delete(myUser, dataService.Users);
+            int actualNumOfUsers = dataService.Users.Count();
+
+            // Assert
+            Assert.AreEqual(expectedNumOfUsers, actualNumOfUsers);
+
+            dataService.Save(myUser, dataService.Users);
+            Assert.AreEqual(1, dataService.Users.Count);
+
+            dataService.Delete(myUser, dataService.Users);
+            Assert.AreEqual(expectedNumOfUsers, dataService.Users.Count);
         }
         [TestMethod]
         public void Dataservice_GetUsersCurrentlyCheckedInShouldNotReturnUsersCheckedOut()

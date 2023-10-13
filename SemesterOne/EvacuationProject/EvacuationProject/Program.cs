@@ -4,6 +4,9 @@ using EvacuationProject.BusinessLogic;
 using EvacuationProject.Models;
 using EvacuationProject.DataHandling;
 using EvacuationProject.UI;
+using System.Runtime.InteropServices;
+using System.Diagnostics;
+using System.Linq.Expressions;
 
 namespace EvacuationProject;
 
@@ -11,32 +14,26 @@ class Program
 {
     static void Main(string[] args)
     {
+        // Setup of Dependency injection
         using IHost host = CreateDefaultBuilder(args).Build();
         using var scope = host.Services.CreateScope();
         var service = scope.ServiceProvider;
 
+        // Instantiating required services
         var dataService = service.GetRequiredService<IDataService>();
         var handler = service.GetRequiredService<IDataHandler>();
         var loginService = service.GetRequiredService<ILoginService>();
         var userService = service.GetRequiredService<IUserService>();
+        var administratorService = service.GetRequiredService<IAdministratorService>();
         // FillDataBaseWithExamples is only for testing purposes!!
         FillDataBaseWithExamples(dataService, handler, userService);
+        handler.ReadDatabase();
 
-	    // Could inject instead?
+        // Could inject instead?
         ViewHelper views = new(dataService);
         views.Greeting.Run();
         while (true)
         {
-            handler.ReadDatabase();
-            Console.WriteLine(dataService.Buildings.Count);
-            Console.WriteLine(dataService.Users.Count);
-            foreach (User myUser in dataService.Users)
-            {
-                Console.WriteLine(myUser);
-            }
-            Console.WriteLine(dataService.Workstations.Count);
-            Console.WriteLine(dataService.Administrators.Count);
-            Console.ReadLine();
             string userOption = views.MainMenuView.Run();
             if (userOption == "Afslut")
             {
@@ -66,7 +63,7 @@ class Program
                         views.SuccessfulCheckin.Run();
                     }
                     if (option == "Check ud")
-                    { 
+                    {
                         views.CreateCheckoutView(myUser);
                         views.CheckoutView.Run();
                         userService.CheckOut(myUser);
@@ -74,110 +71,43 @@ class Program
                 }
                 else if (loginService.IsValidAdministrator(userId) && loginService.IsValidAdminPassword(userId, views.AdminLoginView.Run()))
                 {
-                    string adminOption = "";
-                    while (adminOption != "Afslut")
+                    Administrator myAdmin = dataService.FindObject(userId, dataService.Administrators);
+                    string option = "";
+                    while (option != "Afslut")
                     {
-                        Administrator myAdmin = new();
-                        try
-                        {
-                            myAdmin = dataService.FindObject(userId, dataService.Administrators);
-                        }
-                        catch
-                        {
-                            views.InvalidInput.Run();
-                            break;
-                        }
+                        handler.ReadDatabase();
                         views.CreateAdminMainView(myAdmin);
-                        adminOption = views.AdminMainView.Run();
-                        string internalAdminOption = "";
-                        switch (adminOption)
+                        option = views.AdminMainView.Run();
+                        switch (option)
                         {
                             case "Bruger":
                                 {
-                                    string crudOption = views.ChooseCrudOperation.Run();
-
-                                    //Dictionary<int, string> myOptions = new(){{1, "Vis elementer i databasen"},{2, "Opret ny element"}, {3, "Rediger element"}, {4, "Slet element"}};
-                                    switch (crudOption)
-                                    {
-                                        case "Vis elementer i databasen":
-                                        {
-                                            views.CreateDisplayListView()
-                                            break;
-                                        }
-                                        case "Opret nyt element":
-                                        {
-                                            break;
-                                        }
-                                        case "Rediger element":
-                                        {
-                                            break;
-                                        }
-                                        case "Slet element":
-                                        {
-                                            break;
-                                        }
-                                        default:
-                                        {
-                                            views.InvalidInput.Run();
-                                            break;
-                                        }
-                                    }
-                                    // UserCrudFlow
-                                    // vælg type element (bruger, workstation osv)
-                                    // vælg opret eller rediger?
-                                        // opret: opretskærm
-                                        // rediger: vis elementer, vælge elment
-                                            // vis rediger-skærm
-                                    views.CreateDisplayListView(dataService.Users);
-                                    int myUserIndex;
-                                    while(int.TryParse(views.DisplayList.Run(), out myUserIndex) && myUserIndex > dataService.Users.Count);
-                                    User myUser = dataService.Users[myUserIndex];
-                                    string selectedUserOption = views.SelectOptionView.Run();
-                                    if (selectedUserOption == "Slet")
-                                    {
-                                        dataService.Delete(myUser, dataService.Users);
-                                        views.DeleteSuccessfull.Run();
-                                        break;
-                                    }
-                                    if (selectedUserOption == "Opdater")
-                                    {
-                                        views.CreateUpdateUserIdView(myUser.Id);
-                                        int newUserId;
-                                        do
-                                        {
-                                            int.TryParse(views.UpdateView.Run(), out newUserId);
-                                        } while (newUserId < 0 || newUserId > 10000);
-                                        views.CreateUpdateUserNameView(myUser.Id);
-                                        string newName = views.UpdateView.Run();
-                                        User newUser = new(newUserId, newName);
-                                        dataService.Delete(myUser, dataService.Users);
-                                        dataService.Save(newUser, dataService.Users);
-                                        break;
-                                    }
+                                    User myUser = new();
+                                    ExecuteCrudFlow(dataService.Users, myUser);
                                     break;
                                 }
                             case "Administrator":
                                 {
-                                    views.CreateDisplayListView(dataService.Administrators);
-                                    internalAdminOption = views.DisplayList.Run();
+                                    Administrator myAdministrator = new();
+                                    ExecuteCrudFlow(dataService.Administrators, myAdministrator);
                                     break;
                                 }
                             case "Bygning":
                                 {
-                                    views.CreateDisplayListView(dataService.Buildings);
-                                    internalAdminOption = views.DisplayList.Run();
+                                    Building myBuilding = new("", null);
+                                    ExecuteCrudFlow(dataService.Buildings, myBuilding);
                                     break;
                                 }
                             case "Lokale":
                                 {
-                                    views.CreateDisplayListView(dataService.Rooms);
-                                    internalAdminOption = views.DisplayList.Run();
+                                    Room myRoom = new("", null, 0, null);
+                                    ExecuteCrudFlow(dataService.Rooms, myRoom);
                                     break;
                                 }
                             case "Arbejdsstation":
                                 {
-                                    views.CreateDisplayListView(dataService.Workstations);
-                                    internalAdminOption = views.DisplayList.Run();
+                                    Workstation myWorkstation = new("", null, null);
+                                    ExecuteCrudFlow(dataService.Workstations, myWorkstation);
                                     break;
                                 }
                             case "Afslut":
@@ -190,6 +120,7 @@ class Program
                                     break;
                                 }
                         }
+                        handler.WriteDatabase();
                     }
                 }
                 else
@@ -197,7 +128,6 @@ class Program
                     Console.WriteLine("Login-information var ikke gyldig, tast enter for at forsøge igen!");
                     Console.ReadLine();
                 }
-
             }
             handler.WriteDatabase();
             Console.WriteLine("Reached end of loop");
@@ -232,7 +162,7 @@ class Program
             myWorkstation = new("NewWorkstationName", 2, myRoom);
             myDataService.Save(myWorkstation, myDataService.Workstations);
 
-            Administrator myAdmin = new(99999, "Test Person", "LongPassword");
+            Administrator myAdmin = new(0, "Test Person", "");
             myDataService.Save(myAdmin, myDataService.Administrators);
 
             int userId = 1234;
@@ -245,40 +175,80 @@ class Program
             myUser = new User(4839, "Tobias Test");
             myDataService.Save(myUser, myDataService.Users);
             myUserService.CheckIn(myUser, myWorkstation);
-            myHandler.WriteDatabase();
-            Console.WriteLine("Database successfully written!");
+        }
+
+        void ExecuteCrudFlow<T>(List<T> myList, T myObj) where T : IModel
+        {
+            string crudOption = views.ChooseCrudOperation.Run();
+            switch (crudOption)
+            {
+                case "Vis elementer i databasen":
+                    {
+                        views.CreateDisplayListView(myList);
+                        views.DisplayList.Run();
+                        break;
+                    }
+                case "Opret nyt element":
+                    {
+                        views.CreateCreateView(myObj);
+                        string objectString = views.CreateView.Run();
+                        try { administratorService.CreateObject(objectString, myObj, myList); }
+                        catch
+                        {
+                            views.InvalidInput.Run();
+                            break;
+                        }
+                        views.CreateWasASuccess.Run();
+                        break;
+                    }
+                case "Rediger element":
+                    {
+                        views.CreateSelectFromListView(myList);
+                        int indexOfSelectedElement;
+                        while (!int.TryParse(views.SelectFromList.Run(), out indexOfSelectedElement)) ;
+                        try { myObj = myList[indexOfSelectedElement - 1]; }
+                        catch
+                        {
+                            views.InvalidInput.Run();
+                            break;
+                        }
+                        views.CreateUpdateView(myList, myObj);
+                        string objectString = views.UpdateView.Run();
+                        administratorService.CreateObject(objectString, myObj, myList, overwriteExistingObject: true);
+                        views.UpdateWasASuccess.Run();
+                        break;
+                    }
+                case "Slet element":
+                    {
+                        views.CreateSelectFromListView(myList);
+                        int indexOfSelectedElement;
+                        while (!int.TryParse(views.SelectFromList.Run(), out indexOfSelectedElement)) ;
+                        try { myObj = myList[indexOfSelectedElement - 1]; }
+                        catch
+                        {
+                            views.InvalidInput.Run();
+                            break;
+                        }
+                        try { administratorService.Delete(myObj, myList); }
+                        catch (Exception e)
+                        {
+                            views.InvalidInput.Run(e.Message); break;
+                        }
+                        views.DeleteSuccessfull.Run();
+                        break;
+                    }
+                case "Afslut":
+                    {
+                        break;
+                    }
+                default:
+                    {
+                        views.InvalidInput.Run();
+                        break;
+                    }
+            }
         }
     }
-//    public void CrudFlow<T>(List<T> data, IDataService dataService) 
-//    {
-//        views.CreateDisplayListView(data);
-//        int myIndex;
-//        while (int.TryParse(views.DisplayList.Run(), out myIndex) && myIndex > data.Count) ;
-//        T myObj = data[myIndex];
-//        string selectedUserOption = views.SelectOptionView.Run();
-//        if (selectedUserOption == "Slet")
-//        {
-//            dataService.Delete(myObj, data);
-//            break;
-//        }
-//        if (selectedUserOption == "Opdater")
-//        {
-//            // Create update view needs to know which type of object it is, since most objects have different info 
-//            // For instance a room needs to be associated to a building and a workstation to a oom
-//            // Can a view take prompts in succession??
-//            views.CreateUpdateView(myUser.Id);
-//            int newUserId;
-//            do
-//            {
-//                int.TryParse(views.UpdateView.Run(), out newUserId);
-//            } while (newUserId < 0 || newUserId > 10000);
-//            views.CreateUpdateUserNameView(myUser.Id);
-//            string newName = views.UpdateView.Run();
-//            User newUser = new(newUserId, newName);
-//            dataService.Delete(myUser, data);
-//            dataService.Save(newUser, data);
-//            break;
-//        }
-//        break;
-//    }
 }
+
+

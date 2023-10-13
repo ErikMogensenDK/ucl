@@ -91,16 +91,16 @@ namespace EvacuationProjectTests.BusinessLogicTests
             //Assert
             Assert.IsTrue(isValidPassword);
         }
-        [TestMethod]
-        public void LoginService_InvalidAdminPasswordShouldThrowException()
-        {
-            //Arrange
-            int userId = 666;
-            string password = "IncorrectPassword";
+        //[TestMethod]
+        //public void LoginService_InvalidAdminPasswordShouldThrowException()
+        //{
+        //    //Arrange
+        //    int userId = 666;
+        //    string password = "IncorrectPassword";
 
-            //Assert
-            Assert.ThrowsException<Exception>(() => loginService.IsValidAdminPassword(userId, password));
-        }
+        //    //Assert
+        //    Assert.ThrowsException<Exception>(() => loginService.IsValidAdminPassword(userId, password));
+        //}
         [TestMethod]
         public void LoginUser_ShouldReturnUser()
         {

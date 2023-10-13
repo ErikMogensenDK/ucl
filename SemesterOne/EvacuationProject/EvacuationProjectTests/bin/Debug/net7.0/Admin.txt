@@ -1,2 +1,2 @@
-Name:Test Person,Id:123,Password:LongPassword
-Name:some new Username,Id:1111,Password:someRandomPassword
+Administrator id:123,Name:Test Person,Password:LongPassword
+Administrator id:1111,Name:some new Username,Password:someRandomPassword

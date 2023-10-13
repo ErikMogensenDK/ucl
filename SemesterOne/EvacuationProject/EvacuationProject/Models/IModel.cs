@@ -8,6 +8,7 @@ namespace EvacuationProject.Models
     public interface IModel
     {
         string Name {get; set; }
-        int Id {get; set;}
+        int? Id {get; set;}
+        public string ToString();
     }
 }

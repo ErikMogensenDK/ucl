@@ -57,7 +57,7 @@ namespace EvacuationProject.DataHandling
                 ReadItemsIntoList(_paths[4], _dataService.Administrators, ReadAdministrator);
         }
 
-        public void ReadItemsIntoList<T>(string PathToTextFile, List<T> listToReadTo, Func<string, T> myReadFunction) where T : class
+        public void ReadItemsIntoList<T>(string PathToTextFile, List<T> listToReadTo, Func<string, T> myReadFunction) where T : IModel
         {
             for (int i = 0; i < listToReadTo.Count; i++)
             { 
@@ -65,10 +65,12 @@ namespace EvacuationProject.DataHandling
             }
             StreamReader myReader = new(PathToTextFile);
             string? input; 
+            listToReadTo.Clear();
             while((input = myReader.ReadLine()) != null)
             {
-                listToReadTo.Add(myReadFunction(input));
-                input = myReader.ReadLine();
+                var myObj = myReadFunction(input);
+                listToReadTo.Add(myObj);
+                //input = myReader.ReadLine();
             }
             myReader.Close();
         }
@@ -76,8 +78,8 @@ namespace EvacuationProject.DataHandling
         public Administrator ReadAdministrator(string inputString)
         {
             string[] inputArray = inputString.Split(",");
-            string name = inputArray[0].Split(":")[1];
-            int id = Convert.ToInt32(inputArray[1].Split(":")[1]);
+            int id = Convert.ToInt32(inputArray[0].Split(":")[1]);
+            string name = inputArray[1].Split(":")[1];
             string password = inputArray[2].Split(":")[1];
             Administrator myAdmin = new(id, name, password);
             return myAdmin;
@@ -86,8 +88,8 @@ namespace EvacuationProject.DataHandling
         public Workstation ReadWorkstation(string arg)
         {
             string[] inputArray = arg.Split(",");
-            string name = inputArray[0].Split(":")[1];
-            int id = Convert.ToInt32(inputArray[1].Split(":")[1]);
+            int id = Convert.ToInt32(inputArray[0].Split(":")[1]);
+            string name = inputArray[1].Split(":")[1];
             int roomId = Convert.ToInt32(inputArray[2].Split(":")[1]);
             Room myRoom = _dataService.FindObject(roomId, _dataService.Rooms);
             Workstation myWorkstation = new(name, id, myRoom);
@@ -97,16 +99,16 @@ namespace EvacuationProject.DataHandling
         public Building ReadBuilding(string input)
         {
             string[] inputArray = input.Split(",");
-            string name = inputArray[0].Split(":")[1];
-            int id = Convert.ToInt32(inputArray[1].Split(":")[1]);
+            int id = Convert.ToInt32(inputArray[0].Split(":")[1]);
+            string name = inputArray[1].Split(":")[1];
             Building myBuilding = new(name, id);
             return myBuilding;
         }
         public Room ReadRoom(string input)
         {
             string[] inputArray = input.Split(",");
-            string name = inputArray[0].Split(":")[1];
-            int id = Convert.ToInt32(inputArray[1].Split(":")[1]);
+            int id = Convert.ToInt32(inputArray[0].Split(":")[1]);
+            string name = inputArray[1].Split(":")[1];
             int floor = Convert.ToInt32(inputArray[2].Split(":")[1]);
             int buildingId = Convert.ToInt32(inputArray[3].Split(":")[1]);
             Building building = _dataService.FindObject(buildingId, _dataService.Buildings);
@@ -117,16 +119,15 @@ namespace EvacuationProject.DataHandling
         public User ReadUser(string pathToTextFile)
         {
             string[] inputArray = pathToTextFile.Split(",");
-            string name = inputArray[0].Split(":")[1];
-            int id = Convert.ToInt32(inputArray[1].Split(":")[1]);
+            int id = Convert.ToInt32(inputArray[0].Split(":")[1]);
+            string name = inputArray[1].Split(":")[1];
             AccessLevel accessLevel = DetermineAccessLevel(inputArray[2].Split(":")[1]);
             Presence presence;
-            if (inputArray[3] == "null")
+            if (inputArray[3].Split(":")[1] == "null")
                 presence = null;
             else
             {
-                Console.WriteLine(inputArray[3]);
-                int workstationId = Convert.ToInt32(inputArray[3].Split(":")[1]);
+                int workstationId = Convert.ToInt32(inputArray[3].Split(":")[2]);
                 Workstation myWorkstation = _dataService.FindObject(workstationId, _dataService.Workstations);
                 DateTime startTime = DateTime.Parse(inputArray[4].Split(":")[1] + ":" + inputArray[4].Split(":")[2]);
                 presence = new(myWorkstation, startTime);
