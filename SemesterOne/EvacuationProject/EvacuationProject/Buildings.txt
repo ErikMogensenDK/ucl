@@ -1,1 +1,2 @@
-Building id:1,Name:TestBuildingName
+Building id:4,Name:Erik
+Building id:1,Name:Nyt bygnings-navn (redigeret)

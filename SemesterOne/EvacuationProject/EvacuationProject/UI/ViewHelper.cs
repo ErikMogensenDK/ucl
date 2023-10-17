@@ -143,7 +143,7 @@ namespace EvacuationProject.UI
         {
             get
             {
-                View myView = new(title: "Objekt blev oprettet!", prompt: "Tast enter for at vende tilbage");
+                View myView = new(title: "Objekt blev redigeret!", prompt: "Tast enter for at vende tilbage");
                 return myView;
             }
         }
@@ -421,7 +421,7 @@ namespace EvacuationProject.UI
             if (myString == "Administrator id")
             {
                 newString = "Eksisterende brugere\n";
-                newString += CreateDisplayOfList(dataService.Users);
+                newString += CreateDisplayOfList(dataService.Administrators);
             }
             return newString;
         }

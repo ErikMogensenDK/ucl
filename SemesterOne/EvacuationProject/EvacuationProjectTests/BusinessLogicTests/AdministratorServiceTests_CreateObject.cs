@@ -36,7 +36,7 @@ namespace EvacuationProjectTests.BusinessLogicTests
         {
             //Arrange
             User user = new(1234, "TestName");
-            string objectString = user.ToString();
+            string objectString = "1234,TestName,";
 
             //Act
             administratorService.CreateObject(objectString, user, dataService.Users);
@@ -49,8 +49,8 @@ namespace EvacuationProjectTests.BusinessLogicTests
         public void CreateObject_CreationOfWorkstationShouldAddWorkstation()
         {
             //Arrange
-            Workstation workstation = new("MyWorkstation number 1", 5, dataService.Rooms[0]);
-            string objectString = workstation.ToString();
+            Workstation workstation = new("MyWorkstation number 1", null, dataService.Rooms[0]);
+            string objectString = "1,MyWorkstation number 1,1";
 
             //Act
             administratorService.CreateObject(objectString, workstation, dataService.Workstations);
@@ -65,7 +65,7 @@ namespace EvacuationProjectTests.BusinessLogicTests
         {
             //Arrange
             Building building = new("Name of test building");
-            string objectString = building.ToString();
+            string objectString = "Name of test building,";
 
             //Act
             administratorService.CreateObject(objectString, building, dataService.Buildings);
@@ -73,12 +73,13 @@ namespace EvacuationProjectTests.BusinessLogicTests
             //Assert
             Assert.AreEqual(dataService.Buildings[1].Name, building.Name);
         }
+        
         [TestMethod]
         public void CreateObject_CreationOfAdministratorShouldAddAdministrator()
         {
             //Arrange
             Administrator administrator = new(91988,"Name of test administrator", "PasswordForTesting123!");
-            string objectString = administrator.ToString();
+            string objectString = "91988,Name of test administrator,PasswordForTesting123!";
 
             //Act
             administratorService.CreateObject(objectString, administrator, dataService.Administrators);
@@ -88,12 +89,13 @@ namespace EvacuationProjectTests.BusinessLogicTests
             Assert.AreEqual(dataService.Administrators[0].Id, administrator.Id);
             Assert.AreEqual(dataService.Administrators[0].Password, administrator.Password);
         }
+
         [TestMethod]
         public void CreateObject_CreationOfRoomShouldAddRoom()
         {
             //Arrange
             Room room = new("Name of my room", 123, 2, dataService.Buildings[0]);
-            string objectString = room.ToString();
+            string objectString = "Name of my room, 2,0";
 
             //Act
             administratorService.CreateObject(objectString, room, dataService.Rooms);

@@ -15,19 +15,17 @@ namespace EvacuationProject.BusinessLogic
                 throw new Exception($"Id of \"{obj}\" already exists in in-memory-database");
             _dataService.Save(obj, data);
         }
-        public void Delete<T>(T obj, List<T> data) where T : IModel
+        public void Delete<T>(T obj, List<T> data, bool overwrite = false) where T : IModel
 
         {
-            if (!_dataService.AlreadyExists<T>(obj, data))
-                throw new Exception($"Could not delete, since Id of \"{obj}\" does not exist in in-memory-database");
-            if (_dataService.OtherObjectsDependOnThisObject(obj))
-                throw new Exception("Error - could not delete, since other objects depend on this object");
+            if (!overwrite && _dataService.OtherObjectsDependOnThisObject(obj))
+                throw new Exception("Fejl - kunne ikke slette, da andre objekter afhænger af objektet");
             _dataService.Delete(obj, data);
         }
         public void Update<T>(T obj, List<T> data) where T : IModel
         {
             if (_dataService.AlreadyExists<T>(obj, data))
-                _dataService.Delete(obj, data);
+                Delete(obj, data, true);
             _dataService.Save(obj, data);
         }
 
@@ -43,17 +41,17 @@ namespace EvacuationProject.BusinessLogic
             }
         }
 
-        public void CreateObject<T>(string objectString, T myObj, List<T> myList, bool owerwriteExistingObject = false) where T : IModel
+        public void CreateObject<T>(string objectString, T myObj, List<T> myList, bool overwriteExistingObject = false) where T : IModel
         {
             if (myObj.GetType() == typeof(User))
             {
                 string[] myStringArray = objectString.Split(",");
                 int id;
-                try {int.TryParse(myStringArray[0].Split(":")[1], out id);}
+                try {int.TryParse(myStringArray[0], out id);}
                 catch{throw new Exception("id-input kunne ikke konverteres til et tal, prøv venligst igen");}
-                string name = myStringArray[1].Split(":")[1];
+                string name = myStringArray[1];
                 AccessLevel myLevel;
-                switch (myStringArray[2].Split(":")[1])
+                switch (myStringArray[2])
                 {
                     case "Employee":
                         {
@@ -73,8 +71,8 @@ namespace EvacuationProject.BusinessLogic
                 }
                 User oldObject = new(myObj.Id, myObj.Name);
                 User newObject = new(id, name, myLevel);
-                if (owerwriteExistingObject && _dataService.AlreadyExists(oldObject, _dataService.Users))
-                    Delete(oldObject, _dataService.Users);
+                if (overwriteExistingObject && _dataService.AlreadyExists(oldObject, _dataService.Users))
+                    Delete(oldObject, _dataService.Users, overwriteExistingObject);
                 Update(newObject, _dataService.Users);
                 return;
             }
@@ -82,29 +80,29 @@ namespace EvacuationProject.BusinessLogic
             {
                 string[] myStringArray = objectString.Split(",");
                 int id;
-                try {int.TryParse(myStringArray[0].Split(":")[1], out id);}
-                catch { throw new Exception("id-input kunne ikke konverteres til et tal, prøv venligst igen"); }
-                string name = myStringArray[1].Split(":")[1];
+                string name = myStringArray[1];
                 int roomId;
-                try {int.TryParse(myStringArray[2].Split(":")[1], out roomId);}
+                try {int.TryParse(myStringArray[0], out roomId);}
                 catch {throw new Exception("Rum-id fra arbejdsstationen kunne ikke konverteres til et tal, prøv venligst igen.");}
                 if (myObj.Id == null)
                     id = _dataService.Workstations.Count + 1;
                 else 
                     id = myObj.Id.Value;
-                Room myRoom = GetItemFromDatabase(roomId, _dataService.Rooms);
+                Room myRoom;
+                try { myRoom = GetItemFromDatabase(roomId, _dataService.Rooms); }
+                catch {throw new Exception($"Fejl - kunne ikke finde rum med id: {roomId} i databasen");}
 
                 Workstation oldObject = new(myObj.Name, myObj.Id, myRoom);
                 Workstation newObject = new(name, id, myRoom);
-                if (owerwriteExistingObject && _dataService.AlreadyExists(oldObject, _dataService.Workstations))
-                    Delete(oldObject, _dataService.Workstations);
+                if (overwriteExistingObject && _dataService.AlreadyExists(oldObject, _dataService.Workstations))
+                    Delete(oldObject, _dataService.Workstations, overwriteExistingObject);
                 Update(newObject, _dataService.Workstations);
                 return;
             }
             if (myObj.GetType() == typeof(Building))
             {
                 string[] myStringArray = objectString.Split(",");
-                string name = myStringArray[1].Split(":")[1];
+                string name = myStringArray[0];
                 int? id;
                 if (myObj.Id == null)
                     id = _dataService.Buildings.Count + 1;
@@ -112,8 +110,8 @@ namespace EvacuationProject.BusinessLogic
                     id = myObj.Id;
                 Building oldObject = new(myObj.Name, myObj.Id);
                 Building newObject = new(name, id);
-                if (owerwriteExistingObject && _dataService.AlreadyExists(oldObject, _dataService.Buildings))
-                    Delete(oldObject, _dataService.Buildings);
+                if (overwriteExistingObject && _dataService.AlreadyExists(oldObject, _dataService.Buildings))
+                    Delete(oldObject, _dataService.Buildings, overwriteExistingObject);
                 Update(newObject, _dataService.Buildings);
                 return;
             }
@@ -121,14 +119,14 @@ namespace EvacuationProject.BusinessLogic
             {
                 string[] myStringArray = objectString.Split(",");
                 int id;
-                try { int.TryParse(myStringArray[0].Split(":")[1], out id); }
+                try { int.TryParse(myStringArray[0], out id); }
                 catch { throw new Exception("Kunne ikke konvertere input til id til et tal, prøv venligst igen"); }
-                string name = myStringArray[1].Split(":")[1];
-                string password = myStringArray[2].Split(":")[1];
+                string name = myStringArray[1];
+                string password = myStringArray[2];
                 Administrator oldObject = new(myObj.Id, myObj.Name);
                 Administrator newObject = new(id, name, password);
-                if (owerwriteExistingObject && _dataService.AlreadyExists(oldObject, _dataService.Administrators))
-                    Delete(oldObject, _dataService.Administrators);
+                if (overwriteExistingObject && _dataService.AlreadyExists(oldObject, _dataService.Administrators))
+                    Delete(oldObject, _dataService.Administrators, overwriteExistingObject);
                 Update(newObject, _dataService.Administrators);
                 return;
             }
@@ -136,28 +134,28 @@ namespace EvacuationProject.BusinessLogic
             {
                 string[] myStringArray = objectString.Split(",");
                 int id;
-                try{int.TryParse(myStringArray[0].Split(":")[1], out id);}
-                catch{throw new Exception("Kunne ikke konvertere input til id til et tal, prøv venligst igen");}
-                string name = myStringArray[1].Split(":")[1];
+                if (myObj.Id == null)
+                    id = _dataService.Rooms.Count + 1;
+                else 
+                    id = Convert.ToInt32(myObj.Id);
+                string name = myStringArray[0];
 
                 int floor;
-                try{int.TryParse(myStringArray[2].Split(":")[1], out floor);}
+                try{int.TryParse(myStringArray[1], out floor);}
                 catch{throw new Exception("Kunne ikke konvertere etage-niveau fra rummet til et tal, prøv venligst igen");}
 
                 int buildingId;
-                try{int.TryParse(myStringArray[3].Split(":")[1], out buildingId);}
+                try{int.TryParse(myStringArray[2], out buildingId);}
                 catch{throw new Exception("Kunne ikke konvertere bygning id fra rum til et tal, prøv venligst igen");}
 
-                Building building = GetItemFromDatabase(buildingId, _dataService.Buildings);
+                Building building;
+                try { building = GetItemFromDatabase(buildingId, _dataService.Buildings); }
+                catch { throw new Exception($"Fejl - kunne ikke finde bygning med id-nummeret: {buildingId + 1} i databasen"); }
 
-                if (id == 0)
-                    id = _dataService.Buildings.Count + 1;
-                else 
-                    id = myObj.Id.Value;
                 Room oldObject = new(myObj.Name, myObj.Id, floor, building);
                 Room newObject = new(name, id, floor, building);
-                if (owerwriteExistingObject && _dataService.AlreadyExists(oldObject, _dataService.Rooms))
-                    Delete(oldObject, _dataService.Rooms);
+                if (overwriteExistingObject && _dataService.AlreadyExists(oldObject, _dataService.Rooms))
+                    Delete(oldObject, _dataService.Rooms, overwriteExistingObject);
                 Update(newObject, _dataService.Rooms);
                 return;
             }

@@ -7,6 +7,7 @@ using EvacuationProject.UI;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.Linq.Expressions;
+using Microsoft.Extensions.Configuration.UserSecrets;
 
 namespace EvacuationProject;
 
@@ -46,8 +47,8 @@ class Program
             }
             if (userOption == "Log ind")
             {
-                int.TryParse(views.LoginView.Run(), out int userId);
-                if (loginService.IsValidUserId(userId))
+                int userId;
+                if (int.TryParse(views.LoginView.Run(), out userId) && loginService.IsValidUserId(userId))
                 {
                     User myUser = dataService.FindObject(userId, dataService.Users);
                     views.CreateEmployeeMainView(myUser);

@@ -41,13 +41,13 @@ namespace EvacuationProject.BusinessLogic
         public bool IsValidAdminPassword(int userId, string password)
         {
             Administrator admin = _dataService.FindObject(userId, _dataService.Administrators);
-            if (!(admin.Password == password))
+            if (admin.Password == password)
             {
                 // log admin login attempt
                 //throw new Exception("Error - invalid password for Administrator");
-                return false;
+                return true;
             }
-            return true;
+            return false;
         }
         public User LoginUser(int userId)
         {

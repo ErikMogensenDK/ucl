@@ -1,5 +1,5 @@
 Employee id:1234,Name:Test Thomas,Access level:Employee,Presence:null
-Employee id:4321,Name:Tove Test,Access level:Employee,Presence:Workstation id:2,Start time:13-10-2023 09:35:36
-Employee id:4321,Name:Tove Test,Access level:Employee,Presence:Workstation id:2,Start time:13-10-2023 09:35:36
-Employee id:4839,Name:Tobias Test,Access level:Employee,Presence:Workstation id:2,Start time:13-10-2023 09:35:36
-Employee id:4839,Name:Tobias Test,Access level:Employee,Presence:Workstation id:2,Start time:13-10-2023 09:35:36
+Employee id:4321,Name:Tove Test,Access level:Employee,Presence:Workstation id:2,Start time:13-10-2023 09:35:00
+Employee id:4321,Name:Tove Test,Access level:Employee,Presence:Workstation id:2,Start time:13-10-2023 09:35:00
+Employee id:4839,Name:Tobias Test,Access level:Employee,Presence:Workstation id:2,Start time:13-10-2023 09:35:00
+Employee id:4839,Name:Tobias Test,Access level:Employee,Presence:Workstation id:2,Start time:13-10-2023 09:35:00

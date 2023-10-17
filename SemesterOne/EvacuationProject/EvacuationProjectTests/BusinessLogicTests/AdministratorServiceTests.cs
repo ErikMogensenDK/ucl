@@ -113,28 +113,6 @@ namespace EvacuationProjectTests.ModelsTests
             Assert.IsFalse(dataService.AlreadyExists(myWorkstation, dataService.Workstations));
             Assert.AreEqual(1, dataService.Workstations.Count);
         }
-        [TestMethod]
-        public void Administrator_DeletingWorkstationShouldThrowExceptionIfWorkstationIdNotInDatabase()
-        {
-            // Arrange
-            string workstationName = "Test Workstation Name Two";
-            string roomName = "TestRum 2";
-            int roomNumber = 0;
-            int floor = 0;
-            string buildingName = "TestBuildingNameTwo";
-            int buildingId = 1;
-            var myBuilding = new Building(buildingName, buildingId);
-            var myRoom = new Room(roomName, roomNumber, floor, myBuilding);
-            Workstation myWorkstation = new(workstationName, roomNumber, myRoom);
-            int adminId = 666;
-            Administrator myAdmin = new(adminId, "AdministratorName", "AdministratorPassword");
-
-            // Act
-            administratorService.Create(myWorkstation, dataService.Workstations);
-            administratorService.Delete(myWorkstation, dataService.Workstations);
-            // Assert
-            Assert.ThrowsException<Exception>(() => administratorService.Delete(myWorkstation, dataService.Workstations));
-        }
 
         [TestMethod]
         public void Administrator_CreateUserShouldCreateEmployee()
@@ -203,24 +181,6 @@ namespace EvacuationProjectTests.ModelsTests
             Assert.IsFalse(dataService.AlreadyExists(myUser, dataService.Users));
         }
 
-        [TestMethod]
-        public void Administrator_DeleteUserShouldThrowExceptionIfUserIDDoesNotExist()
-        {
-            //Arrange
-            int userId = 321;
-            string userName = "TestName1";
-            AccessLevel access = AccessLevel.Employee;
-            User myUser = new(userId, userName, access);
-
-            //ACT
-            int adminId = 666;
-            Administrator myAdmin = new(adminId, "AdministratorName", "AdministratorPassword");
-            administratorService.Create(myUser, dataService.Users);
-            administratorService.Delete(myUser, dataService.Users);
-
-            //Assert
-            Assert.ThrowsException<Exception>(() => administratorService.Delete(myUser, dataService.Users));
-        }
 
         [TestMethod]
         public void Administrator_CreateRoomShouldCreateRoom()
@@ -299,27 +259,6 @@ namespace EvacuationProjectTests.ModelsTests
             Assert.IsFalse(dataService.AlreadyExists(myRoom, dataService.Rooms));
         }
 
-        [TestMethod]
-        public void Administrator_DeleteRoomShouldThrowErrorIfRoomIdAlreadyExists()
-        {
-            //Arrange
-            string roomName = "Test Room Name";
-            int roomNumber = 5;
-            int floor = 1;
-            string buildingName = "testBuildingName";
-            int buildingId = 1;
-            var building = new Building(buildingName, buildingId);
-            var myRoom = new Room(roomName, roomNumber, floor, building);
-
-            //Act
-            int adminId = 666;
-            Administrator myAdmin = new(adminId, "AdministratorName", "AdministratorPassword");
-            administratorService.Create(myRoom, dataService.Rooms);
-            administratorService.Delete(myRoom, dataService.Rooms);
-
-            //Assert
-            Assert.ThrowsException<Exception>(() => administratorService.Delete(myRoom, dataService.Rooms));
-        }
 
         [TestMethod]
         public void Administrator_UpdateShouldUpdateInformationInRoom()
@@ -352,25 +291,6 @@ namespace EvacuationProjectTests.ModelsTests
             Assert.AreEqual(newFloor, dataService.Rooms[1].Floor);
         }
 
-        [TestMethod]
-        public void Administrator_DeleteShouldThrowExceptionIfNoRoomExists()
-        {
-            //Arrange
-            string roomName = "Test Room Name";
-            int id = 5;
-            int floor = 1;
-            string buildingName = "testBuildingName";
-            int buildingId = 1;
-            var building = new Building(buildingName, buildingId);
-            var myRoom = new Room(roomName, id, floor, building);
-
-            //Act
-            int adminId = 666;
-            Administrator myAdmin = new(adminId, "AdministratorName", "AdministratorPassword");
-
-            //Assert
-            Assert.ThrowsException<Exception>(() => administratorService.Delete(myRoom, dataService.Rooms));
-        }
 
         [TestMethod]
         public void Administrator_GetItemFromDatabaseShouldReturnUser()

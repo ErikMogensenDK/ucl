@@ -102,10 +102,7 @@ namespace EvacuationProject.BusinessLogic
         }
         public void DeleteObject<T>(T obj, List<T> data) where T: IModel
         {
-            if (!OtherObjectsDependOnThisObject(obj))
-                Delete(obj, data);
-            else
-                throw new Exception("Error - could not delete, since other objects depend on this object");
+            Delete(obj, data);
         }
 
     }

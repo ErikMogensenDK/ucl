@@ -1,5 +1,5 @@
 Employee id:4839,Name:Tobias Test,Access level:Employee,Presence:Workstation id:2,Start time:13-10-2023 10:34:00
-Employee id:4839,Name:Tobias Test,Access level:Employee,Presence:Workstation id:2,Start time:13-10-2023 10:34:00
 Employee id:9192,Name:Erik,Access level:Employee,Presence:null
 Employee id:921,Name:Erik,Access level:Employee,Presence:null
 Employee id:4321,Name:Erik,Access level:Employee,Presence:null
+Employee id:0,Name:erik,Access level:Employee,Presence:null
