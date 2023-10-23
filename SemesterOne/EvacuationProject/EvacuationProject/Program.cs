@@ -131,8 +131,6 @@ class Program
                 }
             }
             handler.WriteDatabase();
-            Console.WriteLine("Reached end of loop");
-            Console.ReadLine();
         }
 
         IHostBuilder CreateDefaultBuilder(string[] args)
