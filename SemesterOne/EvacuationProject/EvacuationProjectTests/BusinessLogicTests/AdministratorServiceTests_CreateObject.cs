@@ -32,57 +32,57 @@ namespace EvacuationProjectTests.BusinessLogicTests
         }
 
         [TestMethod]
-        public void CreateObject_CreationOfUserShouldAddUser()
+        public void Create_CreationOfUserShouldAddUser()
         {
             //Arrange
             User user = new(1234, "TestName");
             string objectString = "1234,TestName,";
 
             //Act
-            administratorService.CreateObject(objectString, user, dataService.Users);
+            administratorService.Create(objectString, user);
 
             //Assert
             Assert.AreEqual(dataService.Users[1].Name, user.Name);
             Assert.AreEqual(dataService.Users[1].Id, user.Id);
         }
         [TestMethod]
-        public void CreateObject_CreationOfWorkstationShouldAddWorkstation()
+        public void Create_CreationOfWorkstationShouldAddWorkstation()
         {
             //Arrange
             Workstation workstation = new("MyWorkstation number 1", null, dataService.Rooms[0]);
-            string objectString = "1,MyWorkstation number 1,1";
+            string objectString = "MyWorkstation number 1,1";
 
             //Act
-            administratorService.CreateObject(objectString, workstation, dataService.Workstations);
+            administratorService.Create(objectString, workstation);
 
             //Assert
             Assert.AreEqual(dataService.Workstations[1].Name, workstation.Name);
-            Assert.AreEqual(dataService.Workstations[1].Id, workstation.Id);
+            Assert.AreEqual(dataService.Workstations[1].Id, 2);
         }
 
         [TestMethod]
-        public void CreateObject_CreationOfBuildingShouldAddBuilding()
+        public void Create_CreationOfBuildingShouldAddBuilding()
         {
             //Arrange
             Building building = new("Name of test building");
             string objectString = "Name of test building,";
 
             //Act
-            administratorService.CreateObject(objectString, building, dataService.Buildings);
+            administratorService.Create(objectString, building);
 
             //Assert
             Assert.AreEqual(dataService.Buildings[1].Name, building.Name);
         }
         
         [TestMethod]
-        public void CreateObject_CreationOfAdministratorShouldAddAdministrator()
+        public void Create_CreationOfAdministratorShouldAddAdministrator()
         {
             //Arrange
             Administrator administrator = new(91988,"Name of test administrator", "PasswordForTesting123!");
             string objectString = "91988,Name of test administrator,PasswordForTesting123!";
 
             //Act
-            administratorService.CreateObject(objectString, administrator, dataService.Administrators);
+            administratorService.Create(objectString, administrator);
 
             //Assert
             Assert.AreEqual(dataService.Administrators[0].Name, administrator.Name);
@@ -91,14 +91,14 @@ namespace EvacuationProjectTests.BusinessLogicTests
         }
 
         [TestMethod]
-        public void CreateObject_CreationOfRoomShouldAddRoom()
+        public void Create_CreationOfRoomShouldAddRoom()
         {
             //Arrange
             Room room = new("Name of my room", 123, 2, dataService.Buildings[0]);
             string objectString = "Name of my room, 2,0";
 
             //Act
-            administratorService.CreateObject(objectString, room, dataService.Rooms);
+            administratorService.Create(objectString, room);
 
             //Assert
             Assert.AreEqual(dataService.Rooms[1].Name, room.Name);

@@ -1,2 +1,3 @@
 Workstation id:1,Name:3,Room id:1
 Workstation id:2,Name:Nyt navn (test),Room id:3
+Workstation id:3,Name:Ny station,Room id:1

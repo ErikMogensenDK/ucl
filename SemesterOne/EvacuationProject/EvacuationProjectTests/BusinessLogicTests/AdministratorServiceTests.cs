@@ -31,7 +31,7 @@ namespace EvacuationProjectTests.ModelsTests
         }
 
         [TestMethod]
-        public void Administrator_CreateWorkstationCreatesWorkstation()
+        public void Administrator_UpdateWorkstationUpdatesWorkstation()
         {
             // Arrange
             string workstationName = "Test Workstation Name Two";
@@ -53,7 +53,7 @@ namespace EvacuationProjectTests.ModelsTests
             string expectedWorkstationBuildingName = buildingName;
 
             // Act
-            administratorService.Create(myWorkstation, dataService.Workstations);
+            administratorService.Update(myWorkstation, dataService.Workstations);
             // Assert
             int actualWorkstationCount = dataService.Workstations.Count;
             string actualWorkstationName = dataService.Workstations[1].Name;
@@ -68,28 +68,6 @@ namespace EvacuationProjectTests.ModelsTests
             Assert.AreEqual(expectedWorkstationBuildingName, actualWorkstationBuildingName);
         }
 
-        [TestMethod]
-        public void Administrator_CreatingWorkstationWithIdenticalIdShouldThrowException()
-        {
-            // Arrange
-            string workstationName = "Test Workstation Name Two";
-            string roomName = "TestRum 2";
-            int roomNumber = 0;
-            int floor = 0;
-            string buildingName = "TestBuildingNameTwo";
-            int buildingId = 1;
-            var myBuilding = new Building(buildingName, buildingId);
-            var myRoom = new Room(roomName, roomNumber, floor, myBuilding);
-            Workstation myWorkstation = new(workstationName, roomNumber, myRoom);
-            int adminId = 666;
-            Administrator myAdmin = new(adminId, "AdministratorName", "AdministratorPassword");
-
-            // Act
-            administratorService.Create(myWorkstation, dataService.Workstations);
-
-            // Assert
-            Assert.ThrowsException<Exception>(() => administratorService.Create(myWorkstation, dataService.Workstations));
-        }
         [TestMethod]
         public void Administrator_DeletingWorkstationShouldRemoveWorkstation()
         {
@@ -107,15 +85,15 @@ namespace EvacuationProjectTests.ModelsTests
             Administrator myAdmin = new(adminId, "AdministratorName", "AdministratorPassword");
 
             // Act
-            administratorService.Create(myWorkstation, dataService.Workstations);
+            administratorService.Update(myWorkstation, dataService.Workstations);
             administratorService.Delete(myWorkstation, dataService.Workstations);
             // Assert
-            Assert.IsFalse(dataService.AlreadyExists(myWorkstation, dataService.Workstations));
+            Assert.IsFalse(dataService.AlreadyExists(myWorkstation));
             Assert.AreEqual(1, dataService.Workstations.Count);
         }
 
         [TestMethod]
-        public void Administrator_CreateUserShouldCreateEmployee()
+        public void Administrator_UpdateUserShouldUpdateEmployee()
         {
             //Arrange
             int userId = 321;
@@ -130,7 +108,7 @@ namespace EvacuationProjectTests.ModelsTests
             //ACT
             int adminId = 666;
             Administrator myAdmin = new(adminId, "AdministratorName", "AdministratorPassword");
-            administratorService.Create(myUser, dataService.Users);
+            administratorService.Update(myUser, dataService.Users);
             int? actualUserId = dataService.Users[1].Id;
             string actualUsername = dataService.Users[1].Name;
             AccessLevel actualAccessLevel = dataService.Users[1].AccessLevel;
@@ -139,24 +117,6 @@ namespace EvacuationProjectTests.ModelsTests
             Assert.AreEqual(expectedUsername, actualUsername);
             Assert.AreEqual(expectedUserId, actualUserId);
             Assert.AreEqual(expectedAccessLevel, actualAccessLevel);
-        }
-
-        [TestMethod]
-        public void Administrator_CreateUserShouldThrowExceptionIfDuplicateId()
-        {
-            //Arrange
-            int userId = 321;
-            string userName = "TestName1";
-            AccessLevel access = AccessLevel.Employee;
-            User myUser = new(userId, userName, access);
-
-            //ACT
-            int adminId = 666;
-            Administrator myAdmin = new(adminId, "AdministratorName", "AdministratorPassword");
-            administratorService.Create(myUser, dataService.Users);
-
-            //Assert
-            Assert.ThrowsException<Exception>(() => administratorService.Create(myUser, dataService.Users));
         }
 
         [TestMethod]
@@ -171,19 +131,19 @@ namespace EvacuationProjectTests.ModelsTests
             //ACT
             int adminId = 666;
             Administrator myAdmin = new(adminId, "AdministratorName", "AdministratorPassword");
-            administratorService.Create(myUser, dataService.Users);
+            administratorService.Update(myUser, dataService.Users);
             Assert.AreEqual(2, dataService.Users.Count);
 
             administratorService.Delete(myUser, dataService.Users);
             Assert.AreEqual(1, dataService.Users.Count);
 
             //Assert
-            Assert.IsFalse(dataService.AlreadyExists(myUser, dataService.Users));
+            Assert.IsFalse(dataService.AlreadyExists(myUser));
         }
 
 
         [TestMethod]
-        public void Administrator_CreateRoomShouldCreateRoom()
+        public void Administrator_UpdateRoomShouldUpdateRoom()
         {
             //Arrange
             string expectedRoomName = "Test Room Name";
@@ -197,7 +157,7 @@ namespace EvacuationProjectTests.ModelsTests
             //Act
             int adminId = 666;
             Administrator myAdmin = new(adminId, "AdministratorName", "AdministratorPassword");
-            administratorService.Create(myRoom, dataService.Rooms);
+            administratorService.Update(myRoom, dataService.Rooms);
 
             string actualRoomName = dataService.Rooms[1].Name;
             int? actualRoomNumber = dataService.Rooms[1].Id;
@@ -213,27 +173,6 @@ namespace EvacuationProjectTests.ModelsTests
             Assert.AreEqual(expectedBuildingId, actualBuildingId);
         }
         [TestMethod]
-        public void Administrator_CreateRoomShouldThrowExceptionIfDuplicateRoomNumberOrName()
-        {
-            //Arrange
-            string roomName = "Test Room Name";
-            int roomNumber = 5;
-            int floor = 1;
-            string buildingName = "testBuildingName";
-            int buildingId = 1;
-            var building = new Building(buildingName, buildingId);
-            var myRoom = new Room(roomName, roomNumber, floor, building);
-
-            //Act
-            int adminId = 666;
-            Administrator myAdmin = new(adminId, "AdministratorName", "AdministratorPassword");
-            administratorService.Create(myRoom, dataService.Rooms);
-
-            //Assert
-            Assert.ThrowsException<Exception>(() => administratorService.Create(myRoom, dataService.Rooms));
-        }
-
-        [TestMethod]
         public void Administrator_DeleteRoomShouldDeleteRoom()
         {
             //Arrange
@@ -248,15 +187,15 @@ namespace EvacuationProjectTests.ModelsTests
             //Act
             int adminId = 666;
             Administrator myAdmin = new(adminId, "AdministratorName", "AdministratorPassword");
-            administratorService.Create(myRoom, dataService.Rooms);
-            Assert.IsTrue(dataService.AlreadyExists(myRoom, dataService.Rooms));
+            administratorService.Update(myRoom, dataService.Rooms);
+            Assert.IsTrue(dataService.AlreadyExists(myRoom));
             Assert.AreEqual(2, dataService.Rooms.Count);
 
             administratorService.Delete(myRoom, dataService.Rooms);
             Assert.AreEqual(1, dataService.Rooms.Count);
 
             //Assert
-            Assert.IsFalse(dataService.AlreadyExists(myRoom, dataService.Rooms));
+            Assert.IsFalse(dataService.AlreadyExists(myRoom));
         }
 
 
@@ -276,7 +215,7 @@ namespace EvacuationProjectTests.ModelsTests
             //Act
             int adminId = 666;
             Administrator myAdmin = new(adminId, "AdministratorName", "AdministratorPassword");
-            administratorService.Create(myRoom, dataService.Rooms);
+            administratorService.Update(myRoom, dataService.Rooms);
             Assert.AreEqual(2, dataService.Rooms.Count);
             Assert.AreEqual(roomName, dataService.Rooms[1].Name);
             
@@ -331,7 +270,7 @@ namespace EvacuationProjectTests.ModelsTests
             Assert.ThrowsException<Exception>(() => administratorService.GetItemFromDatabase(idNotInDatabase, dataService.Users));
         }
         [TestMethod]
-        public void Administrator_CreateShouldSaveAdministrator()
+        public void Administrator_UpdateShouldSaveAdministrator()
         {
             // Arrange
             int id = 666;
@@ -339,7 +278,7 @@ namespace EvacuationProjectTests.ModelsTests
             string password = "TestPassword";
             var myAdmin = new Administrator(id, username, password);
             // Act
-            administratorService.Create(myAdmin, dataService.Administrators);
+            administratorService.Update(myAdmin, dataService.Administrators);
             string actualUsername = dataService.Administrators[0].Name;
             string actualPassword = dataService.Administrators[0].Password;
             string expectedUsername = username;

@@ -4,29 +4,31 @@ namespace EvacuationProject.BusinessLogic
     public class AdministratorService : IAdministratorService
     {
         private IDataService _dataService;
+
         public AdministratorService(IDataService dataService)
         {
             _dataService = dataService;
         }
 
-        public void Create<T>(T obj, List<T> data) where T : IModel
+        private void Save<T>(T obj, List<T> data) where T : IModel
         {
-            if (_dataService.AlreadyExists<T>(obj, data))
+            if (_dataService.AlreadyExists<T>(obj))
                 throw new Exception($"Id of \"{obj}\" already exists in in-memory-database");
             _dataService.Save(obj, data);
         }
-        public void Delete<T>(T obj, List<T> data, bool overwrite = false) where T : IModel
 
+        public void Delete<T>(T obj, List<T> data, bool overwrite = false) where T : IModel
         {
             if (!overwrite && _dataService.OtherObjectsDependOnThisObject(obj))
                 throw new Exception("Fejl - kunne ikke slette, da andre objekter afhænger af objektet");
             _dataService.Delete(obj, data);
         }
+
         public void Update<T>(T obj, List<T> data) where T : IModel
         {
-            if (_dataService.AlreadyExists<T>(obj, data))
+            if (_dataService.AlreadyExists<T>(obj))
                 Delete(obj, data, true);
-            _dataService.Save(obj, data);
+            Save(obj, data);
         }
 
         public T GetItemFromDatabase<T>(int id, List<T> data) where T : IModel
@@ -37,11 +39,11 @@ namespace EvacuationProject.BusinessLogic
             }
             catch (Exception)
             {
-                throw new Exception($"Object ID \"{id}\" not found in database");
+                throw new Exception($"Object ID \"{id}\" not found in list {nameof(data)}");
             }
         }
 
-        public void CreateObject<T>(string objectString, T myObj, List<T> myList, bool overwriteExistingObject = false) where T : IModel
+        public void Create<T>(string objectString, T myObj, bool overwriteExistingObject = false) where T : IModel
         {
             if (myObj.GetType() == typeof(User))
             {
@@ -71,7 +73,7 @@ namespace EvacuationProject.BusinessLogic
                 }
                 User oldObject = new(myObj.Id, myObj.Name);
                 User newObject = new(id, name, myLevel);
-                if (overwriteExistingObject && _dataService.AlreadyExists(oldObject, _dataService.Users))
+                if (overwriteExistingObject && _dataService.AlreadyExists(oldObject))
                     Delete(oldObject, _dataService.Users, overwriteExistingObject);
                 Update(newObject, _dataService.Users);
                 return;
@@ -79,22 +81,22 @@ namespace EvacuationProject.BusinessLogic
             if (myObj.GetType() == typeof(Workstation))
             {
                 string[] myStringArray = objectString.Split(",");
-                int id;
-                string name = myStringArray[1];
+                string name = myStringArray[0];
                 int roomId;
-                try {int.TryParse(myStringArray[0], out roomId);}
+                try {int.TryParse(myStringArray[1], out roomId);}
                 catch {throw new Exception("Rum-id fra arbejdsstationen kunne ikke konverteres til et tal, prøv venligst igen.");}
-                if (myObj.Id == null)
-                    id = _dataService.Workstations.Count + 1;
-                else 
-                    id = myObj.Id.Value;
                 Room myRoom;
                 try { myRoom = GetItemFromDatabase(roomId, _dataService.Rooms); }
                 catch {throw new Exception($"Fejl - kunne ikke finde rum med id: {roomId} i databasen");}
 
+                int id;
+                if (myObj.Id == null)
+                    id = _dataService.Workstations.Count + 1;
+                else 
+                    id = myObj.Id.Value;
                 Workstation oldObject = new(myObj.Name, myObj.Id, myRoom);
                 Workstation newObject = new(name, id, myRoom);
-                if (overwriteExistingObject && _dataService.AlreadyExists(oldObject, _dataService.Workstations))
+                if (overwriteExistingObject && _dataService.AlreadyExists(oldObject))
                     Delete(oldObject, _dataService.Workstations, overwriteExistingObject);
                 Update(newObject, _dataService.Workstations);
                 return;
@@ -110,7 +112,7 @@ namespace EvacuationProject.BusinessLogic
                     id = myObj.Id;
                 Building oldObject = new(myObj.Name, myObj.Id);
                 Building newObject = new(name, id);
-                if (overwriteExistingObject && _dataService.AlreadyExists(oldObject, _dataService.Buildings))
+                if (overwriteExistingObject && _dataService.AlreadyExists(oldObject))
                     Delete(oldObject, _dataService.Buildings, overwriteExistingObject);
                 Update(newObject, _dataService.Buildings);
                 return;
@@ -125,7 +127,7 @@ namespace EvacuationProject.BusinessLogic
                 string password = myStringArray[2];
                 Administrator oldObject = new(myObj.Id, myObj.Name);
                 Administrator newObject = new(id, name, password);
-                if (overwriteExistingObject && _dataService.AlreadyExists(oldObject, _dataService.Administrators))
+                if (overwriteExistingObject && _dataService.AlreadyExists(oldObject))
                     Delete(oldObject, _dataService.Administrators, overwriteExistingObject);
                 Update(newObject, _dataService.Administrators);
                 return;
@@ -154,7 +156,7 @@ namespace EvacuationProject.BusinessLogic
 
                 Room oldObject = new(myObj.Name, myObj.Id, floor, building);
                 Room newObject = new(name, id, floor, building);
-                if (overwriteExistingObject && _dataService.AlreadyExists(oldObject, _dataService.Rooms))
+                if (overwriteExistingObject && _dataService.AlreadyExists(oldObject))
                     Delete(oldObject, _dataService.Rooms, overwriteExistingObject);
                 Update(newObject, _dataService.Rooms);
                 return;

@@ -1,12 +1,6 @@
 using EvacuationProject.Models;
 using EvacuationProject.DataHandling;
-using EvacuationProject.BusinessLogic;
-using System.ComponentModel.Design;
-using System.Runtime.InteropServices;
-using System.Reflection.Metadata.Ecma335;
 using System.Data;
-using System.Data.Common;
-using System.Linq.Expressions;
 
 namespace EvacuationProject.BusinessLogic
 {
@@ -17,7 +11,7 @@ namespace EvacuationProject.BusinessLogic
         private List<Administrator> _administrators;
         private List<Room> _rooms;
         private List<Building> _buildings;
-        private TextDataHandler _dataHandler;
+        private IDataHandler _dataHandler;
 
 
         public List<User> Users { get => _users; }
@@ -33,7 +27,7 @@ namespace EvacuationProject.BusinessLogic
             _administrators = new();
             _rooms = new();
             _buildings = new();
-            _dataHandler = new(this);
+            TextDataHandler _dataHandler = new(this);
         }
 
         public List<User> GetUsersCurrentlyCheckedIn()
@@ -41,16 +35,41 @@ namespace EvacuationProject.BusinessLogic
             return _users.Where(u => u.Presence != null).ToList();
         }
 
-        public bool AlreadyExists<T>(T obj, List<T> data) where T : IModel
+        public bool AlreadyExists<T>(T obj) where T : IModel
         {
             var idProperty = typeof(T).GetProperty("Id");
             var idValue = idProperty.GetValue(obj);
-            return data.Any(e => idProperty.GetValue(e).Equals(idValue));
+            idValue = obj.Id;
+            if (obj.GetType() == typeof(User))
+            {
+                return _users.Any(e => idProperty.GetValue(e).Equals(idValue));
+            }
+            if (obj.GetType() == typeof(Workstation))
+            {
+                return _workstations.Any(e => idProperty.GetValue(e).Equals(idValue));
+            }
+            if (obj.GetType() == typeof(Building))
+            {
+                return _buildings.Any(e => idProperty.GetValue(e).Equals(idValue));
+            }
+            if (obj.GetType() == typeof(Room))
+            {
+                return _rooms.Any(e => idProperty.GetValue(e).Equals(idValue));
+            }
+            if (obj.GetType() == typeof(Administrator))
+            {
+                return _administrators.Any(e => idProperty.GetValue(e).Equals(idValue));
+            }
+            else
+            {
+                throw new Exception($"Error - object type \"{obj.GetType}\" not found in database");
+            }
         }
+
 
         public void Save<T>(T obj, List<T> data) where T : IModel
         {
-            if (!AlreadyExists(obj, data))
+            if (!AlreadyExists(obj))
                 data.Add(obj);
             else
             {
@@ -89,16 +108,9 @@ namespace EvacuationProject.BusinessLogic
         }
         public T FindObject<T>(int id, List<T> data) where T : IModel 
         {
-            //try
-            //{
             var idProperty = typeof(T).GetProperty("Id");
             var myEnumerable = data.Where(e => idProperty.GetValue(e).Equals(id));
             return myEnumerable.First();
-            //}
-            //catch
-            //{
-                //throw new Exception("Error - object_id not found in database");
-            //}
         }
         public void DeleteObject<T>(T obj, List<T> data) where T: IModel
         {

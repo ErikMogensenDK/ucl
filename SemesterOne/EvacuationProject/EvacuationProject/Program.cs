@@ -193,7 +193,7 @@ class Program
                     {
                         views.CreateCreateView(myObj);
                         string objectString = views.CreateView.Run();
-                        try { administratorService.CreateObject(objectString, myObj, myList); }
+                        try { administratorService.Create(objectString, myObj); }
                         catch
                         {
                             views.InvalidInput.Run();
@@ -215,7 +215,7 @@ class Program
                         }
                         views.CreateUpdateView(myList, myObj);
                         string objectString = views.UpdateView.Run();
-                        administratorService.CreateObject(objectString, myObj, myList, overwriteExistingObject: true);
+                        administratorService.Create(objectString, myObj, overwriteExistingObject: true);
                         views.UpdateWasASuccess.Run();
                         break;
                     }
