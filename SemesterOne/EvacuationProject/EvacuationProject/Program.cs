@@ -139,11 +139,10 @@ class Program
             .ConfigureServices((_, services) =>
             {
                 services.AddSingleton<IDataService, DataService>();
-                services.AddSingleton<IAdministratorService, AdministratorService>();
-                services.AddSingleton<IUserService, UserService>();
                 services.AddSingleton<IDataHandler, TextDataHandler>();
-                services.AddSingleton<ILoginService, LoginService>();
-                //services.AddSingleton<ILogger, Logger>();
+                services.AddTransient<IAdministratorService, AdministratorService>();
+                services.AddTransient<IUserService, UserService>();
+                services.AddTransient<ILoginService, LoginService>();
             });
         }
         static void FillDataBaseWithExamples(IDataService myDataService, IDataHandler myHandler, IUserService myUserService)

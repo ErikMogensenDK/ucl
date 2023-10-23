@@ -43,8 +43,6 @@ namespace EvacuationProject.BusinessLogic
             Administrator admin = _dataService.FindObject(userId, _dataService.Administrators);
             if (admin.Password == password)
             {
-                // log admin login attempt
-                //throw new Exception("Error - invalid password for Administrator");
                 return true;
             }
             return false;
