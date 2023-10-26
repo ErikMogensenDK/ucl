@@ -4,10 +4,6 @@ using EvacuationProject.BusinessLogic;
 using EvacuationProject.Models;
 using EvacuationProject.DataHandling;
 using EvacuationProject.UI;
-using System.Runtime.InteropServices;
-using System.Diagnostics;
-using System.Linq.Expressions;
-using Microsoft.Extensions.Configuration.UserSecrets;
 
 namespace EvacuationProject;
 
@@ -30,7 +26,7 @@ class Program
         FillDataBaseWithExamples(dataService, handler, userService);
         handler.ReadDatabase();
 
-        // Could inject instead?
+        // initalize views
         ViewHelper views = new(dataService);
         views.Greeting.Run();
         while (true)

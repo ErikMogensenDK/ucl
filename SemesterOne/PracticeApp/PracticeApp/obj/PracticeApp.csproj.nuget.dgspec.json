@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\erikm\\ucl\\semesterone\\practiceapp\\practiceapp\\PracticeApp.csproj": {}
+    "C:\\Users\\erikm\\ucl\\SemesterOne\\PracticeApp\\PracticeApp\\PracticeApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\erikm\\ucl\\semesterone\\practiceapp\\practiceapp\\PracticeApp.csproj": {
+    "C:\\Users\\erikm\\ucl\\SemesterOne\\PracticeApp\\PracticeApp\\PracticeApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\erikm\\ucl\\semesterone\\practiceapp\\practiceapp\\PracticeApp.csproj",
+        "projectUniqueName": "C:\\Users\\erikm\\ucl\\SemesterOne\\PracticeApp\\PracticeApp\\PracticeApp.csproj",
         "projectName": "PracticeApp",
-        "projectPath": "C:\\Users\\erikm\\ucl\\semesterone\\practiceapp\\practiceapp\\PracticeApp.csproj",
+        "projectPath": "C:\\Users\\erikm\\ucl\\SemesterOne\\PracticeApp\\PracticeApp\\PracticeApp.csproj",
         "packagesPath": "C:\\Users\\erikm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\erikm\\ucl\\semesterone\\practiceapp\\practiceapp\\obj\\",
+        "outputPath": "C:\\Users\\erikm\\ucl\\SemesterOne\\PracticeApp\\PracticeApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\erikm\\AppData\\Roaming\\NuGet\\NuGet.Config",

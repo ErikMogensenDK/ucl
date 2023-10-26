@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\erikm\\ucl\\semesterone\\EvacuationProject\\EvacuationProjectTests\\EvacuationProjectTests.csproj": {}
+    "C:\\Users\\erikm\\ucl\\SemesterOne\\EvacuationProject\\EvacuationProjectTests\\EvacuationProjectTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\erikm\\ucl\\semesterone\\EvacuationProject\\EvacuationProjectTests\\EvacuationProjectTests.csproj": {
+    "C:\\Users\\erikm\\ucl\\SemesterOne\\EvacuationProject\\EvacuationProjectTests\\EvacuationProjectTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\erikm\\ucl\\semesterone\\EvacuationProject\\EvacuationProjectTests\\EvacuationProjectTests.csproj",
+        "projectUniqueName": "C:\\Users\\erikm\\ucl\\SemesterOne\\EvacuationProject\\EvacuationProjectTests\\EvacuationProjectTests.csproj",
         "projectName": "EvacuationProjectTests",
-        "projectPath": "C:\\Users\\erikm\\ucl\\semesterone\\EvacuationProject\\EvacuationProjectTests\\EvacuationProjectTests.csproj",
+        "projectPath": "C:\\Users\\erikm\\ucl\\SemesterOne\\EvacuationProject\\EvacuationProjectTests\\EvacuationProjectTests.csproj",
         "packagesPath": "C:\\Users\\erikm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\erikm\\ucl\\semesterone\\EvacuationProject\\EvacuationProjectTests\\obj\\",
+        "outputPath": "C:\\Users\\erikm\\ucl\\SemesterOne\\EvacuationProject\\EvacuationProjectTests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\erikm\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\erikm\\ucl\\semesterone\\EvacuationProject\\EvacuationProject\\EvacuationProject.csproj": {
-                "projectPath": "C:\\Users\\erikm\\ucl\\semesterone\\EvacuationProject\\EvacuationProject\\EvacuationProject.csproj"
+              "C:\\Users\\erikm\\ucl\\SemesterOne\\EvacuationProject\\EvacuationProject\\EvacuationProject.csproj": {
+                "projectPath": "C:\\Users\\erikm\\ucl\\SemesterOne\\EvacuationProject\\EvacuationProject\\EvacuationProject.csproj"
               }
             }
           }
@@ -81,14 +81,14 @@
         }
       }
     },
-    "C:\\Users\\erikm\\ucl\\semesterone\\EvacuationProject\\EvacuationProject\\EvacuationProject.csproj": {
+    "C:\\Users\\erikm\\ucl\\SemesterOne\\EvacuationProject\\EvacuationProject\\EvacuationProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\erikm\\ucl\\semesterone\\EvacuationProject\\EvacuationProject\\EvacuationProject.csproj",
+        "projectUniqueName": "C:\\Users\\erikm\\ucl\\SemesterOne\\EvacuationProject\\EvacuationProject\\EvacuationProject.csproj",
         "projectName": "EvacuationProject",
-        "projectPath": "C:\\Users\\erikm\\ucl\\semesterone\\EvacuationProject\\EvacuationProject\\EvacuationProject.csproj",
+        "projectPath": "C:\\Users\\erikm\\ucl\\SemesterOne\\EvacuationProject\\EvacuationProject\\EvacuationProject.csproj",
         "packagesPath": "C:\\Users\\erikm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\erikm\\ucl\\semesterone\\EvacuationProject\\EvacuationProject\\obj\\",
+        "outputPath": "C:\\Users\\erikm\\ucl\\SemesterOne\\EvacuationProject\\EvacuationProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\erikm\\AppData\\Roaming\\NuGet\\NuGet.Config",

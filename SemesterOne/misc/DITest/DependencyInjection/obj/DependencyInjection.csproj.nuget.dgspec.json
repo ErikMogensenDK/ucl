@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\DITest\\DependencyInjection\\DependencyInjection.csproj": {}
+    "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\DITest\\DependencyInjection\\DependencyInjection.csproj": {}
   },
   "projects": {
-    "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\DITest\\DependencyInjection\\DependencyInjection.csproj": {
+    "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\DITest\\DependencyInjection\\DependencyInjection.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\DITest\\DependencyInjection\\DependencyInjection.csproj",
+        "projectUniqueName": "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\DITest\\DependencyInjection\\DependencyInjection.csproj",
         "projectName": "DependencyInjection",
-        "projectPath": "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\DITest\\DependencyInjection\\DependencyInjection.csproj",
+        "projectPath": "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\DITest\\DependencyInjection\\DependencyInjection.csproj",
         "packagesPath": "C:\\Users\\erikm\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\erikm\\ucl\\SemesterOne\\misc\\DITest\\DependencyInjection\\obj\\",
+        "outputPath": "C:\\Users\\erikm\\ucl\\SemesterOne\\misc\\DITest\\DependencyInjection\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\erikm\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -18,6 +18,10 @@ namespace EvacuationProject.DataHandling
         {
             _paths = paths;
         }
+        public TextDataHandler()
+        {
+
+        }
 
         public void WriteDatabase()
         {
