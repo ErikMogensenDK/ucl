@@ -1,0 +1,14 @@
+C:\Users\erikm\ucl\semesterone\disaheim\Disaheim\bin\Debug\net7.0\Disaheim.exe
+C:\Users\erikm\ucl\semesterone\disaheim\Disaheim\bin\Debug\net7.0\Disaheim.deps.json
+C:\Users\erikm\ucl\semesterone\disaheim\Disaheim\bin\Debug\net7.0\Disaheim.runtimeconfig.json
+C:\Users\erikm\ucl\semesterone\disaheim\Disaheim\bin\Debug\net7.0\Disaheim.dll
+C:\Users\erikm\ucl\semesterone\disaheim\Disaheim\bin\Debug\net7.0\Disaheim.pdb
+C:\Users\erikm\ucl\semesterone\disaheim\Disaheim\obj\Debug\net7.0\Disaheim.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erikm\ucl\semesterone\disaheim\Disaheim\obj\Debug\net7.0\Disaheim.AssemblyInfoInputs.cache
+C:\Users\erikm\ucl\semesterone\disaheim\Disaheim\obj\Debug\net7.0\Disaheim.AssemblyInfo.cs
+C:\Users\erikm\ucl\semesterone\disaheim\Disaheim\obj\Debug\net7.0\Disaheim.csproj.CoreCompileInputs.cache
+C:\Users\erikm\ucl\semesterone\disaheim\Disaheim\obj\Debug\net7.0\Disaheim.dll
+C:\Users\erikm\ucl\semesterone\disaheim\Disaheim\obj\Debug\net7.0\refint\Disaheim.dll
+C:\Users\erikm\ucl\semesterone\disaheim\Disaheim\obj\Debug\net7.0\Disaheim.pdb
+C:\Users\erikm\ucl\semesterone\disaheim\Disaheim\obj\Debug\net7.0\Disaheim.genruntimeconfig.cache
+C:\Users\erikm\ucl\semesterone\disaheim\Disaheim\obj\Debug\net7.0\ref\Disaheim.dll

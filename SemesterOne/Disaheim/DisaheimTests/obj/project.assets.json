@@ -608,6 +608,19 @@
         "runtime": {
           "bin/placeholder/Disaheim.dll": {}
         }
+      },
+      "UtilityLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Disaheim": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/UtilityLib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UtilityLib.dll": {}
+        }
       }
     }
   },
@@ -2308,6 +2321,11 @@
       "type": "project",
       "path": "../Disaheim/Disaheim.csproj",
       "msbuildProject": "../Disaheim/Disaheim.csproj"
+    },
+    "UtilityLib/1.0.0": {
+      "type": "project",
+      "path": "../UtilityLib/UtilityLib.csproj",
+      "msbuildProject": "../UtilityLib/UtilityLib.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2316,6 +2334,7 @@
       "MSTest.TestAdapter >= 2.2.10",
       "MSTest.TestFramework >= 2.2.10",
       "Microsoft.NET.Test.Sdk >= 17.6.0",
+      "UtilityLib >= 1.0.0",
       "coverlet.collector >= 3.2.0"
     ]
   },
@@ -2325,11 +2344,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\erikm\\ucl\\SemesterOne\\Disaheim\\DisaheimTests\\DisaheimTests.csproj",
+      "projectUniqueName": "C:\\Users\\erikm\\ucl\\semesterone\\Disaheim\\DisaheimTests\\DisaheimTests.csproj",
       "projectName": "DisaheimTests",
-      "projectPath": "C:\\Users\\erikm\\ucl\\SemesterOne\\Disaheim\\DisaheimTests\\DisaheimTests.csproj",
+      "projectPath": "C:\\Users\\erikm\\ucl\\semesterone\\Disaheim\\DisaheimTests\\DisaheimTests.csproj",
       "packagesPath": "C:\\Users\\erikm\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\erikm\\ucl\\SemesterOne\\Disaheim\\DisaheimTests\\obj\\",
+      "outputPath": "C:\\Users\\erikm\\ucl\\semesterone\\Disaheim\\DisaheimTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\erikm\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2346,8 +2365,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\erikm\\ucl\\SemesterOne\\Disaheim\\Disaheim\\Disaheim.csproj": {
-              "projectPath": "C:\\Users\\erikm\\ucl\\SemesterOne\\Disaheim\\Disaheim\\Disaheim.csproj"
+            "C:\\Users\\erikm\\ucl\\semesterone\\Disaheim\\Disaheim\\Disaheim.csproj": {
+              "projectPath": "C:\\Users\\erikm\\ucl\\semesterone\\Disaheim\\Disaheim\\Disaheim.csproj"
+            },
+            "C:\\Users\\erikm\\ucl\\semesterone\\Disaheim\\UtilityLib\\UtilityLib.csproj": {
+              "projectPath": "C:\\Users\\erikm\\ucl\\semesterone\\Disaheim\\UtilityLib\\UtilityLib.csproj"
             }
           }
         }

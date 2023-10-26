@@ -7,8 +7,8 @@ namespace Disaheim
 {
     public enum Level
 {
-    Low,
-    Medium,
-    High
+    low,
+    medium,
+    high
 }
 }
